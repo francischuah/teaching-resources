@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BPMNK3143 Business Research Methodology — Chapter 3 student learning and revision page.">
+<title>Chapter 3 — Broad Problem Area &amp; Defining the Problem Statement</title>
+<style>
+/* Research Methodology learning-page family: Chapter 2 palette and geometry. */
+:root {
+  --navy:#102a43; --blue:#1769aa; --blue2:#eaf4ff;
+  --green:#16794a; --green2:#eaf8f0;
+  --gold:#b66a00; --gold2:#fff4df;
+  --red:#b42318; --red2:#fff0ee;
+  --purple:#6b46a1; --purple2:#f4effc;
+  --ink:#243447; --muted:#61758a; --line:#dce5ed;
+  --paper:#f5f8fb; --white:#fff;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:1.55; }
+.page { max-width:1050px; margin:auto; padding:18px; }
+.hero { background:linear-gradient(135deg,var(--navy),#184f78); color:white; border-radius:24px; padding:28px 24px; box-shadow:0 10px 28px rgba(16,42,67,.14); }
+.eyebrow { font-size:.8rem; letter-spacing:.08em; font-weight:800; opacity:.88; }
+.chapter-label { margin-top:13px; color:#ffd079; font-weight:800; letter-spacing:.12em; font-size:.9rem; }
+h1 { font-size:clamp(1.9rem,5.3vw,3.3rem); line-height:1.08; margin:.35rem 0 .7rem; text-wrap:balance; }
+.hero p { font-size:1.05rem; max-width:760px; margin:.3rem 0 0; }
+.question { margin-top:18px; background:rgba(255,255,255,.12); padding:14px 16px; border-radius:15px; font-weight:700; }
+.question .label { color:#ffe0a3; display:block; margin-bottom:5px; }
+.hero-journey { margin-top:16px; font-weight:700; color:#e5f2ff; }
+.hero-journey strong { color:#ffd079; }
+.toolbar { display:flex; gap:8px; flex-wrap:wrap; margin:14px 0 12px; }
+button { font:inherit; border:0; border-radius:999px; padding:10px 14px; min-height:44px; font-weight:700; cursor:pointer; }
+.primary { background:var(--navy); color:white; }
+.secondary { background:white; color:var(--navy); border:1px solid var(--line); }
+button:hover,.nav a:hover { filter:brightness(.95); }
+button:focus-visible,a:focus-visible,summary:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+.js-only { display:none; }
+.js-enabled .js-only { display:inline-block; }
+.nav { display:flex; flex-wrap:wrap; gap:8px; padding:3px 0 10px; margin-bottom:8px; }
+.nav a { text-decoration:none; color:var(--navy); background:white; border:1px solid var(--line); padding:10px 12px; border-radius:999px; font-size:.88rem; font-weight:700; min-height:44px; display:flex; align-items:center; }
+.card { background:white; border:1px solid var(--line); border-radius:20px; padding:20px; margin:14px 0; box-shadow:0 5px 18px rgba(16,42,67,.05); scroll-margin-top:18px; }
+.section-title { display:flex; align-items:center; gap:11px; margin-bottom:10px; }
+.num { width:34px; height:34px; border-radius:50%; display:grid; place-items:center; color:white; background:var(--blue); font-weight:800; flex:0 0 auto; }
+.num.star { background:var(--gold); }
+.num.tick { background:var(--green); }
+h2 { font-size:1.35rem; line-height:1.3; margin:0; color:var(--navy); }
+h3 { font-size:1.04rem; line-height:1.35; margin:.2rem 0; color:var(--navy); }
+p { margin:.6rem 0; }
+ul { padding-left:1.25rem; margin:.65rem 0; }
+li { margin:.2rem 0; }
+.lead { font-size:1.06rem; }
+.label { font-size:.78rem; font-weight:800; letter-spacing:.06em; }
+.definition,.takeaway,.warning,.caution { padding:15px 16px; border-radius:12px; margin:14px 0; border-left:5px solid; }
+.definition { background:var(--blue2); border-color:var(--blue); }
+.takeaway { background:var(--green2); border-color:var(--green); }
+.warning { background:var(--gold2); border-color:var(--gold); }
+.caution { background:var(--red2); border-color:var(--red); }
+.grid,.compare { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+.grid3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.mini { padding:15px; border-radius:15px; border:1px solid var(--line); background:white; min-width:0; }
+.mini p:last-child { margin-bottom:0; }
+.blue { background:var(--blue2); border-color:#cfe5f8; }
+.green { background:var(--green2); border-color:#c9e8d6; }
+.gold { background:var(--gold2); border-color:#f2d9ae; }
+.purple { background:var(--purple2); border-color:#ded2f2; }
+.red { background:var(--red2); border-color:#f1cbc6; }
+.pill { display:inline-block; font-size:.76rem; font-weight:800; padding:4px 8px; border-radius:999px; background:var(--blue2); color:var(--blue); margin-bottom:7px; }
+.pill.gold-pill { background:var(--gold2); color:var(--gold); }
+.pill.red-pill { background:var(--red2); color:var(--red); }
+.pill.green-pill { background:var(--green2); color:var(--green); }
+.pill.purple-pill { background:var(--purple2); color:var(--purple); }
+.metric { font-size:clamp(1.8rem,5vw,2.6rem); line-height:1.15; font-weight:800; color:var(--navy); margin:10px 0; }
+.anchor-banner { background:var(--navy); color:white; padding:16px; border-radius:14px; text-align:center; margin:14px 0; }
+.anchor-banner strong { display:block; color:#ffd079; font-size:1.2rem; }
+.anchor-banner p { margin:.35rem 0 0; }
+.concept-flow { display:flex; gap:8px; align-items:stretch; margin:14px 0; }
+.flow-node { flex:1; min-width:0; padding:13px; background:var(--blue2); border:1px solid #cfe5f8; border-radius:15px; text-align:center; color:var(--navy); font-weight:800; }
+.flow-node small { display:block; font-weight:400; font-size:.88rem; margin-top:5px; }
+.flow-node.red { background:var(--red2); border-color:#f1cbc6; }
+.flow-node.green { background:var(--green2); border-color:#c9e8d6; }
+.flow-arrow { align-self:center; color:var(--gold); font-size:1.4rem; font-weight:900; }
+.vertical-flow { max-width:650px; margin:14px auto; }
+.vertical-flow .flow-arrow { display:block; text-align:center; line-height:1.2; margin:6px 0; }
+.gap-state { text-align:center; padding:13px; border-radius:12px; font-weight:800; background:var(--blue2); }
+.gap-between { text-align:center; padding:7px; color:var(--gold); font-weight:800; }
+.gap-state.preferred { background:var(--green2); }
+.cause-list,.source-list { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; padding:0; list-style:none; }
+.cause-list li,.source-list li { border:1px solid var(--line); border-radius:10px; padding:9px 12px; margin:0; background:#f8fafc; }
+.source-list li { color:var(--purple); background:var(--purple2); border-color:#ded2f2; font-size:.92rem; }
+.combine { display:grid; grid-template-columns:1fr auto 1fr; gap:12px; align-items:center; margin:14px 0; }
+.combine-symbol { font-size:2rem; color:var(--gold); font-weight:800; text-align:center; }
+.research-need { text-align:center; font-weight:800; color:var(--green); margin:10px 0; font-size:1.05rem; }
+.writing-stages { padding:0; margin:14px 0; list-style:none; counter-reset:stage; }
+.writing-stages li { counter-increment:stage; position:relative; display:grid; grid-template-columns:34px 1fr; gap:12px; padding:13px 15px; border:1px solid #ded2f2; border-radius:14px; background:var(--purple2); margin:0 0 12px; }
+.writing-stages li::before { content:counter(stage); height:32px; width:32px; display:grid; place-items:center; border-radius:50%; background:var(--purple); color:white; font-weight:800; }
+.writing-stages li:not(:last-child)::after { content:'↓'; position:absolute; bottom:-18px; left:30px; color:var(--purple); font-weight:800; line-height:20px; z-index:1; }
+.writing-stages p { margin:4px 0 0; }
+.logic-line { font-size:.94rem; line-height:1.65; font-weight:700; color:var(--purple); }
+.alignment-badge { text-align:center; font-size:1.2rem; font-weight:800; color:var(--gold); padding:10px; }
+.alignment-example { margin:14px 0; }
+.alignment-example .mini { margin-top:9px; }
+.scope-boundary { border:2px dashed var(--blue); border-radius:17px; padding:17px; background:var(--blue2); }
+.scope-fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:12px 0; }
+.scope-fields div { background:white; padding:10px 12px; border:1px solid #cfe5f8; border-radius:10px; }
+.scope-fields strong { display:block; color:var(--blue); font-size:.86rem; }
+.outside-boundary { border:1px solid var(--line); padding:15px; border-radius:15px; margin-top:12px; background:#f8fafc; }
+details { border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin:12px 0; background:#fbfcfe; }
+summary { cursor:pointer; font-weight:800; color:var(--navy); list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:24px; }
+summary::-webkit-details-marker { display:none; }
+summary::after { content:'＋'; color:var(--blue); font-size:1.2rem; flex:0 0 auto; }
+details[open] summary::after { content:'−'; }
+.synthesis { border-top:4px solid var(--gold); }
+.synthesis-journey { list-style:none; padding:0; margin:16px 0 0; }
+.synthesis-journey li { position:relative; margin:0 0 18px; padding:13px 16px; border:1px solid #cfe5f8; background:var(--blue2); border-radius:13px; }
+.synthesis-journey li:last-child { margin-bottom:0; }
+.synthesis-journey li::after { content:'↓'; position:absolute; bottom:-19px; left:50%; transform:translateX(-50%); color:var(--gold); line-height:20px; font-weight:800; }
+.synthesis-journey li:last-child::after { content:none; }
+.synthesis-journey strong { display:block; color:var(--navy); font-size:.93rem; }
+.synthesis-journey span { display:block; font-size:.94rem; margin-top:3px; }
+.synthesis-journey .focus-node { background:var(--gold2); border-color:#f2d9ae; }
+.synthesis-journey .finish-node { background:var(--green2); border-color:#c9e8d6; }
+.revision-list { list-style:none; padding:0; margin:14px 0 0; counter-reset:recall; }
+.revision-list li { counter-increment:recall; padding:13px 15px; background:#fbfcfe; border:1px solid var(--line); border-radius:12px; margin:8px 0; }
+.revision-list h3::before { content:counter(recall) '. '; color:var(--blue); }
+.revision-list p { margin:5px 0 0; }
+.final-rules .mini { background:white; border-color:#c9e8d6; }
+.final-rules strong { color:var(--green); display:block; font-size:1rem; }
+.footer { color:var(--muted); text-align:center; font-size:.8rem; padding:18px 0; }
+@media(max-width:700px) {
+  .page { padding:10px; }
+  .hero { border-radius:18px; padding:22px 18px; }
+  .card { padding:16px; border-radius:16px; }
+  .grid,.grid3,.compare,.scope-fields { grid-template-columns:1fr; }
+  .concept-flow { flex-direction:column; }
+  .concept-flow .flow-arrow { transform:rotate(90deg); line-height:1; }
+  .combine { grid-template-columns:1fr; gap:8px; }
+  .num { align-self:flex-start; }
+  .eyebrow { letter-spacing:.04em; }
+  .nav { gap:7px; }
+  .nav a { font-size:.85rem; padding:10px 11px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+/* Deliberate seven-sheet A4 layout; padding creates a safety margin on EVERY sheet. */
+@page { size:A4 portrait; margin:0; }
+@media print {
+  html { scroll-behavior:auto; }
+  body { background:white; font-size:9.5pt; line-height:1.3; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page { max-width:none; padding:0; margin:0; }
+  .print-sheet { padding:10mm 12mm; break-after:page; }
+  .print-sheet:last-child { break-after:auto; }
+  .toolbar,.nav,.screen-only { display:none!important; }
+  .hero,.card,.mini,.definition,.takeaway,.warning,.caution { box-shadow:none; }
+  .hero { padding:16px 18px; border-radius:12px; }
+  h1 { font-size:23pt; line-height:1.08; }
+  h2 { font-size:13pt; }
+  h3 { font-size:10pt; }
+  p { margin:5px 0; }
+  ul { margin:6px 0; }
+  li { margin:2px 0; }
+  .hero p,.lead { font-size:10pt; }
+  .eyebrow,.chapter-label { font-size:8pt; }
+  .question { margin-top:10px; padding:10px 12px; }
+  .hero-journey { margin-top:8px; }
+  .print-sheet:first-child .hero { padding:10px 14px; }
+  .print-sheet:first-child h1 { font-size:20pt; margin:5px 0; }
+  .print-sheet:first-child .hero p { font-size:9pt; }
+  .print-sheet:first-child .chapter-label { margin-top:6px; }
+  .print-sheet:first-child .question { margin-top:7px; padding:6px 9px; }
+  .print-sheet:first-child .question .label { display:inline; margin-right:7px; }
+  .print-sheet:first-child .card { padding:8px; margin:7px 0; }
+  .print-sheet:first-child .mini { padding:7px; }
+  .print-sheet:first-child .anchor-banner { padding:7px; }
+  #problem-area .grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+  #problem-area .grid h3 { font-size:9pt; }
+  #problem-area .vertical-flow { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:9px; margin:9px 0; }
+  #problem-area .gap-between { font-size:0; }
+  #problem-area .gap-between::after { content:'→ GAP →'; font-size:9pt; }
+  .card { padding:12px; margin:9px 0; border-radius:12px; break-inside:avoid; }
+  .section-title { margin-bottom:7px; gap:9px; }
+  .num { width:26px; height:26px; font-size:10pt; }
+  .grid,.compare { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; }
+  .grid3 { grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; }
+  .mini { padding:10px; border-radius:10px; break-inside:avoid; }
+  .definition,.takeaway,.warning,.caution { padding:10px 12px; margin:9px 0; break-inside:avoid; }
+  .pill,.label { font-size:8pt; }
+  .metric { font-size:20pt; }
+  .anchor-banner { padding:10px; margin:9px 0; }
+  .anchor-banner strong { font-size:12pt; }
+  .concept-flow { flex-direction:row; margin:9px 0; gap:6px; }
+  .concept-flow .flow-arrow { transform:none; }
+  .flow-node { padding:9px; font-size:9pt; }
+  .flow-node small { font-size:8.5pt; }
+  .flow-arrow { font-size:12pt; }
+  .gap-state { padding:9px; }
+  .gap-between { padding:4px; }
+  .cause-list,.source-list { gap:5px; margin:9px 0; }
+  .cause-list li,.source-list li { padding:5px 8px; font-size:9pt; }
+  .writing-stages { margin:9px 0; }
+  .writing-stages li { padding:9px 11px; gap:9px; grid-template-columns:26px 1fr; margin-bottom:9px; break-inside:avoid; }
+  .writing-stages li::before { width:26px; height:26px; font-size:9pt; }
+  .writing-stages li:not(:last-child)::after { left:23px; bottom:-15px; }
+  .logic-line { font-size:9pt; }
+  .scope-fields { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .scope-fields div { padding:6px 9px; }
+  .scope-fields strong { font-size:8pt; }
+  .scope-boundary,.outside-boundary { padding:11px; }
+  .alignment-badge { font-size:12pt; padding:7px; }
+  details { break-inside:avoid; padding:9px 11px; margin:9px 0; }
+  details > :not(summary) { display:block!important; }
+  details::details-content { display:block!important; content-visibility:visible!important; }
+  summary::after { display:none; }
+  .synthesis-journey { margin-top:10px; }
+  .synthesis-journey li { padding:9px 12px; margin-bottom:13px; break-inside:avoid; }
+  .synthesis-journey strong { font-size:9pt; }
+  .synthesis-journey span { font-size:9pt; margin-top:1px; }
+  .synthesis-journey li::after { bottom:-16px; }
+  .revision-list li { padding:11px 13px; margin:7px 0; break-inside:avoid; }
+  .final-rules strong { font-size:10pt; }
+  .footer { font-size:8pt; padding:8px 0 0; }
+}
+</style>
+</head>
+<body>
+<main class="page" id="top">
+<div class="print-sheet">
+<!-- HERO -->
+<header class="hero">
+  <div class="eyebrow">BPMNK3143 · Business Research Methodology</div>
+  <div class="chapter-label">CHAPTER 3</div>
+  <h1>Broad Problem Area &amp; Defining the Problem Statement</h1>
+  <p>Business research often begins because something is happening. Sales may be declining, employee turnover may be increasing, customers may be dissatisfied, or employees may not be using a newly introduced system. But what we observe is not necessarily the actual research problem.</p>
+  <div class="question"><span class="label">LEARNING FOCUS</span>How do we move from something happening in the real world to a researchable problem?</div>
+  <div class="hero-journey"><strong>FIND</strong> the problem → <strong>FRAME</strong> the research</div>
+</header>
+<!-- SCREEN CONTROLS -->
+<div class="toolbar screen-only">
+  <button class="primary" type="button" onclick="window.print()">Print / Save PDF</button>
+  <button class="secondary js-only" type="button" data-open-details="true">Expand answer</button>
+  <button class="secondary js-only" type="button" data-open-details="false">Collapse answer</button>
+</div>
+<!-- SHORTCUT NAVIGATION -->
+<nav class="nav" aria-label="Chapter shortcuts">
+  <a href="#problem-area">Problem Area</a><a href="#symptom">Symptom vs Problem</a>
+  <a href="#preliminary">Preliminary Information</a><a href="#try-it">Try It</a>
+  <a href="#gaps">Problems Mean Gaps</a><a href="#statement">Problem Statement</a>
+  <a href="#research-gap">Research Gap</a><a href="#good-problem">Good Problem</a>
+  <a href="#research-question">Research Question</a><a href="#alignment">RQ &amp; RO</a>
+  <a href="#scope">Scope</a><a href="#significance">Significance</a>
+  <a href="#one-picture">One Picture</a><a href="#revision">Revision</a>
+</nav>
+<!-- SECTION 01: BROAD PROBLEM AREA -->
+<section class="card" id="problem-area" aria-labelledby="heading-1">
+  <div class="section-title"><span class="num" aria-hidden="true">1</span><h2 id="heading-1">From a Broad Problem Area to a Research Problem</h2></div>
+  <p>A research problem does not necessarily mean something has gone seriously wrong. Research may begin because:</p>
+  <div class="grid">
+    <div class="mini"><h3>A difficulty needs attention</h3><p>An organisation is experiencing a problem.</p></div>
+    <div class="mini"><h3>There is room to improve</h3><p>An existing situation could be made better.</p></div>
+    <div class="mini"><h3>Something is not understood</h3><p>We need a clearer explanation of what is happening.</p></div>
+    <div class="mini"><h3>A question remains unanswered</h3><p>Previous research leaves something to investigate.</p></div>
+  </div>
+  <div class="vertical-flow" aria-label="A gap between current and preferred conditions">
+    <div class="gap-state">CURRENT / ACTUAL STATE<br>Turnover = 18%</div>
+    <div class="gap-between">↓ &nbsp; GAP &nbsp; ↓</div>
+    <div class="gap-state preferred">DESIRED / PREFERRED STATE<br>Lower / normal turnover</div>
+  </div>
+  <p><strong>In our example, normal turnover is approximately 8%.</strong> The increase to 18% indicates something may require investigation. We still do not know why turnover has increased.</p>
+  <div class="takeaway"><strong>Identifying that something is happening is only the beginning of the research process.</strong></div>
+</section>
+<!-- SECTION 02: SYMPTOM VS PROBLEM -->
+<section class="card" id="symptom" aria-labelledby="heading-2">
+  <div class="section-title"><span class="num" aria-hidden="true">2</span><h2 id="heading-2">Symptom ≠ Real Problem</h2></div>
+  <div class="compare">
+    <div class="mini blue"><span class="pill">OBSERVATION / SYMPTOM</span><div class="metric">8% → 18%</div><p>Employee turnover increased.</p></div>
+    <div class="mini red"><span class="pill red-pill">POSSIBLE EXPLANATION / ASSUMPTION</span><h3>“Employees are leaving because salaries are too low.”</h3><p>Low salary has <strong>not yet been established</strong> as the cause.</p></div>
+  </div>
+  <p>Other possible explanations also deserve attention:</p>
+  <ul class="cause-list"><li>Workload</li><li>Supervisor support</li><li>Career opportunities</li><li>Working conditions</li><li>Rewards and pay</li><li>Organisational climate</li></ul>
+  <div class="concept-flow">
+    <div class="flow-node">WHAT WE OBSERVE<small>Turnover increased.</small></div><span class="flow-arrow" aria-hidden="true">→</span>
+    <div class="flow-node red">WHAT WE ASSUME<small>Salary is the cause.</small></div><span class="flow-arrow" aria-hidden="true">→</span>
+    <div class="flow-node green">WHAT RESEARCH MUST INVESTIGATE<small>What is actually contributing to the problem?</small></div>
+  </div>
+  <div class="anchor-banner"><strong>SYMPTOM ≠ REAL PROBLEM</strong><p>Researchers should investigate before concluding.</p></div>
+</section>
+</div>
+<div class="print-sheet">
+<!-- SECTION 03: PRELIMINARY INFORMATION -->
+<section class="card" id="preliminary" aria-labelledby="heading-3">
+  <div class="section-title"><span class="num" aria-hidden="true">3</span><h2 id="heading-3">Preliminary Information Gathering</h2></div>
+  <div class="definition"><strong>Preliminary information gathering</strong> is the early collection of information to gain a wider understanding of the situation before defining the research problem.</div>
+  <p>It helps researchers understand what is happening, decide whether the issue is worth investigating, identify possible explanations, narrow the broad problem area and develop a more precise problem statement.</p>
+  <div class="concept-flow">
+    <div class="flow-node">OBSERVE</div><span class="flow-arrow" aria-hidden="true">→</span>
+    <div class="flow-node">INVESTIGATE</div><span class="flow-arrow" aria-hidden="true">→</span>
+    <div class="flow-node">UNDERSTAND</div><span class="flow-arrow" aria-hidden="true">→</span>
+    <div class="flow-node">NARROW</div><span class="flow-arrow" aria-hidden="true">→</span>
+    <div class="flow-node">DEFINE</div>
+  </div>
+  <div class="grid">
+    <div class="mini blue"><h3>Organisational / Contextual Information</h3><ul><li>Organisational background and structure</li><li>People involved and available resources</li><li>Performance information</li><li>Relevant organisational conditions</li></ul></div>
+    <div class="mini purple"><h3>Existing Knowledge / Literature</h3><ul><li>What do previous studies already tell us?</li><li>What explanations have been investigated?</li><li>What remains unclear or insufficiently understood?</li></ul></div>
+  </div>
+  <h3 style="margin-top:14px">Possible sources</h3>
+  <ul class="source-list"><li>Managers</li><li>Employees</li><li>Informal interviews</li><li>Organisational records</li><li>Reports</li><li>Previous research</li></ul>
+  <div class="warning"><strong>The objective is not yet to conduct the entire study.</strong> Understand the situation well enough to define what should actually be investigated.</div>
+</section>
+<!-- SECTION 04: APPLICATION -->
+<section class="card" id="try-it" aria-labelledby="heading-4">
+  <div class="section-title"><span class="num" aria-hidden="true">4</span><h2 id="heading-4">Try It: What Is the Real Problem?</h2></div>
+  <div class="mini blue"><h3>Low digital-system usage</h3><p>A company introduces a new digital system. Six months later, employee usage remains low. Management concludes: <strong>“Our employees resist technology.”</strong></p></div>
+  <p><strong>Pause and think:</strong> What do we actually know? What is management assuming? What else should we investigate?</p>
+  <details open id="activity-answer">
+    <summary>Compare your answer</summary>
+    <div class="grid" style="margin-top:12px">
+      <div class="mini green"><h3>What we know</h3><p>Employee usage of the system is low.</p></div>
+      <div class="mini red"><h3>What management assumes</h3><p>Employees resist technology.</p></div>
+    </div>
+    <h3 style="margin-top:12px">Questions to investigate</h3>
+    <ul><li>Was sufficient training provided?</li><li>Is the system easy to use?</li><li>Do employees find it useful?</li><li>Is management supporting its use?</li><li>Does the system increase workload?</li></ul>
+  </details>
+  <div class="takeaway"><strong>Do not confuse an observed situation with an explanation for that situation.</strong></div>
+</section>
+</div>
+<div class="print-sheet">
+<!-- SECTION 05: PROBLEMS MEAN GAPS -->
+<section class="card" id="gaps" aria-labelledby="heading-5">
+  <div class="section-title"><span class="num" aria-hidden="true">5</span><h2 id="heading-5">Problems Mean Gaps</h2></div>
+  <div class="anchor-banner"><strong>PROBLEMS MEAN GAPS</strong><p>A practical gap and a knowledge gap answer different questions.</p></div>
+  <div class="compare">
+    <div class="mini gold"><span class="pill gold-pill">PRACTICAL GAP</span><h3>Reality differs from a preferred condition.</h3><p><strong>What is happening:</strong> Turnover = 18%.</p><p><strong>What we would prefer:</strong> Lower / normal turnover.</p></div>
+    <div class="mini purple"><span class="pill purple-pill">KNOWLEDGE GAP</span><h3>Existing research does not adequately answer or explain something.</h3><p><strong>What existing research tells us</strong> versus <strong>what we still need to understand.</strong></p></div>
+  </div>
+  <div class="combine"><div class="mini gold"><strong>PRACTICAL GAP</strong><br>What is happening in reality?</div><div class="combine-symbol" aria-hidden="true">+</div><div class="mini purple"><strong>KNOWLEDGE GAP</strong><br>What do we still not adequately know?</div></div>
+  <div class="research-need">↓<br>RESEARCH NEED</div>
+  <div class="takeaway"><strong>A strong research problem establishes both why the issue matters and what still needs to be understood.</strong></div>
+</section>
+<!-- SECTION 06: PROBLEM STATEMENT -->
+<section class="card" id="statement" aria-labelledby="heading-6">
+  <div class="section-title"><span class="num" aria-hidden="true">6</span><h2 id="heading-6">Building the Problem Statement</h2></div>
+  <p>The problem statement becomes the <strong>focal point of the research</strong>: a clear, focused account of what needs investigation and why the study is needed.</p>
+  <ol class="writing-stages">
+    <li><div><h3>Practical Problem</h3><p>What is happening and why does it matter?</p></div></li>
+    <li><div><h3>Scientific / Knowledge Problem</h3><p>What does research still not adequately explain?</p></div></li>
+    <li><div><h3>30,000-foot Review</h3><p>Provide a concise overview of what previous studies have investigated and generally established.</p></div></li>
+    <li><div><h3>Spot the Gap</h3><p>What remains unclear, inconsistent, insufficiently explained or insufficiently examined?</p></div></li>
+    <li><div><h3>Current Study</h3><p>What specifically will this study address?</p></div></li>
+  </ol>
+  <div class="definition logic-line">PRACTICAL PROBLEM → KNOWLEDGE PROBLEM → WHAT WE KNOW → WHAT IS MISSING → WHAT THIS STUDY WILL ADDRESS</div>
+  <div class="takeaway"><strong>A good problem statement should lead the reader logically to the need for the research.</strong></div>
+</section>
+</div>
+<div class="print-sheet">
+<!-- SECTION 07: RESEARCH GAP -->
+<section class="card" id="research-gap" aria-labelledby="heading-7">
+  <div class="section-title"><span class="num" aria-hidden="true">7</span><h2 id="heading-7">What Can a Research Gap Look Like?</h2></div>
+  <div class="warning"><strong>Research gap ≠ “Nobody has ever studied this.”</strong></div>
+  <div class="grid3">
+    <div class="mini blue"><h3>Knowledge Gap</h3><p>Something remains insufficiently understood or explained.</p></div>
+    <div class="mini purple"><h3>Methodological Gap</h3><p>Previous methods or designs leave an important issue unresolved.</p></div>
+    <div class="mini gold"><h3>Contextual Gap</h3><p>Existing evidence may not adequately explain another relevant population, industry, setting or context.</p></div>
+  </div>
+  <p>Findings may be inconsistent, or previous studies may identify limitations requiring further investigation.</p>
+  <div class="caution"><strong>Be careful with “No previous study has examined…”</strong> This is a very strong claim. More defensible wording may include <em>“Limited research has examined…”</em> or <em>“The relationship remains insufficiently understood…”</em>. These claims still need evidence.</div>
+  <div class="takeaway"><strong>The research gap must be supported by the literature, not simply claimed.</strong></div>
+</section>
+<!-- SECTION 08: GOOD RESEARCH PROBLEM -->
+<section class="card" id="good-problem" aria-labelledby="heading-8">
+  <div class="section-title"><span class="num" aria-hidden="true">8</span><h2 id="heading-8">What Makes a Good Research Problem?</h2></div>
+  <div class="grid3">
+    <div class="mini blue"><h3>RELEVANT</h3><p><strong>Does it matter?</strong></p><p>Addresses a meaningful practical or academic need.</p></div>
+    <div class="mini green"><h3>FEASIBLE</h3><p><strong>Can I actually study it?</strong></p><p>Fits my skills, access, time and resources.</p></div>
+    <div class="mini gold"><h3>INTERESTING</h3><p><strong>Is it worth pursuing?</strong></p><p>Sustains my interest and motivation to complete the research.</p></div>
+  </div>
+  <div class="takeaway"><strong>RELEVANT · FEASIBLE · INTERESTING</strong></div>
+</section>
+<!-- SECTION 09: RESEARCH QUESTION -->
+<section class="card" id="research-question" aria-labelledby="heading-9">
+  <div class="section-title"><span class="num" aria-hidden="true">9</span><h2 id="heading-9">From Problem Statement to Research Question</h2></div>
+  <p>Once the problem is clearly defined, ask: <strong>What exactly do we need to learn?</strong> This becomes the Research Question (RQ).</p>
+  <div class="definition">A research question translates the research problem into a <strong>specific need for information.</strong></div>
+  <div class="concept-flow"><div class="flow-node">PROBLEM</div><span class="flow-arrow" aria-hidden="true">→</span><div class="flow-node">WHAT DO WE NEED TO KNOW?</div><span class="flow-arrow" aria-hidden="true">→</span><div class="flow-node">RESEARCH QUESTION</div></div>
+  <div class="mini blue"><p><strong>Research issue:</strong> Employee rewards may be related to employee motivation.</p><p><strong>Research Question:</strong> Does employee reward influence employee motivation?</p></div>
+</section>
+</div>
+<div class="print-sheet">
+<!-- SECTION 10: RQ AND RO ALIGNMENT -->
+<section class="card" id="alignment" aria-labelledby="heading-10">
+  <div class="section-title"><span class="num" aria-hidden="true">10</span><h2 id="heading-10">Research Question ↔ Research Objective</h2></div>
+  <div class="compare">
+    <div class="mini blue"><span class="pill">RESEARCH QUESTION — WHAT?</span><h3>What do we want to learn?</h3><p>Does employee reward influence employee motivation?</p></div>
+    <div class="mini green"><span class="pill green-pill">RESEARCH OBJECTIVE — PURPOSE</span><h3>What will the study examine?</h3><p>To examine the effect of employee reward on employee motivation.</p></div>
+  </div>
+  <div class="alignment-badge">RQ ↔ RO<br>SAME RESEARCH INTENTION</div>
+  <p>The question and objective should match in their concepts, relationship and focus.</p>
+  <div class="alignment-example">
+    <div class="definition"><strong>RQ:</strong> Does employee training influence job performance?</div>
+    <div class="mini red"><span class="pill red-pill">✕ NOT ALIGNED</span><p><strong>RO:</strong> To examine employee satisfaction with salary.</p><p>This objective examines different concepts from the research question.</p></div>
+    <div class="mini green"><span class="pill green-pill">✓ ALIGNED</span><p><strong>Corrected RO:</strong> To examine the effect of employee training on job performance.</p></div>
+  </div>
+  <div class="takeaway"><strong>If the Research Question changes, the Research Objective should change with it.</strong></div>
+</section>
+<!-- SECTION 11: RESEARCH SCOPE -->
+<section class="card" id="scope" aria-labelledby="heading-11">
+  <div class="section-title"><span class="num" aria-hidden="true">11</span><h2 id="heading-11">Set the Boundaries: Research Scope</h2></div>
+  <p>Scope establishes <strong>what the study covers — and what it does not cover.</strong></p>
+  <div class="scope-boundary">
+    <h3>INSIDE THE BOUNDARY</h3><p>What this study investigates. Specify the relevant boundaries:</p>
+    <div class="scope-fields"><div><strong>Purpose / Topic</strong>What is being investigated?</div><div><strong>Population / Sample</strong>Who is included?</div><div><strong>Geographical Setting</strong>Where is the study conducted?</div><div><strong>Time Period</strong>Which period does it cover?</div><div><strong>Concepts / Theories</strong>Which ideas are included?</div></div>
+  </div>
+  <div class="outside-boundary"><h3>OUTSIDE THE BOUNDARY</h3><p>What this study does not attempt to investigate: other topics, populations, locations, periods or concepts beyond its stated focus.</p></div>
+  <div class="takeaway"><strong>A clearly defined scope keeps research focused and manageable.</strong></div>
+</section>
+</div>
+<div class="print-sheet">
+<!-- SECTION 12: SIGNIFICANCE -->
+<section class="card" id="significance" aria-labelledby="heading-12">
+  <div class="section-title"><span class="num" aria-hidden="true">12</span><h2 id="heading-12">Why Does the Study Matter? Significance</h2></div>
+  <p>The significance of the study explains why conducting the research is worthwhile. Ask: <strong>Who may benefit from what we learn?</strong></p>
+  <div class="compare">
+    <div class="mini purple"><h3>Academic / Knowledge Value</h3><p>The study may:</p><ul><li>Address an identified knowledge gap</li><li>Extend existing understanding</li><li>Contribute additional evidence</li></ul></div>
+    <div class="mini green"><h3>Practical Value</h3><p>Findings may help managers, organisations, institutions, industries, policymakers or relevant stakeholders.</p><p><strong>Not every study needs to benefit every group.</strong></p></div>
+  </div>
+  <div class="takeaway"><strong>Significance should follow logically from the research problem.</strong> Explain the potential benefit and who it matters to.</div>
+</section>
+<!-- CHAPTER IN ONE PICTURE -->
+<section class="card synthesis" id="one-picture" aria-labelledby="heading-picture">
+  <div class="section-title"><span class="num star" aria-hidden="true">★</span><h2 id="heading-picture">Chapter 3 in One Picture</h2></div>
+  <p><strong>FIND the problem → FRAME the research.</strong> Follow the complete journey:</p>
+  <ol class="synthesis-journey">
+    <li><strong>BUSINESS REALITY</strong><span>Something is happening.</span></li>
+    <li><strong>BROAD PROBLEM AREA</strong><span>What have we observed?</span></li>
+    <li><strong>⌕ PRELIMINARY INFORMATION GATHERING</strong><span>Investigate before concluding.</span></li>
+    <li class="focus-node"><strong>PRACTICAL PROBLEM + KNOWLEDGE GAP</strong><span>What is happening? + What don’t we adequately know?</span></li>
+    <li class="focus-node"><strong>PROBLEM STATEMENT</strong><span>What specifically needs investigation?</span></li>
+    <li><strong>RESEARCH QUESTION ↔ RESEARCH OBJECTIVE</strong><span>What do we need to learn? ↔ What will we examine?</span></li>
+    <li><strong>SCOPE</strong><span>What are the boundaries?</span></li>
+    <li class="finish-node"><strong>SIGNIFICANCE</strong><span>Why does the study matter?</span></li>
+  </ol>
+</section>
+</div>
+<div class="print-sheet">
+<!-- REVISION -->
+<section class="card quiz" id="revision" aria-labelledby="heading-revision">
+  <div class="section-title"><span class="num tick" aria-hidden="true">✓</span><h2 id="heading-revision">Revision: What Must You Know?</h2></div>
+  <p>Try answering each question before reading the explanation.</p>
+  <ol class="revision-list">
+    <li><h3>What is the difference between a symptom and a research problem?</h3><p>A symptom tells us what we observe. The research problem identifies what needs to be investigated.</p></li>
+    <li><h3>Why do researchers gather preliminary information?</h3><p>To understand and narrow the situation before defining the research problem.</p></li>
+    <li><h3>What does “Problems Mean Gaps” mean?</h3><p>Research may begin from a practical gap, a knowledge gap, or the connection between them.</p></li>
+    <li><h3>How can we build a problem statement?</h3><p>Practical Problem → Knowledge Problem → 30,000-foot Review → Gap → Current Study.</p></li>
+    <li><h3>What is the relationship between RQ and RO?</h3><p>They should express the same research intention.</p></li>
+    <li><h3>What is the difference between scope and significance?</h3><p><strong>Scope</strong> = boundaries of the study.<br><strong>Significance</strong> = why the study matters.</p></li>
+  </ol>
+</section>
+<!-- KEY TAKEAWAY -->
+<section class="card" id="key-takeaway" aria-labelledby="heading-takeaway">
+  <div class="takeaway">
+    <h2 id="heading-takeaway">Key Takeaway</h2>
+    <div class="grid3 final-rules" style="margin-top:12px">
+      <div class="mini"><strong>SYMPTOM ≠ PROBLEM</strong><p>Do not assume that what you first observe tells you the cause.</p></div>
+      <div class="mini"><strong>PROBLEMS MEAN GAPS</strong><p>Connect the practical problem with what we still need to understand.</p></div>
+      <div class="mini"><strong>ALIGNMENT MATTERS</strong><p>Problem → RQ ↔ RO → Scope → Significance should tell one coherent research story.</p></div>
+    </div>
+  </div>
+</section>
+<footer class="footer">BPMNK3143 · Business Research Methodology · Chapter 3</footer>
+</div>
+</main>
+<script>
+/* Native links and details work without JavaScript; only convenience controls use it. */
+document.documentElement.classList.add('js-enabled');
+document.querySelectorAll('[data-open-details]').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('details').forEach(detail => {
+      detail.open = button.dataset.openDetails === 'true';
+    });
+  });
+});
+/* Print all explanations and then restore the student's reading state. */
+let readingState = [];
+window.addEventListener('beforeprint', () => {
+  readingState = Array.from(document.querySelectorAll('details'), detail => [detail, detail.open]);
+  readingState.forEach(([detail]) => { detail.open = true; });
+});
+window.addEventListener('afterprint', () => {
+  readingState.forEach(([detail, wasOpen]) => { detail.open = wasOpen; });
+});
+</script>
+</body>
+</html>
