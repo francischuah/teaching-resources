@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stage 2 – Group Data Analytics</title>
+<style>
+:root{
+  --bg:#f5f7fb; --card:#ffffff; --ink:#18202a; --muted:#5d6774;
+  --accent:#173b67; --accent2:#2d6aa3; --line:#dbe2ea; --soft:#eef4fa;
+  --good:#eaf6ee; --warn:#fff6df;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.55;
+}
+.wrapper{max-width:980px;margin:0 auto;padding:22px}
+.hero{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:white;border-radius:18px;padding:28px;margin-bottom:18px;
+}
+.hero h1{font-size:2rem;line-height:1.15;margin:0 0 8px}
+.hero p{margin:0;opacity:.92}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:22px;margin:16px 0;box-shadow:0 4px 18px rgba(0,0,0,.04)
+}
+h2{color:var(--accent);margin-top:0;font-size:1.35rem}
+h3{margin-bottom:6px;font-size:1.05rem}
+.badge{
+  display:inline-block;background:var(--soft);color:var(--accent);font-weight:700;
+  border-radius:999px;padding:5px 10px;margin:4px 6px 4px 0;font-size:.9rem
+}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+th,td{border:1px solid var(--line);padding:10px;vertical-align:top;text-align:left}
+th{background:var(--soft);color:var(--accent)}
+code{
+  background:#f1f3f5;border-radius:6px;padding:2px 5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  word-break:break-word
+}
+.formula{
+  background:#0f1720;color:#f6f8fa;border-radius:12px;padding:14px 16px;margin:8px 0 14px;
+  overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Menlo,monospace
+}
+.callout{
+  background:var(--warn);border-left:5px solid #d9a01b;border-radius:10px;padding:14px 16px;margin:14px 0
+}
+.good{
+  background:var(--good);border-left:5px solid #3b8f57;border-radius:10px;padding:14px 16px;margin:14px 0
+}
+.step{
+  display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:start;margin:14px 0
+}
+.num{
+  width:36px;height:36px;border-radius:50%;background:var(--accent);color:white;
+  display:flex;align-items:center;justify-content:center;font-weight:800
+}
+.small{color:var(--muted);font-size:.92rem}
+ul,ol{padding-left:22px}
+footer{color:var(--muted);font-size:.85rem;text-align:center;padding:18px 0 6px}
+@media(max-width:650px){
+  .wrapper{padding:12px}
+  .hero{padding:22px 18px;border-radius:14px}
+  .hero h1{font-size:1.55rem}
+  .card{padding:17px}
+  table{font-size:.88rem}
+  th,td{padding:8px}
+}
+@media print{
+  @page{size:A4 portrait;margin:0}
+  body{background:white}
+  .wrapper{max-width:none;padding:14mm}
+  .card,.hero{box-shadow:none;break-inside:avoid}
+  .hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <section class="hero">
+    <div class="badge">Stage 2 • In-Class Group Project</div>
+    <h1>Analyse Your Group Sales Activity Dataset</h1>
+    <p>Clean, summarise, compare, visualise, and interpret your own synthetic operational dataset.</p>
+  </section>
+
+  <section class="card">
+    <h2>Scenario</h2>
+    <p>Your group has extracted 90 days of operational records from a sales activity system. The data include attendance, region assignment, daily promotional expenditure, and total sales for six sales managers. Your task is to prepare the data for analysis and answer a series of managerial questions.</p>
+    <div class="good"><strong>Remember:</strong> Different groups will have different numerical results. Your marks depend on correct analysis, appropriate output, and sound interpretation—not on matching another group's numbers.</div>
+  </section>
+
+  <section class="card">
+    <h2>Part A — Data preparation and cleaning</h2>
+    <ol>
+      <li>Inspect the dataset for blank values in <code>Daily_Promotion_Spend</code> and <code>Total_Sales</code>.</li>
+      <li>Determine whether these blanks are errors or logically missing values associated with <code>Status = Absent</code>.</li>
+      <li>Explain why blank values should not automatically be replaced with zero.</li>
+      <li>Prepare an analysis-ready view for sales analysis using only appropriate records.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Part B — Attendance analysis</h2>
+    <ol>
+      <li>Create a PivotTable showing the number of Present and Absent records for each manager.</li>
+      <li>Calculate each manager's attendance rate and absenteeism rate.</li>
+      <li>Identify the manager with the highest absenteeism rate.</li>
+      <li>Comment on whether absenteeism is concentrated among particular managers or relatively evenly distributed.</li>
+      <li>Compare absenteeism across the three months. Is it increasing, decreasing, or relatively stable?</li>
+      <li>Create a Region × Status crosstab or PivotTable. Does absenteeism appear more common in any region?</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Part C — Sales performance analysis</h2>
+    <ol>
+      <li>Calculate total sales for each manager.</li>
+      <li>Calculate average daily sales for each manager using valid active-day records.</li>
+      <li>Identify the manager with the highest total sales.</li>
+      <li>Identify the manager with the highest average daily sales.</li>
+      <li>Explain why the manager with the highest total sales may not necessarily have the highest average daily sales.</li>
+      <li>Compare total and average sales across the four regions.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Part D — Time-based analysis</h2>
+    <ol>
+      <li>Group the Date variable by month.</li>
+      <li>Create a PivotTable showing total sales by month.</li>
+      <li>Create an appropriate chart to show the three-month sales trend.</li>
+      <li>Repeat the analysis for total promotional expenditure by month.</li>
+      <li>Comment on whether sales and promotional expenditure appear to move together over time.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Part E — Promotional expenditure and efficiency</h2>
+    <ol>
+      <li>Compare total promotional expenditure by manager.</li>
+      <li>Compare average daily promotional expenditure by manager.</li>
+      <li>Identify the manager who spends the most and the manager who spends the least.</li>
+      <li>Calculate a simple sales-efficiency measure:</li>
+    </ol>
+    <div class="formula">Sales Efficiency = Total Sales / Total Promotion Spend</div>
+    <ol start="5">
+      <li>Compare sales efficiency across managers.</li>
+      <li>Does the manager who spends the most also generate the highest sales efficiency? Explain.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Part F — Relationship analysis</h2>
+    <ol>
+      <li>Using valid Present records only, create a scatter plot with <code>Daily_Promotion_Spend</code> on the X-axis and <code>Total_Sales</code> on the Y-axis.</li>
+      <li>Describe the direction of the relationship.</li>
+      <li>Comment on whether the relationship appears weak, moderate, or strong based on the visual pattern.</li>
+      <li>Add a linear trendline.</li>
+      <li>Display the R² value and explain what it tells you about the relationship between promotional expenditure and sales.</li>
+      <li>Select one manager and repeat the scatter-plot analysis. Compare the manager-specific pattern with the overall pattern.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Part G — Managerial interpretation</h2>
+    <p>Prepare a short group conclusion answering the following:</p>
+    <ol>
+      <li>Which manager appears to perform best overall?</li>
+      <li>Which manager may require managerial attention?</li>
+      <li>Is absenteeism an important concern in your dataset?</li>
+      <li>Which region performs best?</li>
+      <li>Does higher promotional expenditure appear to be associated with higher sales?</li>
+      <li>What is one practical recommendation you would make to management based on your findings?</li>
+    </ol>
+    <div class="callout">Support every conclusion with evidence from your PivotTables, calculations, or charts. Avoid making claims that are not supported by your own dataset.</div>
+  </section>
+
+  <section class="card">
+    <h2>Suggested outputs</h2>
+    <p>Your group should be prepared to show:</p>
+    <ul>
+      <li>At least one cleaned analysis view</li>
+      <li>Attendance PivotTable</li>
+      <li>Manager sales PivotTable</li>
+      <li>Regional sales PivotTable</li>
+      <li>Monthly trend chart</li>
+      <li>Promotion expenditure summary</li>
+      <li>Sales-efficiency calculation</li>
+      <li>Scatter plot with trendline and R²</li>
+      <li>Short managerial conclusion</li>
+    </ul>
+  </section>
+
+  <footer>Stage 2 • Group PivotTable and Relationship Analysis</footer>
+</div>
+</body>
+</html>
