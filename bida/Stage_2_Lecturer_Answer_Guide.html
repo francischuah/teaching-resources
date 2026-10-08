@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stage 2 Lecturer Answer Guide</title>
+<style>
+:root{
+  --navy:#173b67; --blue:#2d6aa3; --ink:#17212b; --muted:#607080;
+  --bg:#f4f7fb; --card:#fff; --line:#d9e2ec; --soft:#eef4fa;
+  --green:#eaf6ee; --yellow:#fff6df; --red:#fdecec; --purple:#f2ecfb;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.58}
+.wrap{max-width:1180px;margin:0 auto;padding:22px}
+.hero{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:20px;padding:30px;margin-bottom:18px}
+.hero h1{font-size:2.1rem;line-height:1.15;margin:0 0 8px}.hero p{margin:0;opacity:.94}
+.badge{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:5px 10px;border-radius:999px;font-weight:700;margin-bottom:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0;box-shadow:0 5px 18px rgba(0,0,0,.04)}
+h2{color:var(--navy);margin:0 0 10px;font-size:1.42rem} h3{margin:18px 0 8px;font-size:1.08rem;color:#244a74}
+p{margin:8px 0} ul,ol{padding-left:22px}
+table{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:.94rem}
+th,td{border:1px solid var(--line);padding:10px;vertical-align:top;text-align:left}
+th{background:var(--soft);color:var(--navy)}
+code{background:#f1f3f5;border-radius:5px;padding:2px 5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.formula{background:#101820;color:#fff;border-radius:10px;padding:12px 14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere;margin:8px 0}
+.note,.good,.warn,.mistake{border-left:5px solid;border-radius:9px;padding:12px 14px;margin:12px 0}
+.note{background:var(--soft);border-color:var(--blue)}
+.good{background:var(--green);border-color:#3b8f57}
+.warn{background:var(--yellow);border-color:#d9a01b}
+.mistake{background:var(--red);border-color:#c94a4a}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.kpi{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px}
+.small{color:var(--muted);font-size:.9rem}
+.excel{border:1px solid #b8c4d1;background:#fff;border-radius:10px;overflow:hidden;margin:12px 0}
+.excelbar{background:#e9edf2;border-bottom:1px solid #cfd7df;padding:7px 10px;font-size:.88rem;color:#3d4a57}
+.fx{display:grid;grid-template-columns:44px 1fr;border-bottom:1px solid #d8e0e8}
+.fx div{padding:7px 9px}.fx .name{background:#f3f5f7;border-right:1px solid #d8e0e8;text-align:center}.fx .formula-cell{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.sheet{display:grid;grid-template-columns:46px repeat(6,1fr);font-size:.82rem}
+.sheet div{border-right:1px solid #dfe5ec;border-bottom:1px solid #dfe5ec;padding:7px;min-height:32px}
+.sheet .head,.sheet .rowhead{background:#f2f4f7;font-weight:700;text-align:center}.sheet .sel{outline:2px solid #3c8dde;outline-offset:-2px;background:#f8fbff}
+.pivot{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin:12px 0}
+.pivotbox{border:1px solid #cfd8e2;border-radius:10px;background:#fff;padding:12px}
+.field{padding:6px 8px;margin:5px 0;border:1px solid #ccd6e0;border-radius:7px;background:#f8fafc}
+.zone{min-height:56px;border:1.5px dashed #9bb1c7;border-radius:8px;padding:8px;margin-top:8px;background:#f7fbff}
+.zone strong{display:block;color:#45627f;font-size:.85rem;margin-bottom:5px}
+.mockchart{height:220px;border:1px solid #cad5e0;border-radius:10px;background:linear-gradient(#fff,#f7f9fb);position:relative;padding:18px;margin:10px 0}
+.axisx{position:absolute;left:42px;right:18px;bottom:35px;border-top:2px solid #6f7d8a}.axisy{position:absolute;top:18px;bottom:35px;left:42px;border-left:2px solid #6f7d8a}
+.dot{position:absolute;width:9px;height:9px;border-radius:50%;background:#2d6aa3}
+.trend{position:absolute;height:2px;background:#dc7d1a;transform:rotate(-18deg);width:70%;left:15%;top:50%}
+.footer{color:var(--muted);font-size:.85rem;text-align:center;padding:20px}
+@media(max-width:820px){.grid2,.grid3,.pivot{grid-template-columns:1fr}.wrap{padding:12px}.hero{padding:22px 18px}.hero h1{font-size:1.55rem}.sheet{font-size:.72rem;grid-template-columns:38px repeat(6,minmax(95px,1fr));overflow-x:auto}}
+@media print{@page{size:A4 portrait;margin:0}body{background:#fff}.wrap{max-width:none;padding:12mm}.card,.hero{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<section class="hero">
+  <div class="badge">Lecturer-Only Answer & Teaching Guide</div>
+  <h1>Stage 2: Group Data Analytics Project</h1>
+  <p>Model analysis, Excel setup, PivotTable field arrangements, example outputs, interpretations, managerial implications, and common mistakes.</p>
+</section>
+
+<section class="card">
+<h2>How to use this guide</h2>
+<p>Each group generates a different random dataset, so there is <strong>no single correct numerical answer</strong>. The correct answer is the correct analytical process, correct Excel setup, accurate reading of the group's own output, and a defensible interpretation.</p>
+<div class="warn"><strong>Illustrative numbers only:</strong> All tables and values in this guide are examples. Students should not be expected to reproduce these exact figures.</div>
+<table>
+<tr><th>Analysis type</th><th>Records to use</th><th>Reason</th></tr>
+<tr><td>Attendance / absenteeism</td><td>All records</td><td>Absent records are valid operational records.</td></tr>
+<tr><td>Sales / promotion spend / efficiency</td><td>Present records only</td><td>Absent rows contain structurally missing sales and spend values.</td></tr>
+<tr><td>Scatter plot: Spend vs Sales</td><td>Present records only</td><td>Both X and Y must contain valid numeric observations.</td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>Part A — Data preparation and cleaning</h2>
+<h3>Q1. Inspect blank values in Daily_Promotion_Spend and Total_Sales.</h3>
+<table>
+<tr><th>Expected finding</th><th>Model answer</th></tr>
+<tr><td>Blank values occur mainly where Status = Absent.</td><td>The blanks are expected because absent managers did not perform daily promotional activity and did not record sales for that manager-day.</td></tr>
+</table>
+
+<h3>Q2. Are these blanks errors or logically missing values?</h3>
+<p><strong>Model answer:</strong> They are <em>structurally missing values</em>, not data-entry errors. The missingness is explained by the attendance status.</p>
+
+<h3>Q3. Why should blanks not automatically be replaced with zero?</h3>
+<table>
+<tr><th>Blank</th><th>Zero</th></tr>
+<tr><td>No activity was recorded because the manager was absent.</td><td>The manager was present, but promotion spend or sales was genuinely zero.</td></tr>
+</table>
+<div class="mistake"><strong>Common mistake:</strong> Replacing all blanks with 0 changes the meaning of the data and may lower averages artificially.</div>
+
+<h3>Q4. Prepare an analysis-ready view.</h3>
+<p>For sales-related analysis, filter <code>Status = Present</code>. Keep the original raw dataset unchanged.</p>
+
+<div class="excel">
+  <div class="excelbar">Excel-style filter example</div>
+  <div class="sheet">
+    <div class="head"></div><div class="head">Date</div><div class="head">Region</div><div class="head">Manager</div><div class="head">Status</div><div class="head">Spend</div><div class="head">Sales</div>
+    <div class="rowhead">2</div><div>1 Jun</div><div>North</div><div>Manager 1</div><div class="sel">Present ▼</div><div>1,240</div><div>6,910</div>
+    <div class="rowhead">3</div><div>1 Jun</div><div>South</div><div>Manager 2</div><div>Absent</div><div></div><div></div>
+  </div>
+</div>
+</section>
+
+<section class="card">
+<h2>Part B — Attendance analysis</h2>
+
+<h3>Q1. PivotTable showing Present and Absent records by manager.</h3>
+<div class="pivot">
+  <div class="pivotbox">
+    <strong>PivotTable Fields</strong>
+    <div class="field">☑ Manager</div><div class="field">☑ Status</div><div class="field">☑ Record_ID</div>
+  </div>
+  <div class="pivotbox">
+    <div class="zone"><strong>Rows</strong>Manager</div>
+    <div class="zone"><strong>Columns</strong>Status</div>
+    <div class="zone"><strong>Values</strong>Count of Record_ID</div>
+  </div>
+</div>
+
+<table>
+<tr><th>Manager</th><th>Present</th><th>Absent</th><th>Total scheduled</th></tr>
+<tr><td>Manager 1</td><td>77</td><td>13</td><td>90</td></tr>
+<tr><td>Manager 2</td><td>74</td><td>16</td><td>90</td></tr>
+<tr><td>Manager 3</td><td>79</td><td>11</td><td>90</td></tr>
+<tr><td>Manager 4</td><td>72</td><td>18</td><td>90</td></tr>
+<tr><td>Manager 5</td><td>78</td><td>12</td><td>90</td></tr>
+<tr><td>Manager 6</td><td>76</td><td>14</td><td>90</td></tr>
+</table>
+
+<h3>Q2. Attendance rate and absenteeism rate.</h3>
+<div class="formula">Attendance Rate = Present Days / Scheduled Days × 100</div>
+<div class="formula">Absenteeism Rate = Absent Days / Scheduled Days × 100</div>
+
+<div class="excel">
+  <div class="excelbar">Excel cell formula example</div>
+  <div class="fx"><div class="name">H2</div><div class="formula-cell">=B2/D2</div></div>
+  <div class="sheet">
+    <div class="head"></div><div class="head">Present</div><div class="head">Absent</div><div class="head">Scheduled</div><div class="head">Attendance %</div><div class="head">Absence %</div><div class="head">Check</div>
+    <div class="rowhead">2</div><div>77</div><div>13</div><div>90</div><div class="sel">85.6%</div><div>14.4%</div><div>100%</div>
+  </div>
+</div>
+
+<h3>Q3. Identify the manager with highest absenteeism.</h3>
+<p>Using the illustrative output, Manager 4 has the highest absenteeism rate: <strong>18/90 = 20.0%</strong>.</p>
+
+<h3>Q4. Is absenteeism concentrated or evenly distributed?</h3>
+<p><strong>Model interpretation:</strong> Absenteeism is somewhat uneven because Manager 4 shows a visibly higher rate than several peers. However, whether this is practically serious should be judged relative to the overall pattern and organizational expectations.</p>
+
+<h3>Q5. Compare absenteeism across months.</h3>
+<div class="pivot">
+  <div class="pivotbox"><strong>Fields</strong><div class="field">☑ Date</div><div class="field">☑ Status</div><div class="field">☑ Record_ID</div></div>
+  <div class="pivotbox">
+    <div class="zone"><strong>Rows</strong>Date (Group by Month)</div>
+    <div class="zone"><strong>Columns</strong>Status</div>
+    <div class="zone"><strong>Values</strong>Count of Record_ID</div>
+  </div>
+</div>
+<table>
+<tr><th>Month</th><th>Present</th><th>Absent</th><th>Absence rate</th><th>Interpretation</th></tr>
+<tr><td>June</td><td>153</td><td>27</td><td>15.0%</td><td>Baseline</td></tr>
+<tr><td>July</td><td>149</td><td>31</td><td>17.2%</td><td>Slight deterioration</td></tr>
+<tr><td>August</td><td>155</td><td>25</td><td>13.9%</td><td>Improvement</td></tr>
+</table>
+
+<h3>Q6. Region × Status crosstab.</h3>
+<div class="pivot">
+  <div class="pivotbox"><strong>Fields</strong><div class="field">☑ Region</div><div class="field">☑ Status</div><div class="field">☑ Record_ID</div></div>
+  <div class="pivotbox">
+    <div class="zone"><strong>Rows</strong>Region</div>
+    <div class="zone"><strong>Columns</strong>Status</div>
+    <div class="zone"><strong>Values</strong>Count of Record_ID</div>
+  </div>
+</div>
+<div class="note"><strong>Teaching note:</strong> Because Region is randomly assigned, students should be cautious about over-interpreting a regional absenteeism difference as a real causal regional effect.</div>
+</section>
+
+<section class="card">
+<h2>Part C — Sales performance analysis</h2>
+
+<h3>Q1–Q2. Total sales and average daily sales by manager.</h3>
+<div class="pivot">
+  <div class="pivotbox"><strong>Filter first:</strong><div class="field">Status = Present</div><div class="field">☑ Manager</div><div class="field">☑ Total_Sales</div></div>
+  <div class="pivotbox">
+    <div class="zone"><strong>Rows</strong>Manager</div>
+    <div class="zone"><strong>Values</strong>Sum of Total_Sales<br>Average of Total_Sales</div>
+  </div>
+</div>
+
+<table>
+<tr><th>Manager</th><th>Total Sales (RM)</th><th>Average Daily Sales (RM)</th><th>Present Days</th></tr>
+<tr><td>Manager 1</td><td>516,900</td><td>6,713</td><td>77</td></tr>
+<tr><td>Manager 2</td><td>510,600</td><td>6,900</td><td>74</td></tr>
+<tr><td>Manager 3</td><td>529,300</td><td>6,700</td><td>79</td></tr>
+<tr><td>Manager 4</td><td>495,000</td><td>6,875</td><td>72</td></tr>
+<tr><td>Manager 5</td><td>530,400</td><td>6,800</td><td>78</td></tr>
+<tr><td>Manager 6</td><td>516,800</td><td>6,800</td><td>76</td></tr>
+</table>
+
+<h3>Q3–Q4. Highest total and highest average.</h3>
+<p>Illustratively, Manager 5 has the highest total sales, while Manager 2 has the highest average daily sales.</p>
+
+<h3>Q5. Why can rankings differ?</h3>
+<p>Total sales are influenced by both <strong>performance per active day</strong> and <strong>number of active days</strong>. Average daily sales controls for how many days the manager was present.</p>
+
+<h3>Q6. Compare regions.</h3>
+<div class="pivot">
+  <div class="pivotbox"><strong>Filter:</strong> Status = Present<div class="field">☑ Region</div><div class="field">☑ Total_Sales</div></div>
+  <div class="pivotbox"><div class="zone"><strong>Rows</strong>Region</div><div class="zone"><strong>Values</strong>Sum of Total_Sales<br>Average of Total_Sales</div></div>
+</div>
+</section>
+
+<section class="card">
+<h2>Part D — Time-based analysis</h2>
+
+<h3>Q1. Group Date by month.</h3>
+<p>In a PivotTable, right-click any date → <strong>Group</strong> → select <strong>Months</strong>.</p>
+
+<h3>Q2–Q3. Total sales by month and trend chart.</h3>
+<table>
+<tr><th>Month</th><th>Total Sales (RM)</th></tr>
+<tr><td>June</td><td>1,013,000</td></tr>
+<tr><td>July</td><td>1,027,500</td></tr>
+<tr><td>August</td><td>1,058,500</td></tr>
+</table>
+<p><strong>Recommended chart:</strong> Line chart, because month is an ordered time variable.</p>
+
+<h3>Q4. Total promotional expenditure by month.</h3>
+<div class="pivot"><div class="pivotbox"><div class="field">Status = Present</div><div class="field">☑ Date</div><div class="field">☑ Daily_Promotion_Spend</div></div><div class="pivotbox"><div class="zone"><strong>Rows</strong>Date grouped by Month</div><div class="zone"><strong>Values</strong>Sum of Daily_Promotion_Spend</div></div></div>
+
+<h3>Q5. Do sales and spend move together?</h3>
+<p><strong>Model interpretation:</strong> If both monthly spend and monthly sales rise or fall together, this is consistent with a positive association. It does not by itself prove causation.</p>
+<div class="mistake"><strong>Common mistake:</strong> Writing “promotion spend causes sales” based only on a monthly trend.</div>
+</section>
+
+<section class="card">
+<h2>Part E — Promotional expenditure and efficiency</h2>
+
+<h3>Q1–Q3. Compare promotional spending by manager.</h3>
+<div class="pivot"><div class="pivotbox"><div class="field">Status = Present</div><div class="field">☑ Manager</div><div class="field">☑ Daily_Promotion_Spend</div></div><div class="pivotbox"><div class="zone"><strong>Rows</strong>Manager</div><div class="zone"><strong>Values</strong>Sum of Spend<br>Average of Spend</div></div></div>
+
+<h3>Q4–Q5. Sales efficiency.</h3>
+<div class="formula">Sales Efficiency = Total Sales / Total Promotion Spend</div>
+<table>
+<tr><th>Manager</th><th>Total Sales</th><th>Total Spend</th><th>Sales per RM1 Spend</th></tr>
+<tr><td>Manager 1</td><td>516,900</td><td>96,000</td><td>5.38</td></tr>
+<tr><td>Manager 2</td><td>510,600</td><td>91,500</td><td>5.58</td></tr>
+<tr><td>Manager 3</td><td>529,300</td><td>101,000</td><td>5.24</td></tr>
+<tr><td>Manager 4</td><td>495,000</td><td>89,500</td><td>5.53</td></tr>
+</table>
+<p><strong>Interpretation:</strong> A value of 5.58 means approximately RM5.58 of sales was generated for every RM1 of promotional spending.</p>
+<div class="note"><strong>Acceptable alternative:</strong> Students may create a helper column at row level, but the preferred managerial measure is aggregate total sales divided by aggregate total spend.</div>
+</section>
+
+<section class="card">
+<h2>Part F — Relationship analysis</h2>
+
+<h3>Q1. Create scatter plot: Spend on X, Sales on Y.</h3>
+<div class="excel">
+  <div class="excelbar">Select valid Present rows only</div>
+  <div class="sheet">
+    <div class="head"></div><div class="head">Spend</div><div class="head">Sales</div><div class="head">Manager</div><div class="head">Region</div><div class="head">Status</div><div class="head">Use?</div>
+    <div class="rowhead">2</div><div class="sel">1,240</div><div class="sel">6,910</div><div>M1</div><div>North</div><div>Present</div><div>Yes</div>
+    <div class="rowhead">3</div><div></div><div></div><div>M2</div><div>South</div><div>Absent</div><div>No</div>
+  </div>
+</div>
+
+<div class="mockchart">
+  <div class="axisx"></div><div class="axisy"></div><div class="trend"></div>
+  <span class="dot" style="left:18%;bottom:45px"></span>
+  <span class="dot" style="left:28%;bottom:62px"></span>
+  <span class="dot" style="left:36%;bottom:74px"></span>
+  <span class="dot" style="left:48%;bottom:93px"></span>
+  <span class="dot" style="left:58%;bottom:112px"></span>
+  <span class="dot" style="left:70%;bottom:132px"></span>
+  <span class="dot" style="left:78%;bottom:140px"></span>
+  <span style="position:absolute;bottom:7px;left:40%">Daily Promotion Spend</span>
+  <span style="position:absolute;top:85px;left:2px;transform:rotate(-90deg)">Total Sales</span>
+</div>
+
+<h3>Q2–Q3. Direction and apparent strength.</h3>
+<p><strong>Model wording:</strong> “The scatter plot shows a positive relationship: higher daily promotional spending is generally associated with higher total sales. The points are dispersed around the upward pattern, so the relationship is not perfect.”</p>
+
+<h3>Q4. Add a linear trendline.</h3>
+<p>Chart Elements (+) → Trendline → Linear.</p>
+
+<h3>Q5. Display and interpret R².</h3>
+<p>Trendline Options → tick <strong>Display R-squared value on chart</strong>.</p>
+<table>
+<tr><th>Illustrative R²</th><th>Interpretation</th></tr>
+<tr><td>0.10</td><td>Spend explains about 10% of the variation in sales; weak explanatory power.</td></tr>
+<tr><td>0.35</td><td>Spend explains about 35% of sales variation; moderate explanatory power.</td></tr>
+<tr><td>0.70</td><td>Spend explains about 70% of sales variation; strong explanatory power.</td></tr>
+</table>
+<div class="warn">R² is not a percentage of “sales caused by advertising.” It is the proportion of observed variation in Y accounted for by the fitted linear relationship with X.</div>
+
+<h3>Q6. Manager-specific scatter plot.</h3>
+<p>Filter one manager, then repeat the scatter plot. Students should compare direction, spread, and R² with the overall relationship.</p>
+<table>
+<tr><th>Possible finding</th><th>Interpretation</th></tr>
+<tr><td>Manager-specific R² is higher</td><td>The spend-sales pattern is more consistent for that manager.</td></tr>
+<tr><td>Manager-specific R² is lower</td><td>Other day-to-day factors may matter more for that manager.</td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>Part G — Managerial interpretation</h2>
+<table>
+<tr><th>Question</th><th>Model answer framework</th></tr>
+<tr><td>Best-performing manager?</td><td>Use at least two indicators: total sales, average sales per active day, attendance, and/or efficiency.</td></tr>
+<tr><td>Manager requiring attention?</td><td>Support with evidence such as high absenteeism, weak average sales, poor efficiency, or inconsistent relationship.</td></tr>
+<tr><td>Is absenteeism serious?</td><td>Use overall rate, manager differences, and monthly trend.</td></tr>
+<tr><td>Best region?</td><td>Compare total and average sales; note that random region assignment limits causal interpretation.</td></tr>
+<tr><td>Does spend relate to sales?</td><td>Use scatter plot, direction, trendline, and R².</td></tr>
+<tr><td>One recommendation?</td><td>Recommendation must directly follow from evidence, e.g. review high-absence manager, reallocate spend, replicate efficient practices.</td></tr>
+</table>
+
+<div class="good"><strong>Strong final answer example:</strong> “Manager 2 appears operationally efficient because the manager records the highest average daily sales and the highest sales generated per RM1 of promotion spend, despite not having the highest total sales. Management may study this manager’s sales practices and consider whether they can be replicated across the team.”</div>
+</section>
+
+<section class="card">
+<h2>Lecturer marking / checking guide</h2>
+<table>
+<tr><th>Criterion</th><th>What to look for</th></tr>
+<tr><td>Data preparation</td><td>Correct distinction between structural missing values and errors; Present filter applied appropriately.</td></tr>
+<tr><td>PivotTable mechanics</td><td>Correct Rows, Columns, Values, Filters; correct aggregation type.</td></tr>
+<tr><td>Calculations</td><td>Correct rates, averages, and efficiency formulas.</td></tr>
+<tr><td>Charts</td><td>Line chart for monthly trend; scatter plot for numeric relationship.</td></tr>
+<tr><td>Interpretation</td><td>Answers explain what results mean rather than merely reporting numbers.</td></tr>
+<tr><td>Managerial implication</td><td>Recommendations are linked to evidence and avoid causal overclaiming.</td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>Common mistakes across the entire activity</h2>
+<ul>
+<li>Deleting absent rows before completing attendance analysis.</li>
+<li>Replacing absent-related blanks with zeros.</li>
+<li>Using all rows in the sales scatter plot, including blanks.</li>
+<li>Using Count instead of Sum for Total Sales.</li>
+<li>Comparing managers only by total sales without considering active days.</li>
+<li>Using a pie chart for a time trend.</li>
+<li>Reading R² as proof of causation.</li>
+<li>Making conclusions that are not supported by the group’s own PivotTables or charts.</li>
+</ul>
+</section>
+
+<div class="footer">Stage 2 Lecturer Answer Guide • Illustrative outputs only • Use each group’s own generated dataset for actual answers</div>
+</div>
+</body>
+</html>
