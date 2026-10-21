@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="BPMNK3143 Chapter 4: evaluating and documenting literature, with practice activities and self-checks."><title>Chapter 4 · Evaluating &amp; Documenting the Literature</title><style>
+/* Research Methodology learning-page family: Chapter 2 palette and geometry. */
+:root {
+  --navy:#102a43; --blue:#1769aa; --blue2:#eaf4ff;
+  --green:#16794a; --green2:#eaf8f0;
+  --gold:#b66a00; --gold2:#fff4df;
+  --red:#b42318; --red2:#fff0ee;
+  --purple:#6b46a1; --purple2:#f4effc;
+  --ink:#243447; --muted:#61758a; --line:#dce5ed;
+  --paper:#f5f8fb; --white:#fff;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:1.55; }
+.page { max-width:1050px; margin:auto; padding:18px; }
+.hero { background:linear-gradient(135deg,var(--navy),#184f78); color:white; border-radius:24px; padding:28px 24px; box-shadow:0 10px 28px rgba(16,42,67,.14); }
+.eyebrow { font-size:.8rem; letter-spacing:.08em; font-weight:800; opacity:.88; }
+.chapter-label { margin-top:13px; color:#ffd079; font-weight:800; letter-spacing:.12em; font-size:.9rem; }
+h1 { font-size:clamp(1.9rem,5.3vw,3.3rem); line-height:1.08; margin:.35rem 0 .7rem; text-wrap:balance; }
+.hero p { font-size:1.05rem; max-width:760px; margin:.3rem 0 0; }
+.question { margin-top:18px; background:rgba(255,255,255,.12); padding:14px 16px; border-radius:15px; font-weight:700; }
+.question .label { color:#ffe0a3; display:block; margin-bottom:5px; }
+.hero-journey { margin-top:16px; font-weight:700; color:#e5f2ff; }
+.hero-journey strong { color:#ffd079; }
+.toolbar { display:flex; gap:8px; flex-wrap:wrap; margin:14px 0 12px; }
+button { font:inherit; border:0; border-radius:999px; padding:10px 14px; min-height:44px; font-weight:700; cursor:pointer; }
+.primary { background:var(--navy); color:white; }
+.secondary { background:white; color:var(--navy); border:1px solid var(--line); }
+button:hover,.nav a:hover { filter:brightness(.95); }
+button:focus-visible,a:focus-visible,summary:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+.js-only { display:none; }
+.js-enabled .js-only { display:inline-block; }
+.nav { display:flex; flex-wrap:wrap; gap:8px; padding:3px 0 10px; margin-bottom:8px; }
+.nav a { text-decoration:none; color:var(--navy); background:white; border:1px solid var(--line); padding:10px 12px; border-radius:999px; font-size:.88rem; font-weight:700; min-height:44px; display:flex; align-items:center; }
+.card { background:white; border:1px solid var(--line); border-radius:20px; padding:20px; margin:14px 0; box-shadow:0 5px 18px rgba(16,42,67,.05); scroll-margin-top:18px; }
+.section-title { display:flex; align-items:center; gap:11px; margin-bottom:10px; }
+.num { width:34px; height:34px; border-radius:50%; display:grid; place-items:center; color:white; background:var(--blue); font-weight:800; flex:0 0 auto; }
+.num.star { background:var(--gold); }
+.num.tick { background:var(--green); }
+h2 { font-size:1.35rem; line-height:1.3; margin:0; color:var(--navy); }
+h3 { font-size:1.04rem; line-height:1.35; margin:.2rem 0; color:var(--navy); }
+p { margin:.6rem 0; }
+ul { padding-left:1.25rem; margin:.65rem 0; }
+li { margin:.2rem 0; }
+.lead { font-size:1.06rem; }
+.label { font-size:.78rem; font-weight:800; letter-spacing:.06em; }
+.definition,.takeaway,.warning,.caution { padding:15px 16px; border-radius:12px; margin:14px 0; border-left:5px solid; }
+.definition { background:var(--blue2); border-color:var(--blue); }
+.takeaway { background:var(--green2); border-color:var(--green); }
+.warning { background:var(--gold2); border-color:var(--gold); }
+.caution { background:var(--red2); border-color:var(--red); }
+.grid,.compare { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+.grid3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.mini { padding:15px; border-radius:15px; border:1px solid var(--line); background:white; min-width:0; }
+.mini p:last-child { margin-bottom:0; }
+.blue { background:var(--blue2); border-color:#cfe5f8; }
+.green { background:var(--green2); border-color:#c9e8d6; }
+.gold { background:var(--gold2); border-color:#f2d9ae; }
+.purple { background:var(--purple2); border-color:#ded2f2; }
+.red { background:var(--red2); border-color:#f1cbc6; }
+.pill { display:inline-block; font-size:.76rem; font-weight:800; padding:4px 8px; border-radius:999px; background:var(--blue2); color:var(--blue); margin-bottom:7px; }
+.pill.gold-pill { background:var(--gold2); color:var(--gold); }
+.pill.red-pill { background:var(--red2); color:var(--red); }
+.pill.green-pill { background:var(--green2); color:var(--green); }
+.pill.purple-pill { background:var(--purple2); color:var(--purple); }
+.metric { font-size:clamp(1.8rem,5vw,2.6rem); line-height:1.15; font-weight:800; color:var(--navy); margin:10px 0; }
+.anchor-banner { background:var(--navy); color:white; padding:16px; border-radius:14px; text-align:center; margin:14px 0; }
+.anchor-banner strong { display:block; color:#ffd079; font-size:1.2rem; }
+.anchor-banner p { margin:.35rem 0 0; }
+.concept-flow { display:flex; gap:8px; align-items:stretch; margin:14px 0; }
+.flow-node { flex:1; min-width:0; padding:13px; background:var(--blue2); border:1px solid #cfe5f8; border-radius:15px; text-align:center; color:var(--navy); font-weight:800; }
+.flow-node small { display:block; font-weight:400; font-size:.88rem; margin-top:5px; }
+.flow-node.red { background:var(--red2); border-color:#f1cbc6; }
+.flow-node.green { background:var(--green2); border-color:#c9e8d6; }
+.flow-arrow { align-self:center; color:var(--gold); font-size:1.4rem; font-weight:900; }
+.vertical-flow { max-width:650px; margin:14px auto; }
+.vertical-flow .flow-arrow { display:block; text-align:center; line-height:1.2; margin:6px 0; }
+.gap-state { text-align:center; padding:13px; border-radius:12px; font-weight:800; background:var(--blue2); }
+.gap-between { text-align:center; padding:7px; color:var(--gold); font-weight:800; }
+.gap-state.preferred { background:var(--green2); }
+.cause-list,.source-list { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; padding:0; list-style:none; }
+.cause-list li,.source-list li { border:1px solid var(--line); border-radius:10px; padding:9px 12px; margin:0; background:#f8fafc; }
+.source-list li { color:var(--purple); background:var(--purple2); border-color:#ded2f2; font-size:.92rem; }
+.combine { display:grid; grid-template-columns:1fr auto 1fr; gap:12px; align-items:center; margin:14px 0; }
+.combine-symbol { font-size:2rem; color:var(--gold); font-weight:800; text-align:center; }
+.research-need { text-align:center; font-weight:800; color:var(--green); margin:10px 0; font-size:1.05rem; }
+.writing-stages { padding:0; margin:14px 0; list-style:none; counter-reset:stage; }
+.writing-stages li { counter-increment:stage; position:relative; display:grid; grid-template-columns:34px 1fr; gap:12px; padding:13px 15px; border:1px solid #ded2f2; border-radius:14px; background:var(--purple2); margin:0 0 12px; }
+.writing-stages li::before { content:counter(stage); height:32px; width:32px; display:grid; place-items:center; border-radius:50%; background:var(--purple); color:white; font-weight:800; }
+.writing-stages li:not(:last-child)::after { content:'↓'; position:absolute; bottom:-18px; left:30px; color:var(--purple); font-weight:800; line-height:20px; z-index:1; }
+.writing-stages p { margin:4px 0 0; }
+.logic-line { font-size:.94rem; line-height:1.65; font-weight:700; color:var(--purple); }
+.alignment-badge { text-align:center; font-size:1.2rem; font-weight:800; color:var(--gold); padding:10px; }
+.alignment-example { margin:14px 0; }
+.alignment-example .mini { margin-top:9px; }
+.scope-boundary { border:2px dashed var(--blue); border-radius:17px; padding:17px; background:var(--blue2); }
+.scope-fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:12px 0; }
+.scope-fields div { background:white; padding:10px 12px; border:1px solid #cfe5f8; border-radius:10px; }
+.scope-fields strong { display:block; color:var(--blue); font-size:.86rem; }
+.outside-boundary { border:1px solid var(--line); padding:15px; border-radius:15px; margin-top:12px; background:#f8fafc; }
+details { border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin:12px 0; background:#fbfcfe; }
+summary { cursor:pointer; font-weight:800; color:var(--navy); list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:24px; }
+summary::-webkit-details-marker { display:none; }
+summary::after { content:'＋'; color:var(--blue); font-size:1.2rem; flex:0 0 auto; }
+details[open] summary::after { content:'−'; }
+.synthesis { border-top:4px solid var(--gold); }
+.synthesis-journey { list-style:none; padding:0; margin:16px 0 0; }
+.synthesis-journey li { position:relative; margin:0 0 18px; padding:13px 16px; border:1px solid #cfe5f8; background:var(--blue2); border-radius:13px; }
+.synthesis-journey li:last-child { margin-bottom:0; }
+.synthesis-journey li::after { content:'↓'; position:absolute; bottom:-19px; left:50%; transform:translateX(-50%); color:var(--gold); line-height:20px; font-weight:800; }
+.synthesis-journey li:last-child::after { content:none; }
+.synthesis-journey strong { display:block; color:var(--navy); font-size:.93rem; }
+.synthesis-journey span { display:block; font-size:.94rem; margin-top:3px; }
+.synthesis-journey .focus-node { background:var(--gold2); border-color:#f2d9ae; }
+.synthesis-journey .finish-node { background:var(--green2); border-color:#c9e8d6; }
+.revision-list { list-style:none; padding:0; margin:14px 0 0; counter-reset:recall; }
+.revision-list li { counter-increment:recall; padding:13px 15px; background:#fbfcfe; border:1px solid var(--line); border-radius:12px; margin:8px 0; }
+.revision-list h3::before { content:counter(recall) '. '; color:var(--blue); }
+.revision-list p { margin:5px 0 0; }
+.final-rules .mini { background:white; border-color:#c9e8d6; }
+.final-rules strong { color:var(--green); display:block; font-size:1rem; }
+.footer { color:var(--muted); text-align:center; font-size:.8rem; padding:18px 0; }
+@media(max-width:700px) {
+  .page { padding:10px; }
+  .hero { border-radius:18px; padding:22px 18px; }
+  .card { padding:16px; border-radius:16px; }
+  .grid,.grid3,.compare,.scope-fields { grid-template-columns:1fr; }
+  .concept-flow { flex-direction:column; }
+  .concept-flow .flow-arrow { transform:rotate(90deg); line-height:1; }
+  .combine { grid-template-columns:1fr; gap:8px; }
+  .num { align-self:flex-start; }
+  .eyebrow { letter-spacing:.04em; }
+  .nav { gap:7px; }
+  .nav a { font-size:.85rem; padding:10px 11px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+/* Deliberate seven-sheet A4 layout; padding creates a safety margin on EVERY sheet. */
+@page { size:A4 portrait; margin:0; }
+@media print {
+  html { scroll-behavior:auto; }
+  body { background:white; font-size:9.5pt; line-height:1.3; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page { max-width:none; padding:0; margin:0; }
+  .print-sheet { padding:10mm 12mm; break-after:page; }
+  .print-sheet:last-child { break-after:auto; }
+  .toolbar,.nav,.screen-only { display:none!important; }
+  .hero,.card,.mini,.definition,.takeaway,.warning,.caution { box-shadow:none; }
+  .hero { padding:16px 18px; border-radius:12px; }
+  h1 { font-size:23pt; line-height:1.08; }
+  h2 { font-size:13pt; }
+  h3 { font-size:10pt; }
+  p { margin:5px 0; }
+  ul { margin:6px 0; }
+  li { margin:2px 0; }
+  .hero p,.lead { font-size:10pt; }
+  .eyebrow,.chapter-label { font-size:8pt; }
+  .question { margin-top:10px; padding:10px 12px; }
+  .hero-journey { margin-top:8px; }
+  .print-sheet:first-child .hero { padding:10px 14px; }
+  .print-sheet:first-child h1 { font-size:20pt; margin:5px 0; }
+  .print-sheet:first-child .hero p { font-size:9pt; }
+  .print-sheet:first-child .chapter-label { margin-top:6px; }
+  .print-sheet:first-child .question { margin-top:7px; padding:6px 9px; }
+  .print-sheet:first-child .question .label { display:inline; margin-right:7px; }
+  .print-sheet:first-child .card { padding:8px; margin:7px 0; }
+  .print-sheet:first-child .mini { padding:7px; }
+  .print-sheet:first-child .anchor-banner { padding:7px; }
+  #problem-area .grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+  #problem-area .grid h3 { font-size:9pt; }
+  #problem-area .vertical-flow { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:9px; margin:9px 0; }
+  #problem-area .gap-between { font-size:0; }
+  #problem-area .gap-between::after { content:'→ GAP →'; font-size:9pt; }
+  .card { padding:12px; margin:9px 0; border-radius:12px; break-inside:avoid; }
+  .section-title { margin-bottom:7px; gap:9px; }
+  .num { width:26px; height:26px; font-size:10pt; }
+  .grid,.compare { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; }
+  .grid3 { grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; }
+  .mini { padding:10px; border-radius:10px; break-inside:avoid; }
+  .definition,.takeaway,.warning,.caution { padding:10px 12px; margin:9px 0; break-inside:avoid; }
+  .pill,.label { font-size:8pt; }
+  .metric { font-size:20pt; }
+  .anchor-banner { padding:10px; margin:9px 0; }
+  .anchor-banner strong { font-size:12pt; }
+  .concept-flow { flex-direction:row; margin:9px 0; gap:6px; }
+  .concept-flow .flow-arrow { transform:none; }
+  .flow-node { padding:9px; font-size:9pt; }
+  .flow-node small { font-size:8.5pt; }
+  .flow-arrow { font-size:12pt; }
+  .gap-state { padding:9px; }
+  .gap-between { padding:4px; }
+  .cause-list,.source-list { gap:5px; margin:9px 0; }
+  .cause-list li,.source-list li { padding:5px 8px; font-size:9pt; }
+  .writing-stages { margin:9px 0; }
+  .writing-stages li { padding:9px 11px; gap:9px; grid-template-columns:26px 1fr; margin-bottom:9px; break-inside:avoid; }
+  .writing-stages li::before { width:26px; height:26px; font-size:9pt; }
+  .writing-stages li:not(:last-child)::after { left:23px; bottom:-15px; }
+  .logic-line { font-size:9pt; }
+  .scope-fields { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .scope-fields div { padding:6px 9px; }
+  .scope-fields strong { font-size:8pt; }
+  .scope-boundary,.outside-boundary { padding:11px; }
+  .alignment-badge { font-size:12pt; padding:7px; }
+  details { break-inside:avoid; padding:9px 11px; margin:9px 0; }
+  details > :not(summary) { display:block!important; }
+  details::details-content { display:block!important; content-visibility:visible!important; }
+  summary::after { display:none; }
+  .synthesis-journey { margin-top:10px; }
+  .synthesis-journey li { padding:9px 12px; margin-bottom:13px; break-inside:avoid; }
+  .synthesis-journey strong { font-size:9pt; }
+  .synthesis-journey span { font-size:9pt; margin-top:1px; }
+  .synthesis-journey li::after { bottom:-16px; }
+  .revision-list li { padding:11px 13px; margin:7px 0; break-inside:avoid; }
+  .final-rules strong { font-size:10pt; }
+  .footer { font-size:8pt; padding:8px 0 0; }
+}
+
+/* Interactive learning activities. No external libraries or saved personal data. */
+.practice-label{font-size:.86rem;color:var(--gold);font-weight:700}
+.reading-check,.question-set,.quiz-item{border:1px solid var(--line);border-radius:13px;padding:14px 16px;margin:14px 0;min-width:0}
+legend{padding:0 6px;font-weight:700;color:var(--navy)}
+.reading-check label,.question-set label,.quiz-item label{display:flex;gap:11px;align-items:flex-start;padding:11px 9px;margin:5px 0;background:#f7faff;border-radius:9px;cursor:pointer;min-height:44px}
+input[type="checkbox"],input[type="radio"]{width:19px;height:19px;flex:0 0 auto;margin:3px 0 0;accent-color:var(--blue)}
+.reading-check strong{display:block;color:var(--blue)}.check-status{color:var(--purple);font-weight:700}
+.feedback:empty{display:none}.feedback{padding:12px;border-left:4px solid var(--gold);background:var(--gold2);border-radius:8px}
+.feedback.correct{background:var(--green2);border-color:var(--green)}
+.question-set button{margin-top:12px}.explanation{padding-top:8px}
+dl{margin:10px 0 0}dt{font-size:.8rem;font-weight:800;color:var(--blue);margin-top:14px}dd{margin:3px 0 0}
+.plain-steps li{margin:8px 0}.draft-label{display:block;font-weight:700;margin-bottom:7px}
+textarea{width:100%;resize:vertical;border:1px solid var(--line);border-radius:12px;padding:14px;font:inherit;line-height:1.55;color:var(--ink);background:#fbfcfe;min-height:160px}
+textarea:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.quiz-result:not(:empty){background:var(--blue2);padding:15px;border-radius:12px;font-weight:700}
+.grid3.final-rules{margin-top:12px}
+@media print{
+ button{display:none!important}
+ .print-sheet:first-child .hero{padding:14px 16px}.print-sheet:first-child h1{font-size:23pt}
+ .print-sheet:first-child .hero p{font-size:10pt}
+ .reading-check,.question-set,.quiz-item{padding:8px 10px;margin:9px 0;break-inside:avoid}
+ .reading-check label,.question-set label,.quiz-item label{min-height:0;padding:5px 7px;margin:3px 0}
+ input[type="checkbox"],input[type="radio"]{width:11px;height:11px;margin-top:2px}
+ .feedback,.check-status,.quiz-result{display:none!important}
+ .answer-key{padding:5px 8px;margin:5px 0;font-size:9pt}
+ .answer-key p{margin:3px 0}.practice-label{font-size:8.5pt}
+ dt{font-size:8.5pt;margin-top:8px}dd{margin-top:2px}
+ .plain-steps li{margin:4px 0}textarea{min-height:90px;height:90px;font-size:9pt}
+ .explanation{padding-top:4px}
+ #revision{font-size:9pt}#revision .quiz-item label{padding:4px 7px;margin:2px 0}
+}
+</style></head><body>
+<!-- Content basis: BPMNK3143 syllabus section 4.0 and A252 RM deck slides 61–64; focused follow-through on evaluation and documentation. A, B and C are fictional teaching studies. -->
+<main class="page" id="top"><div class="print-sheet"><!-- HERO -->
+<header class="hero"><div class="eyebrow">BPMNK3143 · Business Research Methodology</div><div class="chapter-label">CHAPTER 4 · LITERATURE REVIEW</div><h1>Evaluating &amp; Documenting the Literature</h1><p>A literature review helps you understand what is known and what still needs investigation. This learning page focuses on choosing useful evidence, comparing findings and writing a connected review that supports your research problem.</p><div class="question"><span class="label">LEARNING FOCUS</span>How do we decide which literature to use—and turn it into a reasoned case for our study?</div><div class="hero-journey"><strong>EVALUATE</strong> the evidence → <strong>CONNECT</strong> the findings → <strong>DOCUMENT</strong> the review</div></header>
+<div class="toolbar screen-only"><button class="primary" type="button" onclick="window.print()">Print / Save PDF</button><button class="secondary js-only" type="button" data-open-details="true">Expand explanations</button><button class="secondary js-only" type="button" data-open-details="false">Collapse explanations</button></div>
+<!-- SHORTCUT NAVIGATION -->
+<nav class="nav" aria-label="Chapter shortcuts"><a href="#screen">Screen</a><a href="#evaluate">Evaluate</a><a href="#practice">Try it</a><a href="#matrix">Reading matrix</a><a href="#synthesis">Synthesis</a><a href="#document">Document</a><a href="#write">Write</a><a href="#one-picture">One picture</a><a href="#revision">Self-check</a></nav>
+<div class="definition"><strong>Your starting point:</strong> Turnover increased in an organisation. You now want to examine the relationship between <strong>supervisor support</strong> and <strong>turnover intention</strong>.<br>Actual turnover means leaving; turnover intention means thinking about or planning to leave. Keep the concepts distinct.</div><!-- SECTION 01: SCREEN FIRST, THEN READ CLOSELY -->
+<section class="card" id="screen"><div class="section-title"><span class="num" aria-hidden="true">1</span><h2>Screen first, then read closely</h2></div><p>Screening helps you decide which sources deserve a closer look. It is the beginning of evaluation.</p><div class="grid3"><div class="mini blue"><h3>Title &amp; abstract</h3><p>Check the topic, purpose, population and main findings.</p></div><div class="mini purple"><h3>Book contents &amp; chapter</h3><p>Locate the part relevant to your research question.</p></div><div class="mini green"><h3>Relevant full text</h3><p>Examine the evidence, methods and limitations.</p></div></div><div class="warning"><strong>Citation counts are clues, not verdicts.</strong> A highly cited study still needs evaluation. Newer work may have fewer citations. Read how other researchers use or challenge it.</div></section></div><div class="print-sheet"><!-- SECTION 02: EVALUATE A STUDY WITH FIVE QUESTIONS -->
+<section class="card" id="evaluate"><div class="section-title"><span class="num" aria-hidden="true">2</span><h2>Evaluate a study with five questions</h2></div><p>Use these questions while reading. Tick each one after you have considered it—not simply because the article looks convincing.</p><fieldset class="reading-check"><legend>My reading checklist</legend><label><input type="checkbox" class="eval-check"><span><strong>Relevance</strong>Does it address my concepts, research question or context?</span></label><label><input type="checkbox" class="eval-check"><span><strong>Credibility</strong>Who produced it? Where and how was it published?</span></label><label><input type="checkbox" class="eval-check"><span><strong>Evidence</strong>Do the methods and data support the conclusions?</span></label><label><input type="checkbox" class="eval-check"><span><strong>Currency</strong>Do I need recent evidence, foundational work, or both?</span></label><label><input type="checkbox" class="eval-check"><span><strong>Limitations</strong>What can the study explain, and what remains uncertain?</span></label></fieldset><p id="check-progress" class="check-status js-only" role="status">0 of 5 questions considered.</p><div class="takeaway"><strong>A different country or a small sample is not automatically a weakness.</strong> Explain how the setting, sampling or method affects what you can conclude and how useful the evidence is for your study.</div></section><!-- SECTION 03: TRY IT: WHICH EVIDENCE BELONGS IN THE REVIEW? -->
+<section class="card" id="practice"><div class="section-title"><span class="num" aria-hidden="true">3</span><h2>Try it: which evidence belongs in the review?</h2></div><p class="practice-label">Fictional practice studies · Never use these as assignment references.</p><div class="grid"><div class="mini blue"><h3>Study A · Service employees</h3><p>One-time survey of 300 employees. Higher supervisor support was associated with lower turnover intention.</p></div><div class="mini gold"><h3>Study C · Hotel employees</h3><p>One-time survey of 90 employees. No clear association was found.</p></div></div><fieldset class="question-set" data-answer="both" data-feedback="Include both if relevant. Different findings deserve comparison. Check the methods and context; neither one-time survey establishes causation."><legend>Which would you include?</legend><label><input type="radio" name="use-study" value="a"> Only A, because it supports the expected relationship</label><label><input type="radio" name="use-study" value="both"> Both, after evaluating their relevance and evidence</label><label><input type="radio" name="use-study" value="c"> Only C, because a different finding is always stronger</label><button class="primary js-only check-one" type="button">Check my reasoning</button><p class="feedback" role="status"></p></fieldset><details><summary>Explanation</summary><div class="explanation"><p><strong>Include both if relevant.</strong> Selecting only findings that support your expectation gives an incomplete picture. A difference needs investigation; the summaries alone cannot explain it. Neither survey proves that support causes employees to stay.</p></div></details></section></div><div class="print-sheet"><!-- SECTION 04: RECORD YOUR READING IN A LITERATURE MATRIX -->
+<section class="card" id="matrix"><div class="section-title"><span class="num" aria-hidden="true">4</span><h2>Record your reading in a literature matrix</h2></div><p>A literature matrix makes studies easier to compare. Record the author, setting and sample, method, relationship examined and findings. Add a note about how you will use the source.</p><p class="practice-label">Fictional practice matrix · All three studies use one-time surveys.</p><div class="grid3 study-grid"><article class="mini blue"><h3>Study A</h3><dl><dt>Setting / sample</dt><dd>Service employees · n = 300</dd><dt>Method</dt><dd>One-time survey</dd><dt>Relationship</dt><dd>Supervisor support ↔ turnover intention</dd><dt>Finding</dt><dd>Higher support associated with lower turnover intention</dd><dt>Use / caution</dt><dd>Supports a relationship; not proof of cause.</dd></dl></article><article class="mini blue"><h3>Study B</h3><dl><dt>Setting / sample</dt><dd>Retail employees · n = 180</dd><dt>Method</dt><dd>One-time survey</dd><dt>Relationship</dt><dd>Supervisor support ↔ turnover intention</dd><dt>Finding</dt><dd>Higher support associated with lower turnover intention</dd><dt>Use / caution</dt><dd>Compare with A across settings.</dd></dl></article><article class="mini blue"><h3>Study C</h3><dl><dt>Setting / sample</dt><dd>Hotel employees · n = 90</dd><dt>Method</dt><dd>One-time survey</dd><dt>Relationship</dt><dd>Supervisor support ↔ turnover intention</dd><dt>Finding</dt><dd>No clear association found</dd><dt>Use / caution</dt><dd>Check methods and context before explaining the difference.</dd></dl></article></div><div class="definition"><strong>In your own notes:</strong> record full source details, keep exact quotations separate from personal notes, and include page locations when useful so you can find the evidence again.</div><h3>Read across the matrix</h3><div class="grid3"><div class="mini green"><h3>Agreement</h3><p>A and B suggest a similar association.</p></div><div class="mini gold"><h3>Difference</h3><p>C reports no clear association.</p></div><div class="mini red"><h3>Shared limitation</h3><p>One-time surveys cannot establish causation.</p></div></div><div class="takeaway"><strong>The matrix is a thinking tool.</strong> Your written review should explain the patterns and their relevance to the research problem.</div></section></div><div class="print-sheet"><!-- SECTION 05: TURN SEPARATE SUMMARIES INTO SYNTHESIS -->
+<section class="card" id="synthesis"><div class="section-title"><span class="num" aria-hidden="true">5</span><h2>Turn separate summaries into synthesis</h2></div><p><strong>Summary</strong> reports what a source says. <strong>Synthesis</strong> connects studies to explain an idea, pattern or unresolved issue.</p><div class="grid"><div class="mini gold"><span class="pill gold-pill">SEPARATE SUMMARIES</span><p>Study A found an association between supervisor support and turnover intention. Study B found a similar association. Study C found no clear association.</p><p><strong>The reader must make the comparison.</strong></p></div><div class="mini green"><span class="pill green-pill">CONNECTED SYNTHESIS</span><p>Evidence from service and retail samples suggests that greater supervisor support is associated with lower turnover intention (Studies A and B). However, Study C found no clear association among hotel employees. Findings differ across these samples, but the summaries alone do not explain why.</p><p><strong>The writer compares and qualifies the evidence.</strong></p></div></div><p class="practice-label">Fictional study labels illustrate the writing logic; they are not valid citations.</p><div class="definition"><strong>A useful paragraph sequence:</strong><br>Claim → Evidence → Comparison → Implication for your research</div><h3>Try a synthesis sentence</h3><p>How could you acknowledge the different findings without claiming to know why they differ?</p><details><summary>Example sentence</summary><div class="explanation"><p>Although Studies A and B suggest a relationship, Study C found no clear association; further examination of their settings, measures and methods is needed to interpret this difference.</p></div></details><div class="caution"><strong>Do not turn limited reading into “Nobody has studied this.”</strong> Check the wider literature before identifying a gap. A new setting alone does not automatically justify a study.</div></section></div><div class="print-sheet"><!-- SECTION 06: DOCUMENT THE REVIEW AND ACKNOWLEDGE SOURCES -->
+<section class="card" id="document"><div class="section-title"><span class="num" aria-hidden="true">6</span><h2>Document the review and acknowledge sources</h2></div><p>A written literature review introduces the subject, highlights the problem and explains the relevant work so far.</p><div class="grid"><div class="mini purple"><h3>Organise by ideas</h3><p>For this topic: turnover intention → supervisor support → evidence on the relationship → unresolved issue and proposed study.</p></div><div class="mini green"><h3>Keep sources traceable</h3><p>Use the course’s APA 7 guidance. Match in-text citations with reference-list entries and check the original source details.</p></div></div><h3>Paraphrase with understanding</h3><ol class="plain-steps"><li>Read until you understand the idea.</li><li>Put the source aside and explain the meaning in your own words.</li><li>Compare your wording with the original for accuracy.</li><li>Acknowledge the source of the idea.</li></ol><div class="warning"><strong>Changing a few words is not enough.</strong> A paraphrased idea still needs a citation. An exact quotation must be clearly identified as a quotation and documented appropriately.</div></section><!-- SECTION 07: WRITE ONE CONNECTED PARAGRAPH -->
+<section class="card" id="write"><div class="section-title"><span class="num" aria-hidden="true">7</span><h2>Write one connected paragraph</h2></div><p>Use the fictional A–B–C matrix. State the shared finding, acknowledge the difference and a limitation, then identify what needs closer investigation.</p><label for="draft" class="draft-label">Your practice paragraph</label><textarea id="draft" rows="5" placeholder="Begin with the pattern across the studies…"></textarea><p class="small screen-only">Practice space only. Your writing is not saved when you close or reload this page.</p><details><summary>Compare with a possible answer</summary><div class="explanation"><p>Studies A and B associate greater supervisor support with lower turnover intention, whereas Study C reports no clear association. These one-time surveys do not demonstrate causation. Further reading is needed to establish whether the differences reflect context, measurement or other explanations.</p></div></details><div class="takeaway"><strong>Before finishing:</strong> Have you compared findings, preserved uncertainty and linked the evidence to your research problem?</div></section></div><div class="print-sheet"><!-- CHAPTER IN ONE PICTURE --><section class="card synthesis" id="one-picture"><div class="section-title"><span class="num star" aria-hidden="true">★</span><h2>Chapter 4 Focus in One Picture</h2></div><p>Use the literature to build a reasoned case for your study.</p><ol class="synthesis-journey"><li class=""><strong>RESEARCH PROBLEM</strong><span>What do I need to understand?</span></li><li class=""><strong>SCREEN &amp; EVALUATE</strong><span>Which evidence is relevant, credible and useful?</span></li><li class=""><strong>RECORD</strong><span>Capture setting, methods, relationship and findings.</span></li><li class=""><strong>COMPARE</strong><span>Where do studies agree or differ?</span></li><li class="focus-node"><strong>SYNTHESISE</strong><span>Explain the pattern, limitations and unresolved issue.</span></li><li class=""><strong>DOCUMENT</strong><span>Write a connected review and acknowledge sources.</span></li><li class="finish-node"><strong>JUSTIFY THE STUDY</strong><span>Show what needs investigation and why.</span></li></ol></section>
+<!-- KEY TAKEAWAY --><section class="card" id="key-takeaway"><div class="takeaway"><h2>Key Takeaway</h2><div class="grid3 final-rules"><div class="mini green"><h3>EVALUATE</h3><p>Know what each study can support.</p></div><div class="mini green"><h3>CONNECT</h3><p>Compare evidence around ideas.</p></div><div class="mini green"><h3>DOCUMENT</h3><p>Make the argument and sources traceable.</p></div></div></div></section></div><div class="print-sheet"><!-- REVISION --><section class="card" id="revision"><div class="section-title"><span class="num tick" aria-hidden="true">✓</span><h2>Revision: What Must You Know?</h2></div><p>Choose an answer for each question, then check your understanding. Explanations are also available without JavaScript.</p><form id="quiz"><fieldset class="quiz-item" data-correct="1"><legend>1. Does a high citation count prove that a study is suitable?</legend><label><input type="radio" name="q0" value="0"> Yes, it replaces a methods check.</label><label><input type="radio" name="q0" value="1"> No, relevance and evidence still need evaluation.</label><p class="quiz-feedback feedback" role="status"></p><details class="answer-key"><summary>Answer and explanation</summary><p><strong>No, relevance and evidence still need evaluation.</strong> Citation counts indicate attention, not automatic quality or relevance.</p></details></fieldset><fieldset class="quiz-item" data-correct="1"><legend>2. A relevant study contradicts your expectation. What should you do?</legend><label><input type="radio" name="q1" value="0"> Exclude it to keep the argument clear.</label><label><input type="radio" name="q1" value="1"> Evaluate and compare it with the other evidence.</label><p class="quiz-feedback feedback" role="status"></p><details class="answer-key"><summary>Answer and explanation</summary><p><strong>Evaluate and compare it with the other evidence.</strong> A review should preserve relevant differences rather than select only supportive findings.</p></details></fieldset><fieldset class="quiz-item" data-correct="1"><legend>3. What does synthesis do?</legend><label><input type="radio" name="q2" value="0"> Lists each author’s findings separately.</label><label><input type="radio" name="q2" value="1"> Connects studies to explain patterns and unresolved issues.</label><p class="quiz-feedback feedback" role="status"></p><details class="answer-key"><summary>Answer and explanation</summary><p><strong>Connects studies to explain patterns and unresolved issues.</strong> Synthesis compares and interprets evidence around an idea.</p></details></fieldset><fieldset class="quiz-item" data-correct="0"><legend>4. Can a one-time survey establish that supervisor support causes employees to stay?</legend><label><input type="radio" name="q3" value="0"> No. An association alone does not establish causation.</label><label><input type="radio" name="q3" value="1"> Yes, if the sample is large enough.</label><p class="quiz-feedback feedback" role="status"></p><details class="answer-key"><summary>Answer and explanation</summary><p><strong>No. An association alone does not establish causation.</strong> A large sample does not by itself establish cause and effect.</p></details></fieldset><fieldset class="quiz-item" data-correct="0"><legend>5. Does a paraphrased idea need a citation?</legend><label><input type="radio" name="q4" value="0"> Yes, the idea still comes from a source.</label><label><input type="radio" name="q4" value="1"> No, because the wording is different.</label><p class="quiz-feedback feedback" role="status"></p><details class="answer-key"><summary>Answer and explanation</summary><p><strong>Yes, the idea still comes from a source.</strong> Your own wording does not remove the need to acknowledge the source of an idea.</p></details></fieldset><div class="toolbar js-only screen-only"><button type="submit" class="primary">Check my answers</button><button type="reset" class="secondary">Try again</button></div><p id="quiz-result" class="quiz-result js-only" role="status" aria-live="polite"></p></form></section><footer class="footer">BPMNK3143 · Business Research Methodology · Chapter 4</footer></div></main><script>
+document.documentElement.classList.add('js-enabled');
+document.querySelectorAll('[data-open-details]').forEach(b=>b.addEventListener('click',()=>document.querySelectorAll('details').forEach(d=>d.open=b.dataset.openDetails==='true')));
+const checks=[...document.querySelectorAll('.eval-check')];
+checks.forEach(c=>c.addEventListener('change',()=>{
+ const n=checks.filter(c=>c.checked).length;
+ document.getElementById('check-progress').textContent=n+' of 5 questions considered.'+(n===5?' Now explain the source’s usefulness and limitations in your notes.':'');
+}));
+document.querySelectorAll('.check-one').forEach(b=>b.addEventListener('click',()=>{
+ const box=b.closest('fieldset'),selected=box.querySelector('input:checked'),feedback=box.querySelector('.feedback');
+ const ok=selected&&selected.value===box.dataset.answer;
+ feedback.classList.toggle('correct',!!ok);
+ feedback.textContent=!selected?'Choose an option first.':(ok?'Good reasoning. ':'Reconsider your selection. ')+box.dataset.feedback;
+}));
+const quiz=document.getElementById('quiz');
+quiz.addEventListener('submit',e=>{
+ e.preventDefault();let score=0,answered=0;
+ const items=[...quiz.querySelectorAll('.quiz-item')];
+ items.forEach(item=>{
+  const selected=item.querySelector('input:checked'),ok=selected&&selected.value===item.dataset.correct;
+  if(selected)answered++;if(ok)score++;
+  const feedback=item.querySelector('.quiz-feedback');feedback.classList.toggle('correct',!!ok);
+  feedback.textContent=!selected?'Choose an answer, then check again.':ok?'Correct. Read the explanation to reinforce the idea.':'Review the explanation and try again.';
+  item.querySelector('details').open=true;
+ });
+ document.getElementById('quiz-result').textContent=score+' of '+items.length+' correct. '+(answered<items.length?(items.length-answered)+' unanswered. ':'')+(score===items.length?'You have checked the main ideas.':'Use the explanations, then try again.');
+});
+quiz.addEventListener('reset',()=>{
+ quiz.querySelectorAll('.quiz-feedback').forEach(f=>{f.textContent='';f.classList.remove('correct')});
+ quiz.querySelectorAll('details').forEach(d=>d.open=false);document.getElementById('quiz-result').textContent='';
+});
+let readingState=[];
+addEventListener('beforeprint',()=>{readingState=[...document.querySelectorAll('details')].map(d=>[d,d.open]);readingState.forEach(([d])=>d.open=true)});
+addEventListener('afterprint',()=>readingState.forEach(([d,open])=>d.open=open));
+</script></body></html>
