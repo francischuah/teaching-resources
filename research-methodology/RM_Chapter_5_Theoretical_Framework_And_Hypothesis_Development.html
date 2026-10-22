@@ -1,0 +1,279 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="BPMNK3143 Chapter 5 interactive learning page: theoretical framework, variables, mediation, moderation and hypotheses."><title>Chapter 5 · Theoretical Framework &amp; Hypothesis Development</title><style>
+/* Research Methodology learning-page family: Chapter 2 palette and geometry. */
+:root {
+  --navy:#102a43; --blue:#1769aa; --blue2:#eaf4ff;
+  --green:#16794a; --green2:#eaf8f0;
+  --gold:#b66a00; --gold2:#fff4df;
+  --red:#b42318; --red2:#fff0ee;
+  --purple:#6b46a1; --purple2:#f4effc;
+  --ink:#243447; --muted:#61758a; --line:#dce5ed;
+  --paper:#f5f8fb; --white:#fff;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:1.55; }
+.page { max-width:1050px; margin:auto; padding:18px; }
+.hero { background:linear-gradient(135deg,var(--navy),#184f78); color:white; border-radius:24px; padding:28px 24px; box-shadow:0 10px 28px rgba(16,42,67,.14); }
+.eyebrow { font-size:.8rem; letter-spacing:.08em; font-weight:800; opacity:.88; }
+.chapter-label { margin-top:13px; color:#ffd079; font-weight:800; letter-spacing:.12em; font-size:.9rem; }
+h1 { font-size:clamp(1.9rem,5.3vw,3.3rem); line-height:1.08; margin:.35rem 0 .7rem; text-wrap:balance; }
+.hero p { font-size:1.05rem; max-width:760px; margin:.3rem 0 0; }
+.question { margin-top:18px; background:rgba(255,255,255,.12); padding:14px 16px; border-radius:15px; font-weight:700; }
+.question .label { color:#ffe0a3; display:block; margin-bottom:5px; }
+.hero-journey { margin-top:16px; font-weight:700; color:#e5f2ff; }
+.hero-journey strong { color:#ffd079; }
+.toolbar { display:flex; gap:8px; flex-wrap:wrap; margin:14px 0 12px; }
+button { font:inherit; border:0; border-radius:999px; padding:10px 14px; min-height:44px; font-weight:700; cursor:pointer; }
+.primary { background:var(--navy); color:white; }
+.secondary { background:white; color:var(--navy); border:1px solid var(--line); }
+button:hover,.nav a:hover { filter:brightness(.95); }
+button:focus-visible,a:focus-visible,summary:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+.js-only { display:none; }
+.js-enabled .js-only { display:inline-block; }
+.nav { display:flex; flex-wrap:wrap; gap:8px; padding:3px 0 10px; margin-bottom:8px; }
+.nav a { text-decoration:none; color:var(--navy); background:white; border:1px solid var(--line); padding:10px 12px; border-radius:999px; font-size:.88rem; font-weight:700; min-height:44px; display:flex; align-items:center; }
+.card { background:white; border:1px solid var(--line); border-radius:20px; padding:20px; margin:14px 0; box-shadow:0 5px 18px rgba(16,42,67,.05); scroll-margin-top:18px; }
+.section-title { display:flex; align-items:center; gap:11px; margin-bottom:10px; }
+.num { width:34px; height:34px; border-radius:50%; display:grid; place-items:center; color:white; background:var(--blue); font-weight:800; flex:0 0 auto; }
+.num.star { background:var(--gold); }
+.num.tick { background:var(--green); }
+h2 { font-size:1.35rem; line-height:1.3; margin:0; color:var(--navy); }
+h3 { font-size:1.04rem; line-height:1.35; margin:.2rem 0; color:var(--navy); }
+p { margin:.6rem 0; }
+ul { padding-left:1.25rem; margin:.65rem 0; }
+li { margin:.2rem 0; }
+.lead { font-size:1.06rem; }
+.label { font-size:.78rem; font-weight:800; letter-spacing:.06em; }
+.definition,.takeaway,.warning,.caution { padding:15px 16px; border-radius:12px; margin:14px 0; border-left:5px solid; }
+.definition { background:var(--blue2); border-color:var(--blue); }
+.takeaway { background:var(--green2); border-color:var(--green); }
+.warning { background:var(--gold2); border-color:var(--gold); }
+.caution { background:var(--red2); border-color:var(--red); }
+.grid,.compare { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+.grid3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.mini { padding:15px; border-radius:15px; border:1px solid var(--line); background:white; min-width:0; }
+.mini p:last-child { margin-bottom:0; }
+.blue { background:var(--blue2); border-color:#cfe5f8; }
+.green { background:var(--green2); border-color:#c9e8d6; }
+.gold { background:var(--gold2); border-color:#f2d9ae; }
+.purple { background:var(--purple2); border-color:#ded2f2; }
+.red { background:var(--red2); border-color:#f1cbc6; }
+.pill { display:inline-block; font-size:.76rem; font-weight:800; padding:4px 8px; border-radius:999px; background:var(--blue2); color:var(--blue); margin-bottom:7px; }
+.pill.gold-pill { background:var(--gold2); color:var(--gold); }
+.pill.red-pill { background:var(--red2); color:var(--red); }
+.pill.green-pill { background:var(--green2); color:var(--green); }
+.pill.purple-pill { background:var(--purple2); color:var(--purple); }
+.metric { font-size:clamp(1.8rem,5vw,2.6rem); line-height:1.15; font-weight:800; color:var(--navy); margin:10px 0; }
+.anchor-banner { background:var(--navy); color:white; padding:16px; border-radius:14px; text-align:center; margin:14px 0; }
+.anchor-banner strong { display:block; color:#ffd079; font-size:1.2rem; }
+.anchor-banner p { margin:.35rem 0 0; }
+.concept-flow { display:flex; gap:8px; align-items:stretch; margin:14px 0; }
+.flow-node { flex:1; min-width:0; padding:13px; background:var(--blue2); border:1px solid #cfe5f8; border-radius:15px; text-align:center; color:var(--navy); font-weight:800; }
+.flow-node small { display:block; font-weight:400; font-size:.88rem; margin-top:5px; }
+.flow-node.red { background:var(--red2); border-color:#f1cbc6; }
+.flow-node.green { background:var(--green2); border-color:#c9e8d6; }
+.flow-arrow { align-self:center; color:var(--gold); font-size:1.4rem; font-weight:900; }
+.vertical-flow { max-width:650px; margin:14px auto; }
+.vertical-flow .flow-arrow { display:block; text-align:center; line-height:1.2; margin:6px 0; }
+.gap-state { text-align:center; padding:13px; border-radius:12px; font-weight:800; background:var(--blue2); }
+.gap-between { text-align:center; padding:7px; color:var(--gold); font-weight:800; }
+.gap-state.preferred { background:var(--green2); }
+.cause-list,.source-list { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; padding:0; list-style:none; }
+.cause-list li,.source-list li { border:1px solid var(--line); border-radius:10px; padding:9px 12px; margin:0; background:#f8fafc; }
+.source-list li { color:var(--purple); background:var(--purple2); border-color:#ded2f2; font-size:.92rem; }
+.combine { display:grid; grid-template-columns:1fr auto 1fr; gap:12px; align-items:center; margin:14px 0; }
+.combine-symbol { font-size:2rem; color:var(--gold); font-weight:800; text-align:center; }
+.research-need { text-align:center; font-weight:800; color:var(--green); margin:10px 0; font-size:1.05rem; }
+.writing-stages { padding:0; margin:14px 0; list-style:none; counter-reset:stage; }
+.writing-stages li { counter-increment:stage; position:relative; display:grid; grid-template-columns:34px 1fr; gap:12px; padding:13px 15px; border:1px solid #ded2f2; border-radius:14px; background:var(--purple2); margin:0 0 12px; }
+.writing-stages li::before { content:counter(stage); height:32px; width:32px; display:grid; place-items:center; border-radius:50%; background:var(--purple); color:white; font-weight:800; }
+.writing-stages li:not(:last-child)::after { content:'↓'; position:absolute; bottom:-18px; left:30px; color:var(--purple); font-weight:800; line-height:20px; z-index:1; }
+.writing-stages p { margin:4px 0 0; }
+.logic-line { font-size:.94rem; line-height:1.65; font-weight:700; color:var(--purple); }
+.alignment-badge { text-align:center; font-size:1.2rem; font-weight:800; color:var(--gold); padding:10px; }
+.alignment-example { margin:14px 0; }
+.alignment-example .mini { margin-top:9px; }
+.scope-boundary { border:2px dashed var(--blue); border-radius:17px; padding:17px; background:var(--blue2); }
+.scope-fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:12px 0; }
+.scope-fields div { background:white; padding:10px 12px; border:1px solid #cfe5f8; border-radius:10px; }
+.scope-fields strong { display:block; color:var(--blue); font-size:.86rem; }
+.outside-boundary { border:1px solid var(--line); padding:15px; border-radius:15px; margin-top:12px; background:#f8fafc; }
+details { border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin:12px 0; background:#fbfcfe; }
+summary { cursor:pointer; font-weight:800; color:var(--navy); list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:24px; }
+summary::-webkit-details-marker { display:none; }
+summary::after { content:'＋'; color:var(--blue); font-size:1.2rem; flex:0 0 auto; }
+details[open] summary::after { content:'−'; }
+.synthesis { border-top:4px solid var(--gold); }
+.synthesis-journey { list-style:none; padding:0; margin:16px 0 0; }
+.synthesis-journey li { position:relative; margin:0 0 18px; padding:13px 16px; border:1px solid #cfe5f8; background:var(--blue2); border-radius:13px; }
+.synthesis-journey li:last-child { margin-bottom:0; }
+.synthesis-journey li::after { content:'↓'; position:absolute; bottom:-19px; left:50%; transform:translateX(-50%); color:var(--gold); line-height:20px; font-weight:800; }
+.synthesis-journey li:last-child::after { content:none; }
+.synthesis-journey strong { display:block; color:var(--navy); font-size:.93rem; }
+.synthesis-journey span { display:block; font-size:.94rem; margin-top:3px; }
+.synthesis-journey .focus-node { background:var(--gold2); border-color:#f2d9ae; }
+.synthesis-journey .finish-node { background:var(--green2); border-color:#c9e8d6; }
+.revision-list { list-style:none; padding:0; margin:14px 0 0; counter-reset:recall; }
+.revision-list li { counter-increment:recall; padding:13px 15px; background:#fbfcfe; border:1px solid var(--line); border-radius:12px; margin:8px 0; }
+.revision-list h3::before { content:counter(recall) '. '; color:var(--blue); }
+.revision-list p { margin:5px 0 0; }
+.final-rules .mini { background:white; border-color:#c9e8d6; }
+.final-rules strong { color:var(--green); display:block; font-size:1rem; }
+.footer { color:var(--muted); text-align:center; font-size:.8rem; padding:18px 0; }
+@media(max-width:700px) {
+  .page { padding:10px; }
+  .hero { border-radius:18px; padding:22px 18px; }
+  .card { padding:16px; border-radius:16px; }
+  .grid,.grid3,.compare,.scope-fields { grid-template-columns:1fr; }
+  .concept-flow { flex-direction:column; }
+  .concept-flow .flow-arrow { transform:rotate(90deg); line-height:1; }
+  .combine { grid-template-columns:1fr; gap:8px; }
+  .num { align-self:flex-start; }
+  .eyebrow { letter-spacing:.04em; }
+  .nav { gap:7px; }
+  .nav a { font-size:.85rem; padding:10px 11px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+/* Deliberate seven-sheet A4 layout; padding creates a safety margin on EVERY sheet. */
+@page { size:A4 portrait; margin:0; }
+@media print {
+  html { scroll-behavior:auto; }
+  body { background:white; font-size:9.5pt; line-height:1.3; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page { max-width:none; padding:0; margin:0; }
+  .print-sheet { padding:10mm 12mm; break-after:page; }
+  .print-sheet:last-child { break-after:auto; }
+  .toolbar,.nav,.screen-only { display:none!important; }
+  .hero,.card,.mini,.definition,.takeaway,.warning,.caution { box-shadow:none; }
+  .hero { padding:16px 18px; border-radius:12px; }
+  h1 { font-size:23pt; line-height:1.08; }
+  h2 { font-size:13pt; }
+  h3 { font-size:10pt; }
+  p { margin:5px 0; }
+  ul { margin:6px 0; }
+  li { margin:2px 0; }
+  .hero p,.lead { font-size:10pt; }
+  .eyebrow,.chapter-label { font-size:8pt; }
+  .question { margin-top:10px; padding:10px 12px; }
+  .hero-journey { margin-top:8px; }
+  .print-sheet:first-child .hero { padding:10px 14px; }
+  .print-sheet:first-child h1 { font-size:20pt; margin:5px 0; }
+  .print-sheet:first-child .hero p { font-size:9pt; }
+  .print-sheet:first-child .chapter-label { margin-top:6px; }
+  .print-sheet:first-child .question { margin-top:7px; padding:6px 9px; }
+  .print-sheet:first-child .question .label { display:inline; margin-right:7px; }
+  .print-sheet:first-child .card { padding:8px; margin:7px 0; }
+  .print-sheet:first-child .mini { padding:7px; }
+  .print-sheet:first-child .anchor-banner { padding:7px; }
+  #problem-area .grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+  #problem-area .grid h3 { font-size:9pt; }
+  #problem-area .vertical-flow { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:9px; margin:9px 0; }
+  #problem-area .gap-between { font-size:0; }
+  #problem-area .gap-between::after { content:'→ GAP →'; font-size:9pt; }
+  .card { padding:12px; margin:9px 0; border-radius:12px; break-inside:avoid; }
+  .section-title { margin-bottom:7px; gap:9px; }
+  .num { width:26px; height:26px; font-size:10pt; }
+  .grid,.compare { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; }
+  .grid3 { grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; }
+  .mini { padding:10px; border-radius:10px; break-inside:avoid; }
+  .definition,.takeaway,.warning,.caution { padding:10px 12px; margin:9px 0; break-inside:avoid; }
+  .pill,.label { font-size:8pt; }
+  .metric { font-size:20pt; }
+  .anchor-banner { padding:10px; margin:9px 0; }
+  .anchor-banner strong { font-size:12pt; }
+  .concept-flow { flex-direction:row; margin:9px 0; gap:6px; }
+  .concept-flow .flow-arrow { transform:none; }
+  .flow-node { padding:9px; font-size:9pt; }
+  .flow-node small { font-size:8.5pt; }
+  .flow-arrow { font-size:12pt; }
+  .gap-state { padding:9px; }
+  .gap-between { padding:4px; }
+  .cause-list,.source-list { gap:5px; margin:9px 0; }
+  .cause-list li,.source-list li { padding:5px 8px; font-size:9pt; }
+  .writing-stages { margin:9px 0; }
+  .writing-stages li { padding:9px 11px; gap:9px; grid-template-columns:26px 1fr; margin-bottom:9px; break-inside:avoid; }
+  .writing-stages li::before { width:26px; height:26px; font-size:9pt; }
+  .writing-stages li:not(:last-child)::after { left:23px; bottom:-15px; }
+  .logic-line { font-size:9pt; }
+  .scope-fields { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .scope-fields div { padding:6px 9px; }
+  .scope-fields strong { font-size:8pt; }
+  .scope-boundary,.outside-boundary { padding:11px; }
+  .alignment-badge { font-size:12pt; padding:7px; }
+  details { break-inside:avoid; padding:9px 11px; margin:9px 0; }
+  details > :not(summary) { display:block!important; }
+  details::details-content { display:block!important; content-visibility:visible!important; }
+  summary::after { display:none; }
+  .synthesis-journey { margin-top:10px; }
+  .synthesis-journey li { padding:9px 12px; margin-bottom:13px; break-inside:avoid; }
+  .synthesis-journey strong { font-size:9pt; }
+  .synthesis-journey span { font-size:9pt; margin-top:1px; }
+  .synthesis-journey li::after { bottom:-16px; }
+  .revision-list li { padding:11px 13px; margin:7px 0; break-inside:avoid; }
+  .final-rules strong { font-size:10pt; }
+  .footer { font-size:8pt; padding:8px 0 0; }
+}
+
+/* Interactive learning activities. No external libraries or saved personal data. */
+.practice-label{font-size:.86rem;color:var(--gold);font-weight:700}
+.reading-check,.question-set,.quiz-item{border:1px solid var(--line);border-radius:13px;padding:14px 16px;margin:14px 0;min-width:0}
+legend{padding:0 6px;font-weight:700;color:var(--navy)}
+.reading-check label,.question-set label,.quiz-item label{display:flex;gap:11px;align-items:flex-start;padding:11px 9px;margin:5px 0;background:#f7faff;border-radius:9px;cursor:pointer;min-height:44px}
+input[type="checkbox"],input[type="radio"]{width:19px;height:19px;flex:0 0 auto;margin:3px 0 0;accent-color:var(--blue)}
+.reading-check strong{display:block;color:var(--blue)}.check-status{color:var(--purple);font-weight:700}
+.feedback:empty{display:none}.feedback{padding:12px;border-left:4px solid var(--gold);background:var(--gold2);border-radius:8px}
+.feedback.correct{background:var(--green2);border-color:var(--green)}
+.question-set button{margin-top:12px}.explanation{padding-top:8px}
+dl{margin:10px 0 0}dt{font-size:.8rem;font-weight:800;color:var(--blue);margin-top:14px}dd{margin:3px 0 0}
+.plain-steps li{margin:8px 0}.draft-label{display:block;font-weight:700;margin-bottom:7px}
+textarea{width:100%;resize:vertical;border:1px solid var(--line);border-radius:12px;padding:14px;font:inherit;line-height:1.55;color:var(--ink);background:#fbfcfe;min-height:160px}
+textarea:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.quiz-result:not(:empty){background:var(--blue2);padding:15px;border-radius:12px;font-weight:700}
+.grid3.final-rules{margin-top:12px}
+@media print{
+ button{display:none!important}
+ .print-sheet:first-child .hero{padding:14px 16px}.print-sheet:first-child h1{font-size:23pt}
+ .print-sheet:first-child .hero p{font-size:10pt}
+ .reading-check,.question-set,.quiz-item{padding:8px 10px;margin:9px 0;break-inside:avoid}
+ .reading-check label,.question-set label,.quiz-item label{min-height:0;padding:5px 7px;margin:3px 0}
+ input[type="checkbox"],input[type="radio"]{width:11px;height:11px;margin-top:2px}
+ .feedback,.check-status,.quiz-result{display:none!important}
+ .answer-key{padding:5px 8px;margin:5px 0;font-size:9pt}
+ .answer-key p{margin:3px 0}.practice-label{font-size:8.5pt}
+ dt{font-size:8.5pt;margin-top:8px}dd{margin-top:2px}
+ .plain-steps li{margin:4px 0}textarea{min-height:90px;height:90px;font-size:9pt}
+ .explanation{padding-top:4px}
+ #revision{font-size:9pt}#revision .quiz-item label{padding:4px 7px;margin:2px 0}
+}
+
+/* Chapter 5 framework activities: vertical reading order on small screens. */
+.model-flow{display:flex;align-items:stretch;gap:10px;margin:16px 0}
+.model-node{flex:1;min-width:0;border:1px solid #cfe5f8;border-radius:13px;padding:16px;background:var(--blue2);text-align:center}
+.model-node strong{display:block;color:var(--navy)}.model-node span{display:block;color:var(--muted);font-size:.9rem;margin-top:5px}
+.flow-link{align-self:center;color:var(--gold);font-size:1.6rem;font-weight:800}
+.moderator-note{padding:13px 16px;margin:16px 0;background:var(--gold2);border:1px solid #f2d9ae;border-radius:13px;text-align:center}.moderator-note strong,.moderator-note span{display:block}.moderator-note span{font-size:.9rem;margin-top:4px}
+.slope-chart{margin:14px 0;padding:16px;border:1px solid var(--line);border-radius:14px;background:#fbfcfe}.slope-chart svg{width:100%;height:auto;display:block}.slope-chart figcaption{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:14px;font-size:.9rem}.legend{font-weight:700}.legend:before{content:'';display:inline-block;width:22px;height:4px;margin-right:7px;vertical-align:middle}.legend.low:before{background:var(--blue)}.legend.high:before{background:var(--gold)}.axis-title{font-size:.9rem;font-weight:700;color:var(--muted)}.axis-title.horizontal{text-align:center}.slope-chart p{font-size:.92rem}
+.selected{border:2px solid var(--gold)!important;background:var(--gold2)!important;color:var(--navy)!important}
+.js-enabled .model-panel{display:none}.js-enabled .model-panel.active{display:block}.model-panel{margin:18px 0;padding:14px;border:1px solid var(--line);border-radius:13px}
+.path-note{padding:16px;text-align:center;font-weight:700;color:var(--purple)}
+@media(max-width:700px){.model-flow{flex-direction:column}.flow-link{transform:rotate(90deg);line-height:1}.model-node{padding:14px}}
+@media print{
+ .print-sheet{padding:10mm 12mm}.card{break-inside:avoid}
+ .model-flow{flex-direction:row;margin:9px 0;gap:6px}.model-node{padding:9px}.model-node span{font-size:8.5pt}.flow-link{transform:none;font-size:12pt}
+ .moderator-note{padding:8px 10px;margin:9px 0}.moderator-note span{font-size:8.5pt}
+ .model-panel,.js-enabled .model-panel{display:block!important;padding:7px 10px;margin:8px 0}
+ .slope-chart{padding:9px;margin:9px 0}.slope-chart svg{max-height:150px}.slope-chart figcaption,.axis-title,.slope-chart p{font-size:8.5pt}
+ textarea{height:64px;min-height:64px}.path-note{padding:9px}
+ #revision{font-size:8.5pt}#revision .quiz-item{padding:6px 9px;margin:7px 0}#revision .quiz-item label{padding:3px 5px;margin:2px 0}#revision details{padding:4px 7px;margin:4px 0;font-size:8.5pt}#revision .explanation{padding:0}
+}
+</style></head><body><!-- CONTENT BASIS: approved Chapter 5 interactive presentation; syllabus section 5.0; personal Chapter 5 deck and A252 slides 91–120. Examples are proposed teaching relationships, not reported empirical results. --><main class="page" id="top"><div class="print-sheet"><!-- HERO --><header class="hero"><div class="eyebrow">BPMNK3143 · Business Research Methodology</div><div class="chapter-label">CHAPTER 5</div><h1>Theoretical Framework &amp; Hypothesis Development</h1><p>A research problem tells us what needs investigation. The literature helps us understand what is known. A theoretical framework now brings the relevant variables and explanations together, leading to hypotheses we can investigate.</p><div class="question"><span class="label">LEARNING FOCUS</span>How do we turn a research problem and existing knowledge into a clear framework and testable hypotheses?</div><div class="hero-journey"><strong>IDENTIFY</strong> variables → <strong>EXPLAIN</strong> relationships → <strong>PROPOSE</strong> hypotheses</div></header><div class="toolbar screen-only"><button class="primary" type="button" onclick="window.print()">Print / Save PDF</button><button class="secondary js-only" data-open-details="true" type="button">Expand explanations</button><button class="secondary js-only" data-open-details="false" type="button">Collapse explanations</button></div><nav class="nav" aria-label="Chapter shortcuts"><a href="#framework">Framework</a><a href="#concepts">Concepts</a><a href="#indicators">Indicators</a><a href="#mediation">Mediation</a><a href="#moderation">Moderation</a><a href="#compare">Compare roles</a><a href="#hypotheses">Hypotheses</a><a href="#write">Practice</a><a href="#tourism">Tourism activity</a><a href="#one-picture">One picture</a><a href="#revision">Self-check</a></nav><!-- SECTION 01: A FRAMEWORK NEEDS RELATIONSHIPS AND REASONS --><section class="card" id="framework"><div class="section-title"><span class="num">1</span><h2>A framework needs relationships and reasons</h2></div><p>A theoretical framework identifies the relevant variables, shows how they are proposed to relate and explains why those relationships are expected.</p><div class="grid"><div class="mini blue"><h3>The model</h3><p>Supervisor support → Turnover intention.</p></div><div class="mini gold"><h3>The explanation</h3><p>Support may help employees feel valued and reduce their intention to leave.</p></div></div><div class="definition"><strong>Our continuing example:</strong> We observed an increase in employee turnover in Chapter 3 and evaluated relevant evidence in Chapter 4. Now we propose relationships to investigate.<br><strong>Actual turnover:</strong> leaving the organisation.<br><strong>Turnover intention:</strong> thinking about or planning to leave.</div><div class="takeaway"><strong>Identify → Connect → Explain.</strong> Define the variables, specify the relationships, and justify them using theory and relevant literature.</div><p class="small">All relationships on this page are teaching proposals unless stated otherwise. They are not presented as empirical findings.</p></section></div><div class="print-sheet"><!-- SECTION 02: CONCEPTS, CONSTRUCTS AND VARIABLES --><section class="card" id="concepts"><div class="section-title"><span class="num">2</span><h2>Concepts, constructs and variables</h2></div><div class="grid3"><div class="mini blue"><h3>Concept</h3><p>A general idea used to describe something—for example, support.</p></div><div class="mini purple"><h3>Construct</h3><p>An abstract concept deliberately defined for research—for example, perceived supervisor support.</p></div><div class="mini green"><h3>Variable</h3><p>A characteristic that takes different values across people or situations. It may be observed or latent.</p></div></div><div class="definition"><strong>Latent</strong> means not directly observed. Responses to relevant questionnaire items can serve as observed indicators of an abstract construct.</div><div class="model-flow"><div class="model-node"><strong>Conceptual meaning</strong><span>What do we mean?</span></div><span class="flow-link" aria-hidden="true">→</span><div class="model-node"><strong>Defined construct</strong><span>What exactly is included?</span></div><span class="flow-link" aria-hidden="true">→</span><div class="model-node"><strong>Observed indicators</strong><span>What responses do we collect?</span></div></div><div class="warning">These terms can overlap. Define clearly how you use them in your study; not every variable is directly observable.</div></section><!-- SECTION 03: CONNECT CONSTRUCTS TO THEIR INDICATORS --><section class="card" id="indicators"><div class="section-title"><span class="num">3</span><h2>Connect constructs to their indicators</h2></div><p>In the customer example, <strong>likeability</strong> and <strong>competency</strong> are proposed to relate to <strong>customer loyalty</strong>. Questionnaire items provide observed responses representing each construct.</p><div class="grid3"><div class="mini blue"><h3>Likeability</h3><p>“I regard [the company] as a likeable company.”</p></div><div class="mini purple"><h3>Competency</h3><p>“I believe that [the company] performs at a premium level.”</p></div><div class="mini green"><h3>Customer loyalty</h3><p>“I will remain a customer of [the company] in the future.”</p></div></div><p class="small">Sample items retained or lightly edited from the supplied teaching deck. They do not by themselves constitute a validated scale.</p><details><summary>Think: is the item the same as the construct?</summary><div class="explanation"><p>No. The construct is the defined abstract idea; an item provides an observed response used to represent it. The measure must fit the intended meaning.</p></div></details><div class="takeaway"><strong>The diagram is not the whole framework.</strong> A theory—such as the Theory of Planned Behaviour example in the presentation—provides reasoning about how and why constructs relate.</div></section></div><div class="print-sheet"><!-- SECTION 04: INDEPENDENT, DEPENDENT AND MEDIATING VARIABLES --><section class="card" id="mediation"><div class="section-title"><span class="num">4</span><h2>Independent, dependent and mediating variables</h2></div><div class="grid"><div class="mini blue"><h3>Independent variable · IV</h3><p>The proposed predictor or explanatory variable: supervisor support.</p></div><div class="mini green"><h3>Dependent variable · DV</h3><p>The outcome of interest: turnover intention.</p></div></div><div class="model-flow"><div class="model-node"><strong>Supervisor support</strong><span>IV: proposed predictor</span></div><span class="flow-link" aria-hidden="true">→</span><div class="model-node"><strong>Turnover intention</strong><span>DV: outcome of interest</span></div></div><div class="definition"><strong>Mediator: HOW?</strong> A mediator explains a proposed mechanism through which one variable relates to another.</div><div class="model-flow"><div class="model-node"><strong>Supervisor support</strong><span>IV</span></div><span class="flow-link" aria-hidden="true">→</span><div class="model-node"><strong>Job satisfaction</strong><span>Mediator</span></div><span class="flow-link" aria-hidden="true">→</span><div class="model-node"><strong>Turnover intention</strong><span>DV</span></div></div><p>Support may improve satisfaction, which may reduce intention to leave. A possible direct support–intention relationship may also be included.</p><div class="mini purple"><h3>Another familiar example</h3><p><strong>Study effort → Learning → Exam performance</strong><br>Learning is the proposed mechanism connecting effort and performance.</p></div><div class="caution"><strong>Position alone does not establish mediation.</strong> A variable does not become a mediator merely because it appears between two boxes or occurs later. Explain the mechanism and investigate it appropriately.</div></section></div><div class="print-sheet"><!-- SECTION 05: MODERATION: WHEN DOES A RELATIONSHIP CHANGE? --><section class="card" id="moderation"><div class="section-title"><span class="num">5</span><h2>Moderation: when does a relationship change?</h2></div><div class="definition"><strong>Moderator: WHEN or under what conditions?</strong> A moderator changes the strength and/or direction of a specified relationship.</div><div class="moderator-note"><strong>Alternative job opportunities</strong><span>Proposed moderator of the support–turnover intention relationship</span></div><div class="model-flow"><div class="model-node"><strong>Supervisor support</strong><span>IV</span></div><span class="flow-link" aria-hidden="true">→</span><div class="model-node"><strong>Turnover intention</strong><span>DV</span></div></div><p>We ask whether the support–intention relationship differs depending on available alternatives. A directional prediction needs theoretical reasoning and literature support.</p><h3>Satisfaction, loyalty and switching cost</h3><p>Switching cost may change the strength of the satisfaction–loyalty relationship. Compare the slopes in the illustrative graph.</p><div class="pattern-controls toolbar js-only screen-only" role="group" aria-label="Choose an illustrative moderation pattern"><button class="secondary pattern selected" type="button" data-pattern="stronger" aria-pressed="true">Stronger</button><button class="secondary pattern" type="button" data-pattern="weaker" aria-pressed="false">Weaker</button><button class="secondary pattern" type="button" data-pattern="same" aria-pressed="false">No moderation</button></div><figure class="slope-chart"><figcaption><span class="legend low">Lower switching cost</span><span class="legend high">Higher switching cost</span></figcaption><div class="axis-title">Customer loyalty</div><svg viewBox="0 0 640 230" role="img" aria-label="Illustrative moderation graph. The higher switching cost line is steeper than the lower switching cost line."><path d="M30 10 V210 H620" fill="none" stroke="#61758a" stroke-width="2"/><path d="M60 175 L590 115" fill="none" stroke="#1769aa" stroke-width="5"/><path id="slope-line" d="M60 195 L590 35" fill="none" stroke="#b66a00" stroke-width="5"/></svg><div class="axis-title horizontal">Customer satisfaction →</div><p id="slope-caption">Illustration: the relationship is stronger at higher switching cost.</p></figure><div class="takeaway"><strong>Compare slopes, not just line height.</strong> Parallel lines represent no moderation in this illustration.</div><p class="small">These are possible patterns, not observed data or established findings. Another teaching example is reward → motivation, with perceived fairness as a proposed moderator.</p></section></div><div class="print-sheet"><!-- SECTION 06: COMPARE THE VARIABLE ROLES --><section class="card" id="compare"><div class="section-title"><span class="num">6</span><h2>Compare the variable roles</h2></div><div class="grid"><div class="mini purple"><h3>Mediator: HOW?</h3><p>Explains a proposed mechanism. Support may work through job satisfaction.</p></div><div class="mini gold"><h3>Moderator: WHEN?</h3><p>Changes a specified relationship. The support–intention relationship may differ by job opportunities.</p></div></div><div class="toolbar js-only screen-only model-controls" role="group" aria-label="Explore the framework"><button type="button" class="secondary model-choice selected" data-model="direct" aria-pressed="true">IV → DV</button><button type="button" class="secondary model-choice" data-model="mediated" aria-pressed="false">Add a mediator</button><button type="button" class="secondary model-choice" data-model="moderated" aria-pressed="false">Add a moderator</button></div><div class="model-panel active" data-model="direct"><h3>Direct relationship</h3><div class="model-flow"><div class="model-node"><strong>Supervisor support</strong><span>IV</span></div><span class="flow-link" aria-hidden="true">→</span><div class="model-node"><strong>Turnover intention</strong><span>DV</span></div></div></div><div class="model-panel" data-model="mediated"><h3>Proposed mechanism</h3><div class="model-flow"><div class="model-node"><strong>Supervisor support</strong><span>IV</span></div><span class="flow-link" aria-hidden="true">→</span><div class="model-node"><strong>Job satisfaction</strong><span>Mediator</span></div><span class="flow-link" aria-hidden="true">→</span><div class="model-node"><strong>Turnover intention</strong><span>DV</span></div></div></div><div class="model-panel" data-model="moderated"><h3>Proposed condition</h3><div class="moderator-note"><strong>Alternative job opportunities</strong><span>Condition on the support–intention relationship</span></div><div class="model-flow"><div class="model-node"><strong>Supervisor support</strong><span>IV</span></div><span class="flow-link" aria-hidden="true">→</span><div class="model-node"><strong>Turnover intention</strong><span>DV</span></div></div></div><fieldset class="role-task question-set"><legend>“Support reduces intention to leave because it improves job satisfaction.” What role does satisfaction play?</legend><label><input type="radio" name="role" value="iv"> Independent variable</label><label><input type="radio" name="role" value="mediator"> Mediator</label><label><input type="radio" name="role" value="moderator"> Moderator</label><button type="button" id="check-role" class="primary js-only">Check my reasoning</button><p id="role-feedback" class="feedback" role="status"></p></fieldset><details><summary>Answer and explanation</summary><div class="explanation"><p><strong>Mediator.</strong> The explanation proposes satisfaction as the mechanism. In contrast, a statement that the support–intention relationship differs by job opportunities assigns opportunities a moderator role.</p></div></details><div class="warning">A variable’s role depends on the proposed explanation. Define the role before drawing the arrows.</div></section></div><div class="print-sheet"><!-- SECTION 07: DEVELOP CLEAR, TESTABLE HYPOTHESES --><section class="card" id="hypotheses"><div class="section-title"><span class="num">7</span><h2>Develop clear, testable hypotheses</h2></div><p>A hypothesis is a proposition that can be examined empirically. It should fit the research purpose, state a clear relationship and have theoretical and literature support.</p><div class="grid"><div class="mini blue"><h3>H₀ · Null hypothesis</h3><p>There is no relationship between supervisor support and turnover intention.</p></div><div class="mini gold"><h3>H₁ · Alternative hypothesis</h3><p>There is a relationship between supervisor support and turnover intention.</p></div></div><p class="small">These are introductory substantive statements. A statistical test requires a precise parameter-based formulation.</p><h3>Directional versus non-directional</h3><p>“If–then” is another wording format. For example: if supervisor support increases, turnover intention is expected to decrease. The relationship still needs justification.</p><div class="grid3"><div class="mini blue"><h3>Non-directional</h3><p>Supervisor support is related to turnover intention.</p></div><div class="mini gold"><h3>Negative direction</h3><p>Higher support is associated with lower turnover intention.</p></div><div class="mini green"><h3>Positive direction</h3><p>Higher support is associated with higher job satisfaction.</p></div></div><div class="definition"><strong>Relationship → Reason → Evidence.</strong> Explain the expected relationship, give its theoretical reasoning and use relevant literature to justify it.</div><div class="caution">An arrow does not prove causation. Directional wording alone does not decide the full statistical testing procedure.</div></section><!-- SECTION 08: PRACTISE WRITING A HYPOTHESIS --><section class="card" id="write"><div class="section-title"><span class="num">8</span><h2>Practise writing a hypothesis</h2></div><p>Choose a relationship from the model and write a matching hypothesis. You can use non-directional wording unless you can justify a direction.</p><label class="draft-label" for="hyp-draft">Your hypothesis</label><textarea id="hyp-draft" rows="3" placeholder="For example: Supervisor support is…"></textarea><p class="small screen-only">Practice only. Your writing is not saved when you close or reload this page.</p><details><summary>Compare with possible statements</summary><div class="explanation"><ul><li>Likeability is related to customer loyalty.</li><li>Job satisfaction mediates the relationship between supervisor support and turnover intention.</li><li>Alternative job opportunities moderate the relationship between supervisor support and turnover intention.</li></ul><p>A directional moderation hypothesis must specify and justify how the relationship changes.</p></div></details><div class="takeaway">Check: <strong>same variables, same relationship, clear wording, justified prediction.</strong></div></section></div><div class="print-sheet"><!-- SECTION 09: APPLICATION: BUILD THE TOURISM FRAMEWORK --><section class="card" id="tourism"><div class="section-title"><span class="num">9</span><h2>Application: build the tourism framework</h2></div><p>Quality offerings, service performance and visitor satisfaction are proposed to relate directly to revisit intention. Quality offerings and service performance also relate to visitor satisfaction. The satisfaction–revisit relationship is proposed to be stronger when destination image is more favourable.</p><div class="mini gold"><h3>Your task</h3><ol><li>Identify the outcome and predictors.</li><li>Identify the proposed mediator and moderator.</li><li>Sketch the framework and write two hypotheses.</li></ol></div><details><summary>Reveal the framework</summary><div class="explanation"><div class="tourism-framework"><div class="grid"><div class="mini blue"><h3>Quality offerings</h3><p>Proposed IV</p></div><div class="mini blue"><h3>Service performance</h3><p>Proposed IV</p></div></div><div class="path-note">Both → Visitor satisfaction → Revisit intention</div><div class="grid"><div class="mini purple"><h3>Visitor satisfaction</h3><p>Proposed mediator</p></div><div class="mini green"><h3>Revisit intention</h3><p>Outcome / DV</p></div></div><div class="moderator-note"><strong>Destination image · Moderator</strong><span>Changes the satisfaction–revisit intention relationship</span></div><p><strong>Also retain the direct paths:</strong> quality offerings → revisit intention; service performance → revisit intention.</p></div></div></details><details><summary>Reveal possible hypotheses</summary><div class="explanation"><ul><li>Visitor satisfaction is positively related to revisit intention.</li><li>Destination image strengthens the positive relationship between visitor satisfaction and revisit intention.</li></ul><p>The scenario supplies the proposed relationships. An actual study must justify them with theory and literature.</p></div></details><div class="takeaway"><strong>Explain the model before testing it.</strong> Each variable role must follow the relationships and reasoning stated in the scenario.</div></section></div><div class="print-sheet"><!-- CHAPTER IN ONE PICTURE --><section class="card synthesis" id="one-picture"><div class="section-title"><span class="num star">★</span><h2>Chapter 5 in One Picture</h2></div><ol class="synthesis-journey"><li class=""><strong>RESEARCH PROBLEM</strong><span>What needs investigation?</span></li><li class=""><strong>THEORY & LITERATURE</strong><span>Why might the variables be related?</span></li><li class=""><strong>VARIABLES & INDICATORS</strong><span>What do the concepts mean, and how will they be represented?</span></li><li class="focus-node"><strong>FRAMEWORK</strong><span>Which variables, roles and relationships?</span></li><li class=""><strong>HYPOTHESES</strong><span>What precise relationships do we propose to examine?</span></li><li class="finish-node"><strong>EVIDENCE</strong><span>Investigate the predictions; reconsider or refine the explanation.</span></li></ol></section><section class="card" id="key-takeaway"><div class="takeaway"><h2>Key Takeaway</h2><div class="grid3 final-rules"><div class="mini green"><h3>DEFINE THE VARIABLES</h3><p>Keep meanings and measures clear.</p></div><div class="mini green"><h3>EXPLAIN THE ARROWS</h3><p>Distinguish mechanisms from conditions.</p></div><div class="mini green"><h3>JUSTIFY THE PREDICTIONS</h3><p>Write hypotheses that match the framework.</p></div></div></div><p>A framework is an explained research proposal—not proof that the relationships exist.</p></section></div><div class="print-sheet"><!-- REVISION --><section class="card" id="revision"><div class="section-title"><span class="num tick">✓</span><h2>Revision: What Must You Know?</h2></div><p>Select an answer, then check your understanding. Each explanation also works without JavaScript.</p><form id="quiz"><fieldset class="quiz-item" data-correct="1"><legend>1. What does a theoretical framework need?</legend><label><input type="radio" name="q0" value="0"> Only a diagram with labelled boxes.</label><label><input type="radio" name="q0" value="1"> Proposed relationships and an explanation of why they are expected.</label><p class="quiz-feedback feedback" role="status"></p><details><summary>Answer and explanation</summary><div class="explanation"><p><strong>Proposed relationships and an explanation of why they are expected.</strong> A framework connects the variables, relationships and supporting reasoning.</p></div></details></fieldset><fieldset class="quiz-item" data-correct="1"><legend>2. What is the DV in our continuing example?</legend><label><input type="radio" name="q1" value="0"> Supervisor support.</label><label><input type="radio" name="q1" value="1"> Turnover intention.</label><p class="quiz-feedback feedback" role="status"></p><details><summary>Answer and explanation</summary><div class="explanation"><p><strong>Turnover intention.</strong> Turnover intention is the outcome we want to understand.</p></div></details></fieldset><fieldset class="quiz-item" data-correct="0"><legend>3. Job satisfaction explains how support may relate to intention. What is its role?</legend><label><input type="radio" name="q2" value="0"> Mediator.</label><label><input type="radio" name="q2" value="1"> Moderator.</label><p class="quiz-feedback feedback" role="status"></p><details><summary>Answer and explanation</summary><div class="explanation"><p><strong>Mediator.</strong> A mediator proposes a mechanism.</p></div></details></fieldset><fieldset class="quiz-item" data-correct="1"><legend>4. Job opportunities change the support–intention relationship. What is the role?</legend><label><input type="radio" name="q3" value="0"> Mediator.</label><label><input type="radio" name="q3" value="1"> Moderator.</label><p class="quiz-feedback feedback" role="status"></p><details><summary>Answer and explanation</summary><div class="explanation"><p><strong>Moderator.</strong> A moderator specifies a condition under which a relationship changes.</p></div></details></fieldset><fieldset class="quiz-item" data-correct="1"><legend>5. Which hypothesis is directional?</legend><label><input type="radio" name="q4" value="0"> Support is related to turnover intention.</label><label><input type="radio" name="q4" value="1"> Higher support is associated with lower turnover intention.</label><p class="quiz-feedback feedback" role="status"></p><details><summary>Answer and explanation</summary><div class="explanation"><p><strong>Higher support is associated with lower turnover intention.</strong> The second statement specifies a negative direction.</p></div></details></fieldset><fieldset class="quiz-item" data-correct="1"><legend>6. What does an observed association establish by itself?</legend><label><input type="radio" name="q5" value="0"> That the predictor causes the outcome.</label><label><input type="radio" name="q5" value="1"> A relationship, without establishing causation.</label><p class="quiz-feedback feedback" role="status"></p><details><summary>Answer and explanation</summary><div class="explanation"><p><strong>A relationship, without establishing causation.</strong> Causal conclusions need more than the presence of an association.</p></div></details></fieldset><div class="toolbar js-only screen-only"><button class="primary" type="submit">Check my answers</button><button class="secondary" type="reset">Try again</button></div><p class="quiz-result js-only" id="quiz-result" role="status" aria-live="polite"></p></form></section><footer class="footer">BPMNK3143 · Business Research Methodology · Chapter 5</footer></div></main><script>
+document.documentElement.classList.add('js-enabled');
+document.querySelectorAll('[data-open-details]').forEach(b=>b.addEventListener('click',()=>document.querySelectorAll('details').forEach(d=>d.open=b.dataset.openDetails==='true')));
+const patterns={stronger:['M60 195 L590 35','Illustration: the relationship is stronger at higher switching cost.','The higher switching cost line is steeper than the lower switching cost line.'],weaker:['M60 105 L590 85','Illustration: the relationship is weaker at higher switching cost.','The higher switching cost line is flatter than the lower switching cost line.'],same:['M60 145 L590 85','Illustration: the lines are parallel, so there is no moderation.','Parallel lines show no moderation in this illustration.']};
+document.querySelectorAll('.pattern').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.pattern').forEach(x=>{x.classList.toggle('selected',x===b);x.setAttribute('aria-pressed',String(x===b))});const d=patterns[b.dataset.pattern];document.getElementById('slope-line').setAttribute('d',d[0]);document.getElementById('slope-caption').textContent=d[1];document.querySelector('.slope-chart svg').setAttribute('aria-label',d[2])}));
+document.querySelectorAll('.model-choice').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.model-choice').forEach(x=>{x.classList.toggle('selected',x===b);x.setAttribute('aria-pressed',String(x===b))});document.querySelectorAll('.model-panel').forEach(x=>x.classList.toggle('active',x.dataset.model===b.dataset.model))}));
+document.getElementById('check-role').addEventListener('click',()=>{const choice=document.querySelector('input[name="role"]:checked'),feedback=document.getElementById('role-feedback');feedback.classList.toggle('correct',!!choice&&choice.value==='mediator');feedback.textContent=!choice?'Choose an option first.':choice.value==='mediator'?'Correct. Satisfaction is the proposed mechanism connecting support and intention.':'Reconsider: the explanation says support works through satisfaction. That makes satisfaction a mediator.'});
+const quiz=document.getElementById('quiz');
+quiz.addEventListener('submit',ev=>{ev.preventDefault();let score=0,answered=0;const items=[...quiz.querySelectorAll('.quiz-item')];items.forEach(item=>{const selected=item.querySelector('input:checked'),ok=selected&&selected.value===item.dataset.correct;if(selected)answered++;if(ok)score++;const f=item.querySelector('.quiz-feedback');f.classList.toggle('correct',!!ok);f.textContent=!selected?'Choose an answer and check again.':ok?'Correct.':'Review the explanation and try again.';item.querySelector('details').open=true});document.getElementById('quiz-result').textContent=score+' of '+items.length+' correct. '+(answered<items.length?(items.length-answered)+' unanswered. ':'')+(score===items.length?'You have checked the main ideas.':'Use the explanations, then try again.')});
+quiz.addEventListener('reset',()=>{quiz.querySelectorAll('.quiz-feedback').forEach(f=>{f.textContent='';f.classList.remove('correct')});quiz.querySelectorAll('details').forEach(d=>d.open=false);document.getElementById('quiz-result').textContent=''});
+let readingState=[];addEventListener('beforeprint',()=>{readingState=[...document.querySelectorAll('details')].map(d=>[d,d.open]);readingState.forEach(([d])=>d.open=true)});addEventListener('afterprint',()=>readingState.forEach(([d,state])=>d.open=state));
+</script></body></html>
