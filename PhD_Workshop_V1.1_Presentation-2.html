@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Research Gap, Novelty and Originality | PhD Workshop V1.1</title>
+<style>:root{color-scheme:dark;--navy:#0b1628;--panel:#13233a;--raised:#1a2f48;--line:#37506a;--mint:#a8efda;--paper:#f3f7f8;--muted:#c0cfdb;--amber:#ffde9d;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--navy);color:var(--paper)}
+*{box-sizing:border-box}
+body{margin:0;padding-bottom:5rem}
+[hidden]{display:none!important}
+button,input,textarea,select{font:inherit}
+button{color:var(--paper);background:var(--raised);border:1px solid var(--line);border-radius:.55rem;padding:.52rem .83rem;min-height:2.65rem;cursor:pointer}
+button:hover,button[aria-pressed=true],button[aria-current=true]{border-color:var(--mint);color:var(--mint)}
+button:disabled{opacity:.45;cursor:default}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+#mast,#controls{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.7rem clamp(.85rem,4vw,3.8rem);background:var(--navy);border-bottom:1px solid var(--line)}
+#mast nav,.choices,.timeline{display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+.brand{display:flex;gap:.75rem;align-items:center;line-height:1.25}
+.brand small{display:block;color:var(--muted)}
+.mark{color:var(--mint)}
+#deck,#notes-view{max-width:78rem;margin:auto;padding:clamp(.9rem,3.5vw,3rem)}
+.slide{min-width:0;border:1px solid var(--line);border-radius:1.05rem;padding:clamp(1rem,4vw,3.4rem);background:linear-gradient(140deg,#172944,var(--panel) 55%);box-shadow:inset 0 3px var(--mint);font-size:clamp(1.03rem,1.65vw,1.32rem);line-height:1.51;overflow-wrap:anywhere}
+.eyebrow,.minor{color:var(--mint);font-size:.83em;font-weight:650}
+.eyebrow{letter-spacing:.08em;text-transform:uppercase}
+h1,h2,h3,p,ul,ol,blockquote{margin:0 0 .85em}
+h1,h2,h3{line-height:1.13}
+h1{font-family:Georgia,serif;font-weight:normal;font-size:clamp(1.9rem,4.6vw,3.6rem);margin:.32em 0 .55em}
+h2{font-size:1.35rem}
+h3{font-size:1.18em;color:var(--mint)}
+ul,ol{padding-left:1.45em}
+li+li{margin-top:.35em}
+strong{color:var(--mint)}
+.slide p:last-child,.slide ul:last-child{margin-bottom:0}
+.slide[data-unit=O1] .audience{font-size:1.2em}
+.flag{color:var(--amber);font-size:.84em;margin:0 0 1rem}
+blockquote,.feedback,.quote-card,.flow-node,.activity,.row-reveal{padding:.9em 1.05em;border-radius:.65rem;background:var(--raised);border:1px solid var(--line);margin:.8em 0}
+blockquote,.feedback,.quote-card{border-left:3px solid var(--mint)}
+.feedback{color:var(--paper);min-width:0}
+details>summary{cursor:pointer;color:var(--mint);font-weight:650;padding:.3rem 0}
+.choices button,.timeline button{text-align:left}
+.flow{display:grid;max-width:50rem;margin:1em auto}
+.flow-node{text-align:center;margin:0;padding:.7em}
+.flow-arrow{text-align:center;color:var(--mint)}
+.quote-card h3{font-family:Georgia,serif;font-size:clamp(1.4rem,3.5vw,2.5rem);margin:.35em 0}
+.table-wrap{overflow:auto;margin:1rem 0}
+table{width:100%;border-collapse:collapse;min-width:27rem;text-align:left}
+td,th{border:1px solid var(--line);padding:.55em .7em;vertical-align:top}
+th{background:var(--raised);color:var(--mint)}
+textarea{display:block;width:100%;min-height:4.8rem;margin:.35rem 0 .9rem;padding:.65rem;resize:vertical;border-radius:.5rem;background:var(--navy);color:var(--paper);border:1px solid var(--line)}
+td textarea{min-width:10rem}
+label.check{display:flex;gap:.7rem;align-items:flex-start;padding:.45rem 0}
+input[type=checkbox]{accent-color:#64d1b1;flex:none;width:1.1rem;height:1.1rem;margin-top:.25em}
+.activity-note,.status{color:var(--muted);font-size:.88em}
+#controls{position:fixed;inset:auto 0 0;border-top:1px solid var(--line);border-bottom:0;padding-bottom:max(.7rem,env(safe-area-inset-bottom));z-index:2}
+.progress{display:grid;text-align:center;gap:.25rem;font-size:.82rem;color:var(--muted)}
+progress{height:.28rem;width:clamp(3rem,18vw,13rem);accent-color:var(--mint)}
+dialog{color:var(--paper);background:var(--panel);border:1px solid var(--line);border-radius:1rem;width:min(92vw,58rem);max-height:86vh;padding:1rem clamp(.85rem,3vw,2rem)}
+dialog::backdrop{background:#030812c9}
+.dialog-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1rem}
+.dialog-bar h2{margin:0}
+.index-group{display:grid;gap:.36rem;margin-bottom:1.4rem}
+.index-group button{text-align:left}
+.timeline{padding:.7rem 0;border-bottom:1px solid var(--line);margin-bottom:1rem}
+.notes-layout #mast,.notes-layout #deck,.notes-layout #controls{display:none}
+.notes-layout{padding-bottom:0}
+#notes-view{line-height:1.55}
+#notes-view article{background:var(--panel);border:1px solid var(--line);border-radius:.7rem;padding:1rem;margin:.7rem 0}
+@media(max-width:620px){#mast{align-items:flex-start;flex-direction:column}#mast button,#controls button{font-size:.85rem}#mast nav{gap:.32rem}button{padding:.52rem .65rem}.slide{border-radius:.72rem}body{padding-bottom:4.5rem}}
+@media print{
+ :root{color-scheme:light;--navy:white;--paper:#142237;--mint:#114d40;--muted:#33465a;--raised:#f0f4f6;--line:#9aabba;--amber:#704400;background:white}
+ body,#deck{padding:0}#mast,#controls,dialog,button,textarea,.status{display:none!important}
+ .slide,.slide[hidden]{display:block!important;background:white;box-shadow:none;border:0;border-radius:0;padding:0;font-size:10.5pt;break-after:page}
+ details>*{display:block!important}
+ .table-wrap{overflow:visible}
+ table{min-width:0}
+ h1{font-size:22pt}
+ #review-body .print-references{display:block}
+}
+.print-only{display:none}
+@media print{
+ .print-only{display:block}
+ tbody tr[hidden]{display:table-row!important}
+ .lever-panel[hidden]{display:block!important}
+}
+#fullscreen-status{margin:.65rem clamp(.85rem,4vw,3.8rem);color:var(--muted)}
+
+.slide[data-unit="18"] table{table-layout:fixed;min-width:0;font-size:.88em;line-height:1.35}
+.slide[data-unit="18"] th:nth-child(1){width:23%}
+.slide[data-unit="18"] th:nth-child(2){width:36%}
+.slide[data-unit="18"] th:nth-child(3){width:41%}
+.slide[data-unit="18"] td:first-child{font-weight:650;color:var(--mint)}
+.slide[data-unit="18"] th,.slide[data-unit="18"] td{padding:.5em .65em;overflow-wrap:anywhere}
+.slide[data-unit="18"] tbody tr:nth-child(even){background:#ffffff08}
+@media screen{
+ :root:fullscreen,:root.presentation-fit{overflow:hidden}
+ body.presentation-fit{height:100vh;height:100dvh;padding:0;display:grid;grid-template-rows:auto minmax(0,1fr) auto;overflow:hidden}
+ .presentation-fit #deck{width:min(100%,90rem);height:100%;margin:0 auto;min-height:0;padding:clamp(.35rem,1.2vh,.85rem) clamp(.45rem,2vw,1.8rem)}
+ .presentation-fit #mast,.presentation-fit #controls{padding-top:.4rem;padding-bottom:.4rem}
+ .presentation-fit #controls{position:static}
+ .presentation-fit .slide{padding:clamp(.65rem,2vw,1.65rem);zoom:var(--slide-zoom,1)}
+ .presentation-fit .slide h1{font-size:clamp(1.6rem,3.5vw,3rem);margin-bottom:.4em}
+ .presentation-fit .table-wrap{overflow:visible}
+ .presentation-fit table,.presentation-fit td textarea{min-width:0}
+ .presentation-fit table{table-layout:fixed}
+ .presentation-fit td,.presentation-fit th{overflow-wrap:anywhere;padding:.42em .55em}
+ .presentation-fit textarea{min-width:0;resize:none}
+ .presentation-fit #fullscreen-status{position:absolute;z-index:3;top:3.5rem;background:var(--navy)}
+}
+@media print{.slide{zoom:1!important}}
+
+</style>
+</head>
+<body>
+<header id="mast">
+  <div class="brand"><span class="mark" aria-hidden="true">◆</span><div><strong>PhD Research Workshop</strong></div></div>
+  <nav aria-label="Workshop controls">
+    <button id="fullscreen" type="button" aria-pressed="false">Full screen</button>
+    <button id="open-index">Slide index</button>
+    <button id="open-review">Overview &amp; references</button>
+    <button id="open-notes">Presenter notes ↗</button>
+  </nav>
+</header>
+<p id="fullscreen-status" role="status" hidden></p>
+<main id="deck" aria-label="Workshop slides"></main>
+<footer id="controls">
+  <button id="prev" aria-label="Previous slide">← Previous</button>
+  <div class="progress"><span id="position" aria-live="polite"></span><progress id="progress" max="50"></progress></div>
+  <button id="next" aria-label="Next slide">Next →</button>
+</footer>
+<dialog id="index"><div class="dialog-bar"><h2>Slide index</h2><form method="dialog"><button>Close</button></form></div><div id="index-body"></div></dialog>
+<dialog id="review"><div class="dialog-bar"><h2>Workshop overview</h2><form method="dialog"><button>Close</button></form></div><div id="review-body"></div></dialog>
+<main id="notes-view" hidden></main>
+<noscript><p>Enable JavaScript to use the offline workshop presentation.</p></noscript>
+<script id="source" type="application/json">{"slides": [{"id": "O1", "title": "Research Gap, Novelty and Originality", "section": "A", "audience": "<p>Research Gap, Novelty and Originality<\/p>\n<p><em>How to Know Whether You Really Have One?<\/em><\/p>\n<p>College of Business — PhD Research Development Workshop<\/p>\n<p><strong>Duration:<\/strong> 90–120 minutes.<\/p>\n", "notes": "<p>Explain that the workshop is not about manufacturing claims of novelty. It is about learning to defend the intellectual value of doctoral research through critical comparison with existing scholarship.<\/p>\n"}, {"id": "O2", "title": "Four familiar claims", "section": "A", "audience": "<p>Which statement establishes an original doctoral contribution?<\/p>\n<p>A. “Nobody has studied my variables together.”<\/p>\n<p>B. “My research is the first in this country.”<\/p>\n<p>C. “I added a mediator and moderator.”<\/p>\n<p>D. “My results are statistically significant.”<\/p>\n<p><strong>Interaction:<\/strong> Four-option poll followed by reveal.<\/p>\n<p><strong>Reveal answer:<\/strong> None independently establishes an original contribution. Each may be relevant, but requires an explanation of why the difference matters and what knowledge it produces.<\/p>\n", "notes": "<p>Avoid dismissing contextual studies, additional variables, or statistically significant results. The problem is treating those features as sufficient evidence of contribution.<\/p>\n"}, {"id": "O3", "title": "What should you be able to defend?", "section": "A", "audience": "<p>By the end of the workshop, you should be able to:<\/p>\n<ol>\n<li>Distinguish a literature omission from a defensible intellectual problem.<\/li>\n<li>Evaluate novelty against the closest existing scholarship.<\/li>\n<li>Explain the original contribution your study intends to make—or has demonstrated.<\/li>\n<\/ol>\n", "notes": "<p>Invite participants to use their own doctoral research throughout the workshop. The final exercise will require a connected gap, novelty, and contribution statement.<\/p>\n"}, {"id": "1", "title": "What is a research gap?", "section": "B", "audience": "<p>A research gap is not simply something that has not been studied.<\/p>\n<p>It is a <strong>justified limitation in what existing scholarship can adequately establish, explain, predict, or understand<\/strong>.<\/p>\n<p>Three starting questions:<\/p>\n<ul>\n<li>What does existing research already establish?<\/li>\n<li>What remains insufficiently understood?<\/li>\n<li>Why does that limitation matter?<\/li>\n<\/ul>\n", "notes": "<p>Begin by challenging the assumption that absence of research automatically establishes a research gap. A defensible gap requires evidence from the relevant literature, a meaningful unresolved issue, and a rationale for addressing it.<\/p>\n"}, {"id": "2", "title": "Which strategic foresight proposal has a stronger gap?", "section": "B", "audience": "<p>Three PhD candidates propose research on strategic foresight and strategy implementation.<\/p>\n<p><strong>A — Contextual omission<\/strong><\/p>\n<p>“Few studies have examined strategic foresight among middle managers in Malaysian manufacturing firms.”<\/p>\n<p><strong>B — Additional variable<\/strong><\/p>\n<p>“Previous studies have not examined strategic engagement as a mediator between strategic foresight and strategy implementation.”<\/p>\n<p><strong>C — Explanatory problem<\/strong><\/p>\n<p>“Although organisations invest in strategic foresight, its translation into effective strategy implementation remains inadequately explained. Why does foresight translate into implementation in some circumstances but not others?”<\/p>\n<p><strong>Interaction:<\/strong> Participants choose A, B, or C and explain their reasoning.<\/p>\n<p><strong>Reveal answer:<\/strong> C provides the strongest provisional intellectual problem because it identifies an explanatory issue. However, the claim must be supported by a close review of prior scholarship. A or B could also become defensible gaps if the context or mechanism changes an important theoretical expectation.<\/p>\n", "notes": "<p>Do not teach that mediators or contextual studies are inherently weak. The purpose is to show how a descriptive omission can be developed into a theoretically consequential problem.<\/p>\n"}, {"id": "3", "title": "Four elements of a defensible research gap", "section": "B", "audience": "<p>A strong gap argument should establish:<\/p>\n<table>\n<thead>\n<tr>\n<th>Element<\/th>\n<th>Question<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>Existing knowledge<\/td>\n<td>What do we already know?<\/td>\n<\/tr>\n<tr>\n<td>Unresolved limitation<\/td>\n<td>What remains inadequately explained or established?<\/td>\n<\/tr>\n<tr>\n<td>Intellectual consequence<\/td>\n<td>Why does this limitation matter?<\/td>\n<\/tr>\n<tr>\n<td>Researchability<\/td>\n<td>Can the proposed study investigate it credibly?<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n", "notes": "<p>A claim can be interesting but too broad, unsupported, or impossible to investigate. The final element forces candidates to connect the intellectual problem with a feasible research design.<\/p>\n"}, {"id": "4", "title": "Five possible research gap types", "section": "B", "audience": "<table>\n<thead>\n<tr>\n<th>Type<\/th>\n<th>Illustrative unresolved issue<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>Empirical<\/td>\n<td>Important evidence remains insufficient or inconclusive<\/td>\n<\/tr>\n<tr>\n<td>Contextual<\/td>\n<td>Existing explanations may not hold under consequential conditions<\/td>\n<\/tr>\n<tr>\n<td>Theoretical<\/td>\n<td>Available theories inadequately explain the phenomenon<\/td>\n<\/tr>\n<tr>\n<td>Methodological<\/td>\n<td>Existing methods cannot adequately investigate an important question<\/td>\n<\/tr>\n<tr>\n<td>Contradictory<\/td>\n<td>Credible studies yield conflicting conclusions requiring explanation<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n", "notes": "<p>These are teaching categories, not mutually exclusive classifications. A contradictory empirical pattern may reveal a theoretical boundary; a methodological limitation may prevent an explanatory question from being answered.<\/p>\n"}, {"id": "5", "title": "Weak and stronger contextual gap arguments", "section": "B", "audience": "<p><strong>Weak claim:<\/strong><\/p>\n<p>“Few studies have investigated strategic foresight in Malaysia.”<\/p>\n<p><strong>Stronger, conditional claim:<\/strong><\/p>\n<p>“Existing explanations of how strategic foresight influences implementation may not adequately account for organisational conditions that shape middle managers' authority to act. Examining such conditions could establish whether existing explanations require qualification.”<\/p>\n<p><strong>Interaction:<\/strong> Ask participants what additional literature evidence is necessary to defend the stronger claim.<\/p>\n<p><strong>Reveal answer:<\/strong> Evidence must establish the existing explanation, identify the consequential contextual feature, and demonstrate why current scholarship does not already account for it.<\/p>\n", "notes": "<p>The stronger statement is a hypothetical argument, not an established empirical conclusion about Malaysian firms.<\/p>\n"}, {"id": "6", "title": "Gap-spotting and problematisation", "section": "B", "audience": "<p>Two ways of developing research questions:<\/p>\n<p><strong>Gap-spotting:<\/strong> Identify something insufficiently addressed in existing research.<\/p>\n<p><strong>Problematisation:<\/strong> Critically examine assumptions underlying established explanations and consider alternative ways of understanding the phenomenon.<\/p>\n<p>Guiding questions:<\/p>\n<ul>\n<li>What does the literature take for granted?<\/li>\n<li>Under what circumstances might that assumption be questionable?<\/li>\n<li>What alternative explanation becomes possible?<\/li>\n<\/ul>\n<p><strong>Scholarly anchor:<\/strong> Alvesson and Sandberg (2011); Sandberg and Alvesson (2011).<\/p>\n", "notes": "<p>Problematisation is not simply disagreeing with existing literature. It requires identifying a meaningful assumption and developing a credible alternative. Gap-spotting can also generate valuable research questions.<\/p>\n"}, {"id": "7", "title": "Three levels of research gap development", "section": "B", "audience": "<div class=\"flow\">\n<div class=\"flow-node\">\n<p><strong>Level 1 — Omission<\/strong><\/p>\n<p>Strategic foresight has received limited attention in a particular setting.<\/p>\n<\/div>\n<div class=\"flow-arrow\" aria-hidden=\"true\">↓<\/div>\n<div class=\"flow-node\">\n<p><strong>Level 2 — Unresolved relationship<\/strong><\/p>\n<p>The processes connecting strategic foresight to implementation are not adequately established.<\/p>\n<\/div>\n<div class=\"flow-arrow\" aria-hidden=\"true\">↓<\/div>\n<div class=\"flow-node\">\n<p><strong>Level 3 — Explanatory puzzle<\/strong><\/p>\n<p>Why might comparable foresight capabilities lead to different implementation outcomes?<\/p>\n<\/div>\n<\/div>", "notes": "<p>This is an illustrative progression in intellectual specificity, not a universal hierarchy of research quality. A well-supported empirical omission can itself be consequential.<\/p>\n"}, {"id": "8", "title": "Challenge an underlying assumption", "section": "B", "audience": "<p><strong>Hypothetical assumption:<\/strong><\/p>\n<p>“Greater strategic foresight should lead to better strategy implementation.”<\/p>\n<p>Ask:<\/p>\n<ol>\n<li>What assumptions connect foresight to implementation?<\/li>\n<li>Could organisations possess foresight capabilities but lack the ability to act?<\/li>\n<li>What mechanisms or conditions could explain the difference?<\/li>\n<\/ol>\n<p><strong>Interaction:<\/strong> Participants propose an alternative explanation before revealing examples.<\/p>\n<p><strong>Reveal examples:<\/strong> Managerial discretion, resource allocation, organisational coordination, competing priorities, and engagement with strategic decisions.<\/p>\n", "notes": "<p>These are candidate explanations, not demonstrated findings. Their novelty and relevance require literature comparison and empirical investigation.<\/p>\n"}, {"id": "9", "title": "Five-question research gap diagnostic", "section": "B", "audience": "<ul>\n<li>Can I identify the closest relevant scholarship?<\/li>\n<li>Can I explain what that scholarship already establishes?<\/li>\n<li>Can I specify the unresolved intellectual issue?<\/li>\n<li>Can I explain why resolving it matters?<\/li>\n<li>Can I investigate the issue through a credible research design?<\/li>\n<\/ul>\n<p><strong>Interaction:<\/strong> Five-item self-assessment checklist.<\/p>\n", "notes": "<p>Candidates should distinguish between being unable to find a paper and demonstrating that a significant question remains unresolved.<\/p>\n"}, {"id": "10", "title": "Write a three-sentence gap argument", "section": "B", "audience": "<p>Complete these statements:<\/p>\n<p><strong>Sentence 1 — Existing knowledge<\/strong><\/p>\n<p>“Existing research establishes that …”<\/p>\n<p><strong>Sentence 2 — Unresolved issue<\/strong><\/p>\n<p>“However, it remains unclear …”<\/p>\n<p><strong>Sentence 3 — Intellectual consequence<\/strong><\/p>\n<p>“Resolving this issue matters because …”<\/p>\n<p><strong>Interaction:<\/strong> Three editable text fields and a copy-response control.<\/p>\n", "notes": "<p>Encourage specific statements supported by the closest literature. Avoid allowing “few studies” to substitute for the second sentence.<\/p>\n"}, {"id": "11", "title": "Stress-test the gap", "section": "B", "audience": "<p>An examiner challenges your argument:<\/p>\n<p>“You say this issue is unresolved. How do you know the existing literature has not already answered it?”<\/p>\n<p><strong>Interaction:<\/strong> Pair discussion. One participant defends the gap; the other acts as examiner.<\/p>\n<p><strong>Expected defence:<\/strong> Identify the closest studies, what they establish, the precise limitation remaining, and the consequence of that limitation.<\/p>\n", "notes": "<p>This exercise should encourage intellectual humility. Candidates may discover that their proposed gap needs refinement.<\/p>\n"}, {"id": "12", "title": "What does not independently establish a gap?", "section": "B", "audience": "<p>None of these is sufficient by itself:<\/p>\n<ul>\n<li>“Nobody has studied my exact variable combination.”<\/li>\n<li>“The study has not been conducted in my country.”<\/li>\n<li>“Previous studies did not use PLS-SEM.”<\/li>\n<li>“My preferred mediator was not included.”<\/li>\n<li>“The literature review contains very few papers on my exact topic.”<\/li>\n<\/ul>\n<p><strong>Reveal explanation:<\/strong> Each may point toward a worthwhile research opportunity, but a defensible gap requires a meaningful unresolved problem and appropriate evidence.<\/p>\n", "notes": "<p>Emphasise the word <em>independently<\/em>. The goal is not to rule out contextual, methodological, or model-based contributions.<\/p>\n"}, {"id": "13", "title": "Defend your research gap", "section": "B", "audience": "<p><strong>The examiner asks:<\/strong><\/p>\n<p>“What important issue remains unresolved after the closest existing studies, and why should anyone investigate it?”<\/p>\n<p>A strong response identifies:<\/p>\n<ol>\n<li>The relevant scholarly baseline.<\/li>\n<li>The specific unresolved issue.<\/li>\n<li>The intellectual or practical consequence.<\/li>\n<li>The proposed study's ability to address it.<\/li>\n<\/ol>\n", "notes": "<p>Encourage candidates to make their claims proportionate to the literature and to the evidence they could realistically obtain.<\/p>\n"}, {"id": "14", "title": "From gap to novelty", "section": "B", "audience": "<p>A defensible gap identifies an unresolved problem.<\/p>\n<p>It does not yet establish that the proposed research will generate new knowledge.<\/p>\n<p><strong>Transition question:<\/strong><\/p>\n<p>“What will your study change in our understanding of that problem?”<\/p>\n", "notes": "<p>Connect Part I to Part II. Distinguish the problem requiring investigation from the particular intellectual advance the proposed study intends to make.<\/p>\n"}, {"id": "15", "title": "A research gap does not guarantee novelty", "section": "C", "audience": "<p><strong>Your research may address a genuine gap. But what makes your proposed answer new?<\/strong><\/p>\n<p>A gap identifies an unresolved issue. Novelty concerns what is meaningfully different about the knowledge your study seeks to generate.<\/p>\n", "notes": "<p>Connect directly to Part I. A researcher might identify a genuine lack of evidence about a phenomenon but propose a study that merely reproduces an established explanation without extending its scope, precision, or evidential basis.<\/p>\n<p>That study might still be valuable. The important question is whether the researcher can explain its particular novelty rather than simply declaring it.<\/p>\n"}, {"id": "16", "title": "Which research proposal is genuinely novel?", "section": "C", "audience": "<p><strong>Scenario:<\/strong> Four PhD candidates propose research on corporate sustainability and organisational performance.<\/p>\n<p><strong>Audience question:<\/strong> Which proposal offers the strongest <em>potential<\/em> for generating new knowledge?<\/p>\n<p><strong>A — New context<\/strong><\/p>\n<p>Investigate the relationship between sustainability practices and organisational performance among Malaysian manufacturing firms.<\/p>\n<p><strong>B — New mediator<\/strong><\/p>\n<p>Introduce organisational commitment as a mediator between sustainability practices and organisational performance.<\/p>\n<p><strong>C — Explanatory puzzle<\/strong><\/p>\n<p>Investigate why organisations making similar sustainability investments sometimes experience substantially different performance outcomes.<\/p>\n<p><strong>D — New analytical technique<\/strong><\/p>\n<p>Re-examine the relationship using PLS-SEM rather than conventional regression.<\/p>\n<p><strong>Interaction:<\/strong> Four-option poll. Reveal a separate explanation for the selected option.<\/p>\n<p><strong>Reveal explanations:<\/strong><\/p>\n<ul>\n<li><strong>A:<\/strong> A contextual extension could be novel if the setting creates theoretically consequential conditions that existing research has not explained. A different country alone is insufficient.<\/li>\n<li><strong>B:<\/strong> A mediator could contribute if it offers a genuinely different explanation not already captured by existing theories. Adding a variable is not enough.<\/li>\n<li><strong>C:<\/strong> This is the strongest provisional candidate because it begins with an explanatory puzzle and invites investigation of mechanisms or boundary conditions. Its novelty must still be established against prior studies that may already explain the variation.<\/li>\n<li><strong>D:<\/strong> A methodological change may be novel if it resolves a substantive inferential limitation. Using a different estimator alone is insufficient.<\/li>\n<\/ul>\n", "notes": "<p>Ask participants why they selected their answer before revealing the discussion.<\/p>\n<p>The aim is not to teach that explanatory puzzles are always superior to contextual, conceptual, or methodological studies. It is to distinguish surface-level differences from differences that can change understanding.<\/p>\n<p>Ask: “What evidence would make Proposal A or D the strongest option instead?”<\/p>\n"}, {"id": "17", "title": "Difference is not the same as novelty", "section": "C", "audience": "<table>\n<thead>\n<tr>\n<th>Difference<\/th>\n<th>Potential novelty<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>A different country<\/td>\n<td>A consequential theoretical boundary<\/td>\n<\/tr>\n<tr>\n<td>Another sample<\/td>\n<td>Evidence that changes an important inference<\/td>\n<\/tr>\n<tr>\n<td>An additional variable<\/td>\n<td>A previously unrecognised mechanism<\/td>\n<\/tr>\n<tr>\n<td>A different analytical technique<\/td>\n<td>A method enabling previously unavailable inference<\/td>\n<\/tr>\n<tr>\n<td>A new combination of constructs<\/td>\n<td>A revised conceptualisation or explanation<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n", "notes": "<p>The first column is not inherently weak, and the second column is not automatically novel.<\/p>\n<p>Novelty is relational: the claim must be evaluated against what the closest existing research already provides.<\/p>\n<p>A useful doctoral question is not merely “What did I change?” but “What knowledge becomes possible because of that change?”<\/p>\n"}, {"id": "18", "title": "Six sources of novelty", "section": "C", "audience": "<p>These are six practical ways to organise novelty claims. They are a teaching framework, not six mutually exclusive or universally standard categories.<\/p>\n<table>\n<thead>\n<tr>\n<th>Source<\/th>\n<th>Guiding question<\/th>\n<th>Illustrative possibility<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>Conceptual<\/td>\n<td>Are we defining or understanding a construct differently?<\/td>\n<td>Distinguishing strategic awareness from strategic engagement<\/td>\n<\/tr>\n<tr>\n<td>Theoretical<\/td>\n<td>Does the study extend or challenge an explanation?<\/td>\n<td>Revising assumptions about how organisational capabilities generate outcomes<\/td>\n<\/tr>\n<tr>\n<td>Explanatory<\/td>\n<td>Does it identify why or how something occurs?<\/td>\n<td>Explaining why similar sustainability investments produce different outcomes<\/td>\n<\/tr>\n<tr>\n<td>Contextual<\/td>\n<td>Do consequential conditions change what we expect?<\/td>\n<td>Investigating whether managerial authority changes the foresight–implementation relationship<\/td>\n<\/tr>\n<tr>\n<td>Empirical<\/td>\n<td>Does it provide important evidence not previously established?<\/td>\n<td>Resolving an unresolved finding through stronger or broader evidence<\/td>\n<\/tr>\n<tr>\n<td>Methodological<\/td>\n<td>Does a new approach enable knowledge unavailable through existing approaches?<\/td>\n<td>Capturing a dynamic implementation process using longitudinal evidence<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n", "notes": "<p>Clarify that a study may combine several sources.<\/p>\n<p>For example, a contextual study may reveal a boundary condition that improves theory. A methodological innovation may expose a previously unrecognised mechanism.<\/p>\n<p>These six categories are <strong>not Makadok's six levers<\/strong>. We introduce Makadok separately as a more specific framework for theorising.<\/p>\n"}, {"id": "19", "title": "Novelty requires a comparator", "section": "C", "audience": "<div class=\"flow\">\n<div class=\"flow-node\">\n<p><strong>What the closest existing research already establishes<\/strong><\/p>\n<\/div>\n<div class=\"flow-arrow\" aria-hidden=\"true\">↓<\/div>\n<div class=\"flow-node\">\n<p><strong>What the proposed study changes<\/strong><\/p>\n<\/div>\n<div class=\"flow-arrow\" aria-hidden=\"true\">↓<\/div>\n<div class=\"flow-node\">\n<p><strong>What new understanding that change makes possible<\/strong><\/p>\n<\/div>\n<\/div>", "notes": "<p>A researcher should not claim novelty simply because an exact phrase or variable label is absent from a database search.<\/p>\n<p>Equivalent concepts may appear under different terminology.<\/p>\n<p>Ask participants to identify the nearest studies, including those that could undermine their preferred novelty claim.<\/p>\n"}, {"id": "20", "title": "From novelty claims to theorising", "section": "C", "audience": "<p>Makadok, Burton, and Barney (2018) offer a practical framework for making theoretical contributions in strategic management.<\/p>\n<p>Their framework helps researchers examine how changes in theorising can produce new explanations, predictions, or prescriptions.<\/p>\n<p><strong>Central message:<\/strong> A theoretical contribution is not created simply by adding a variable. It requires a meaningful change in what a theory can explain, predict, or prescribe.<\/p>\n", "notes": "<p>Explain that the framework is particularly useful for management and business doctoral researchers because it directs attention toward the intellectual work performed by a theoretical model.<\/p>\n<p>Reference: Makadok, R., Burton, R., &amp; Barney, J. (2018). <em>A practical guide for making theory contributions in strategic management.<\/em> Strategic Management Journal, 39, 1530–1545.<\/p>\n"}, {"id": "21", "title": "The six levers of theorising", "section": "C", "audience": "<table>\n<thead>\n<tr>\n<th>Lever<\/th>\n<th>Theorising decision<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>HOW<\/td>\n<td>Mode of theorising<\/td>\n<\/tr>\n<tr>\n<td>WHO<\/td>\n<td>Level of analysis<\/td>\n<\/tr>\n<tr>\n<td>WHERE<\/td>\n<td>Phenomenon of interest<\/td>\n<\/tr>\n<tr>\n<td>WHY<\/td>\n<td>Causal mechanism<\/td>\n<\/tr>\n<tr>\n<td>WHAT<\/td>\n<td>Constructs and variables<\/td>\n<\/tr>\n<tr>\n<td>WHEN<\/td>\n<td>Boundary conditions<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n", "notes": "<p>The six levers are ways of examining what can change in a theoretical argument.<\/p>\n<p>They should not be interpreted as six compulsory requirements for a PhD thesis.<\/p>\n<p>A study may make a focused contribution through one well-developed lever.<\/p>\n<p><strong>Academic verification flag:<\/strong> This is the teaching adaptation recorded in our draft. Check its terminology and correspondence with the original Makadok et al. article before publication.<\/p>\n"}, {"id": "22", "title": "Interactive Makadok lever explorer", "section": "C", "audience": "<p><strong>Scenario:<\/strong> A doctoral researcher is investigating why strategic foresight does not always translate into effective strategy implementation.<\/p>\n<p><strong>Interaction:<\/strong> Six selectable buttons—HOW, WHO, WHERE, WHY, WHAT, WHEN. Selecting a lever reveals a research question. A second reveal shows the interpretation and a sustainability example.<\/p>\n<h3>HOW — Mode of theorising<\/h3>\n<p><strong>Research question:<\/strong> Could a process model explain the sequence through which foresight becomes implementation?<\/p>\n<p><strong>Reveal interpretation:<\/strong> The novelty opportunity lies in changing the form of reasoning, not merely the statistical technique.<\/p>\n<p><strong>Sustainability example:<\/strong> Model investment decisions as a sequence of capability-building and performance outcomes.<\/p>\n<h3>WHO — Level of analysis<\/h3>\n<p><strong>Research question:<\/strong> How does a firm-level foresight capability translate into middle managers' implementation behaviour?<\/p>\n<p><strong>Reveal interpretation:<\/strong> The novelty opportunity lies in explaining a cross-level relationship while respecting the level at which constructs are defined.<\/p>\n<p><strong>Sustainability example:<\/strong> Distinguish organisational sustainability strategy from individual managerial enactment.<\/p>\n<h3>WHERE — Phenomenon of interest<\/h3>\n<p><strong>Research question:<\/strong> What changes when the outcome is strategy implementation rather than strategic awareness?<\/p>\n<p><strong>Reveal interpretation:<\/strong> The novelty opportunity lies in identifying a consequentially different phenomenon or outcome.<\/p>\n<p><strong>Sustainability example:<\/strong> Examine implementation effectiveness rather than the adoption of sustainability practices.<\/p>\n<h3>WHY — Causal mechanism<\/h3>\n<p><strong>Research question:<\/strong> Through what organisational and behavioural processes does foresight influence implementation?<\/p>\n<p><strong>Reveal interpretation:<\/strong> The novelty opportunity lies in identifying a mechanism that improves the explanation.<\/p>\n<p><strong>Sustainability example:<\/strong> Explain how resource allocation and organisational learning translate investment into outcomes.<\/p>\n<h3>WHAT — Constructs and variables<\/h3>\n<p><strong>Research question:<\/strong> Does distinguishing strategic engagement from strategic awareness improve our explanation?<\/p>\n<p><strong>Reveal interpretation:<\/strong> The novelty opportunity lies in conceptual distinctions that perform genuine explanatory work.<\/p>\n<p><strong>Sustainability example:<\/strong> Distinguish symbolic sustainability commitment from substantive implementation.<\/p>\n<h3>WHEN — Boundary conditions<\/h3>\n<p><strong>Research question:<\/strong> Under what conditions does foresight fail to improve implementation?<\/p>\n<p><strong>Reveal interpretation:<\/strong> The novelty opportunity lies in specifying the circumstances under which an explanation holds or fails.<\/p>\n<p><strong>Sustainability example:<\/strong> Investigate whether resource constraints alter the effectiveness of sustainability investment.<\/p>\n", "notes": "<p>This is one of the central interactive teaching moments.<\/p>\n<p>Invite participants to select different levers and explain what the resulting research question would contribute.<\/p>\n<p>The examples are illustrative research possibilities, not established findings.<\/p>\n<p>Emphasise that changing a lever creates an opportunity for novelty, not proof that novelty exists.<\/p>\n"}, {"id": "23", "title": "From a theoretical modification to a contribution", "section": "C", "audience": "<p>Makadok et al. distinguish among theoretical outputs such as explanation, prediction, and prescription.<\/p>\n<table>\n<thead>\n<tr>\n<th>Output<\/th>\n<th>Guiding question<\/th>\n<th>Intellectual function<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>Explanation<\/td>\n<td>Why or how does it happen?<\/td>\n<td>Identifies the mechanism<\/td>\n<\/tr>\n<tr>\n<td>Prediction<\/td>\n<td>What should happen, and when?<\/td>\n<td>Specifies expected outcomes<\/td>\n<\/tr>\n<tr>\n<td>Prescription<\/td>\n<td>What should decision-makers do?<\/td>\n<td>Guides action under conditions<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n", "notes": "<p>Ask participants to identify which output their proposed research can credibly support.<\/p>\n<p>A cross-sectional association study, for example, should be cautious about claiming a fully established causal mechanism or validated managerial prescription.<\/p>\n"}, {"id": "24", "title": "Published example: Rethinking corporate social responsibility", "section": "C", "audience": "<p><strong>Published research:<\/strong> Luo and Kaul (2018), <em>An economic case for CSR: The comparative efficiency of for-profit firms in meeting consumer demand for social goods.<\/em><\/p>\n<p><strong>Conventional framing:<\/strong><\/p>\n<p>Does corporate social responsibility benefit shareholders or improve social outcomes?<\/p>\n<p><strong>Reframed theoretical question:<\/strong><\/p>\n<p>Under what conditions are for-profit firms relatively more efficient than alternative institutions at providing social goods?<\/p>\n", "notes": "<p>The value of this example lies in the change of theoretical question.<\/p>\n<p>Rather than merely adding another variable to a familiar CSR–performance model, the paper examines the comparative efficiency of organisational forms in providing social goods.<\/p>\n<p>Explain that the two questions above are teaching paraphrases of the intellectual contrast, not direct quotations from the article.<\/p>\n<p>This case illustrates how changing the question can open a different theoretical explanation.<\/p>\n"}, {"id": "25", "title": "What makes the CSR example different?", "section": "C", "audience": "<p><strong>Audience question:<\/strong> Is the principal contribution simply that the researchers introduced a new mediator or moderator?<\/p>\n<p><strong>Interaction:<\/strong> Reveal the theoretical shift.<\/p>\n<p><strong>Reveal answer:<\/strong><\/p>\n<p>No. The important shift is in the underlying theoretical problem.<\/p>\n<p>The research considers comparative efficiency, organisational capabilities, and the conditions under which different institutional arrangements may provide social goods.<\/p>\n<p>The reframing changes what the theoretical analysis is intended to explain.<\/p>\n", "notes": "<p>Connect this example back to the Makadok levers. Ask participants which levers are most relevant and what theoretical outputs the paper seeks to generate.<\/p>\n<p>Avoid presenting this conceptual/theoretical case as though it established universal empirical effects.<\/p>\n"}, {"id": "26", "title": "The closest-literature novelty matrix", "section": "C", "audience": "<table>\n<thead>\n<tr>\n<th>Dimension<\/th>\n<th>Closest existing research<\/th>\n<th>Proposed research<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>Research question<\/td>\n<td>What is already being asked?<\/td>\n<td>What is meaningfully different?<\/td>\n<\/tr>\n<tr>\n<td>Theoretical explanation<\/td>\n<td>What does the literature explain?<\/td>\n<td>What explanation changes?<\/td>\n<\/tr>\n<tr>\n<td>Mechanism<\/td>\n<td>What processes are established?<\/td>\n<td>What process remains unresolved?<\/td>\n<\/tr>\n<tr>\n<td>Boundary conditions<\/td>\n<td>When is the explanation expected to hold?<\/td>\n<td>What new condition is examined?<\/td>\n<\/tr>\n<tr>\n<td>Knowledge implication<\/td>\n<td>What can readers already conclude?<\/td>\n<td>What could readers conclude after this study?<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n<p><strong>Interaction:<\/strong> Participants choose their closest comparator and begin completing the matrix.<\/p>\n", "notes": "<p>The matrix should not be completed using an arbitrary or distant paper. It must use the closest relevant literature.<\/p>\n<p>Researchers may discover that a claimed novelty is already present in a study using different terminology.<\/p>\n<p>That discovery is valuable because it prevents an overstated contribution claim.<\/p>\n"}, {"id": "27", "title": "Challenge the novelty claim", "section": "C", "audience": "<p><strong>Scenario:<\/strong> A PhD candidate says:<\/p>\n<blockquote>\n<p>My study is novel because I introduce a new moderator and collect data in a country where the model has not been tested.<\/p>\n<\/blockquote>\n<p><strong>Audience question:<\/strong> What question should an examiner ask first?<\/p>\n<p><strong>Interaction:<\/strong> Reveal the examiner's challenge.<\/p>\n<p><strong>Reveal answer:<\/strong><\/p>\n<p>“What theoretical expectation changes because of the moderator or the new context, and why?”<\/p>\n<p>A defensible answer must identify the closest existing explanation, specify what the proposed change adds, and show why that difference matters.<\/p>\n", "notes": "<p>Explain that a moderator or a new national setting may provide substantial novelty when it reveals a consequential boundary condition.<\/p>\n<p>The weakness lies in treating the addition itself as sufficient evidence.<\/p>\n"}, {"id": "28", "title": "The five-question novelty diagnostic", "section": "C", "audience": "<p>Five-item interactive checklist.<\/p>\n<ol>\n<li>Can I identify the closest existing research?<\/li>\n<li>Can I explain what my study changes beyond a superficial difference?<\/li>\n<li>Can I identify the conceptual, theoretical, explanatory, contextual, empirical, or methodological source of novelty?<\/li>\n<li>Can I explain what new understanding the change makes possible?<\/li>\n<li>Can I identify evidence or prior research that could weaken my novelty claim?<\/li>\n<\/ol>\n<p><strong>Completion feedback:<\/strong> You have identified the components of a defensible novelty argument. Their strength depends on your comparison with the literature.<\/p>\n", "notes": "<p>This is a formative reflection tool rather than a validated scale. Encourage candidates to avoid overstating novelty at the proposal stage.<\/p>\n"}, {"id": "29", "title": "Defend your novelty", "section": "C", "audience": "<p><strong>What can your study help us understand that the closest existing research cannot?<\/strong><\/p>\n<p>And what evidence would convince a sceptical examiner that this difference is meaningful?<\/p>\n", "notes": "<p>Give participants a moment to formulate their answer.<\/p>\n<p>Conclude with the transition to Part III:<\/p>\n<p>“Even if your research is novel, the next question remains: What original contribution will your thesis actually make?”<\/p>\n"}, {"id": "30", "title": "Does every novel study make an original contribution?", "section": "D", "audience": "<p><strong>Your research is different. But what does the academic community gain?<\/strong><\/p>\n<p>Originality is not simply about doing something that has never been done before. It is about making a defensible contribution to knowledge.<\/p>\n", "notes": "<p>Connect the transition from Part II.<\/p>\n<p>A research gap identifies an unresolved intellectual issue. Novelty identifies what is meaningfully different about the proposed approach or insight. Originality requires the candidate to demonstrate the contribution made by the research.<\/p>\n<p>These are useful distinctions for teaching, but they are not three universally independent or sequential properties. A study's novelty and originality often overlap.<\/p>\n"}, {"id": "31", "title": "Which doctoral study makes an original contribution?", "section": "D", "audience": "<p><strong>Scenario:<\/strong> Three doctoral candidates defend their research contributions.<\/p>\n<p><strong>A — A unique model<\/strong><\/p>\n<p>“I developed a model combining five constructs that have never appeared together, and several hypotheses were statistically significant.”<\/p>\n<p><strong>B — An alternative explanation<\/strong><\/p>\n<p>“My findings challenge an established explanation and provide evidence for a theoretically grounded alternative.”<\/p>\n<p><strong>C — A consequential replication<\/strong><\/p>\n<p>“My replication identifies an important boundary under which a previously supported theoretical relationship does not hold.”<\/p>\n<p><strong>Interaction:<\/strong> Three-option poll with selection-specific feedback.<\/p>\n<p><strong>Reveal explanations:<\/strong><\/p>\n<ul>\n<li><strong>A:<\/strong> A unique combination of constructs and significant results are not sufficient by themselves. The candidate must explain what the model changes in our understanding.<\/li>\n<li><strong>B:<\/strong> Challenging an established explanation can contribute to theory if the alternative is well supported and meaningfully changes what the theory explains.<\/li>\n<li><strong>C:<\/strong> A carefully designed replication can make an original contribution when it establishes a consequential boundary condition or corrects an important prior inference.<\/li>\n<\/ul>\n", "notes": "<p>Invite participants to compare B and C. Do not imply that replication is inherently less original than proposing a new model.<\/p>\n<p>Candidate A might also make an original contribution, but the statement offered does not establish it.<\/p>\n<p>The essential question is what the study enables readers to understand that they could not adequately understand before.<\/p>\n"}, {"id": "32", "title": "Originality and utility", "section": "D", "audience": "<p>Corley and Gioia (2011) discuss theoretical contribution through two important dimensions: <strong>originality<\/strong> and <strong>utility<\/strong>.<\/p>\n<table>\n<thead>\n<tr>\n<th>Originality<\/th>\n<th>Utility<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>How does the contribution differ from existing knowledge?<\/td>\n<td>Why is the contribution valuable?<\/td>\n<\/tr>\n<tr>\n<td>May range from incremental advances to more revelatory insights<\/td>\n<td>May involve scientific usefulness, practical usefulness, or both<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n", "notes": "<p>Explain that originality does not require every PhD to overturn an entire theoretical tradition.<\/p>\n<p>An incremental contribution may be valuable when it meaningfully clarifies, extends, or qualifies existing understanding.<\/p>\n<p>Conversely, a surprising finding is not automatically useful.<\/p>\n<p>Reference: Corley, K. G., &amp; Gioia, D. A. (2011). <em>Building theory about theory building: What constitutes a theoretical contribution?<\/em> Academy of Management Review, 36(1), 12–32.<\/p>\n"}, {"id": "33", "title": "A contribution must do intellectual work", "section": "D", "audience": "<p>Drawing on Whetten (1989) and Sutton and Staw (1995):<\/p>\n<ul>\n<li>A list of constructs is not automatically a theory.<\/li>\n<li>A conceptual diagram is not automatically a theoretical explanation.<\/li>\n<li>Significant hypotheses do not automatically establish originality.<\/li>\n<li>Citing an established theory is not itself a contribution to that theory.<\/li>\n<\/ul>\n", "notes": "<p>Ask participants to distinguish WHAT is related to WHAT from WHY those relationships should occur.<\/p>\n<p>Whetten's discussion of what, how, why, and contextual conditions is particularly useful here.<\/p>\n<p>Sutton and Staw remind us that references, data, variables, diagrams, and hypotheses may support theorising without themselves constituting a theory.<\/p>\n"}, {"id": "34", "title": "Different forms of doctoral contribution", "section": "D", "audience": "<table>\n<thead>\n<tr>\n<th>Form<\/th>\n<th>Potential contribution<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>Theoretical<\/td>\n<td>Improves, extends, challenges, or develops an explanation<\/td>\n<\/tr>\n<tr>\n<td>Conceptual<\/td>\n<td>Clarifies, differentiates, or reconceptualises important constructs<\/td>\n<\/tr>\n<tr>\n<td>Empirical<\/td>\n<td>Establishes consequential evidence or resolves an important uncertainty<\/td>\n<\/tr>\n<tr>\n<td>Methodological<\/td>\n<td>Improves how researchers can investigate or establish knowledge<\/td>\n<\/tr>\n<tr>\n<td>Practice-oriented<\/td>\n<td>Produces defensible insights, tools, or frameworks for decision-making<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n", "notes": "<p>These forms can overlap, and they are a teaching classification rather than a rigid hierarchy.<\/p>\n<p>Not every doctoral contribution must involve proposing a new theory. However, claims of theoretical contribution require a theoretical argument.<\/p>\n<p>A practice-oriented contribution should also demonstrate the validity and usefulness of the proposed insight or tool.<\/p>\n"}, {"id": "35", "title": "Contribution of theory versus contribution to theory", "section": "D", "audience": "<p>This distinction is informed by Venkatesh (2025), alongside broader discussions of theoretical contribution.<\/p>\n<p><strong>Contribution of theory<\/strong><\/p>\n<p>Theory helps us understand the phenomenon.<\/p>\n<p>Existing theory is used as an explanatory lens to generate substantive knowledge about a problem.<\/p>\n<p><strong>Contribution to theory<\/strong><\/p>\n<p>The research helps us improve the theory.<\/p>\n<p>The findings or arguments refine, extend, challenge, or develop theoretical understanding.<\/p>\n", "notes": "<p>These are not mutually exclusive categories, and one is not automatically superior to the other.<\/p>\n<p>The distinction concerns the direction of the knowledge contribution.<\/p>\n<p>A study can apply an established theory to produce important new knowledge about a phenomenon. A study can also use evidence from that phenomenon to revise the theory.<\/p>\n<p>Crucially, merely citing a theory does not establish a contribution <em>of<\/em> theory. Similarly, a surprising result does not automatically constitute a contribution <em>to<\/em> theory.<\/p>\n<p>Reference: Venkatesh, V. (2025). <em>Leveraging Context: Re-Thinking Research Processes to Make “Contributions to Theory”.<\/em> Information Systems Research, 36(3), 1871–1886.<\/p>\n"}, {"id": "36", "title": "Illustrating the distinction through strategic foresight", "section": "D", "audience": "<p><strong>Hypothetical research setting:<\/strong> Middle managers' strategic foresight and strategy implementation.<\/p>\n<p><strong>Illustrative contribution of theory:<\/strong><\/p>\n<p>Using an established engagement perspective to explain how middle managers' psychological involvement relates to strategy implementation.<\/p>\n<p><strong>Illustrative contribution to theory:<\/strong><\/p>\n<p>Demonstrating, with appropriate evidence, that an established engagement explanation requires an additional boundary condition concerning managerial discretion.<\/p>\n", "notes": "<p>The first example would need to produce substantive new knowledge about the phenomenon, rather than simply apply a familiar label.<\/p>\n<p>The second would require showing that the boundary is genuinely absent or inadequately explained in the existing theory.<\/p>\n<p>The examples are hypothetical and should not be presented as published findings.<\/p>\n"}, {"id": "37", "title": "Classify the contribution", "section": "D", "audience": "<p><strong>Interaction:<\/strong> Four-case interactive classifier.<\/p>\n<p>Participants choose:<\/p>\n<ul>\n<li>Contribution of theory<\/li>\n<li>Contribution to theory<\/li>\n<li>Both<\/li>\n<li>Neither established<\/li>\n<\/ul>\n<p>Each case has a reveal explaining the intended classification.<\/p>\n<h3>Case 1<\/h3>\n<p>“A researcher uses established engagement theory to explain a previously unresolved implementation problem, without claiming to revise the theory.”<\/p>\n<p><strong>Expected classification:<\/strong> Contribution of theory.<\/p>\n<p><strong>Reveal explanation:<\/strong> The principal intended contribution concerns substantive understanding of implementation through an established theoretical lens.<\/p>\n<h3>Case 2<\/h3>\n<p>“A study provides robust evidence that an established theoretical relationship operates only under a previously unrecognised condition, requiring a revision of the theory's scope.”<\/p>\n<p><strong>Expected classification:<\/strong> Contribution to theory.<\/p>\n<p><strong>Reveal explanation:<\/strong> The stated contribution revises the theory's boundary conditions. It may also generate substantive knowledge about the phenomenon.<\/p>\n<h3>Case 3<\/h3>\n<p>“A study explains a new phenomenon using an established theory and demonstrates that the theory's central mechanism requires refinement.”<\/p>\n<p><strong>Expected classification:<\/strong> Both.<\/p>\n<p><strong>Reveal explanation:<\/strong> The study generates substantive understanding and develops the theoretical explanation.<\/p>\n<h3>Case 4<\/h3>\n<p>“A thesis cites three theories, presents a diagram and reports significant coefficients, but does not establish new understanding or theoretical implications.”<\/p>\n<p><strong>Expected classification:<\/strong> Neither established.<\/p>\n<p><strong>Reveal explanation:<\/strong> The description alone does not demonstrate a contribution. Further substantive argument and evidence would be necessary.<\/p>\n", "notes": "<p>Explain that these classifications are teaching judgements based on the claims as written. Actual publications may support more nuanced classifications.<\/p>\n<p>Encourage participants to justify the classification rather than simply select a label.<\/p>\n"}, {"id": "38", "title": "Theory develops through cumulative research", "section": "D", "audience": "<p><strong>Kahn (1990) → May et al. (2004) → Rich et al. (2010)<\/strong><\/p>\n<p>How can successive studies develop, examine, and extend our understanding of engagement?<\/p>\n", "notes": "<p>This sequence is drawn from the engagement-research teaching example previously used in the theory workshop.<\/p>\n<p>It illustrates two complementary ideas.<\/p>\n<p>First, academic knowledge develops through a sequence of conceptual and empirical contributions.<\/p>\n<p>Second, different studies can contribute by generating, examining, applying, or extending theoretical ideas.<\/p>\n<p>The sequence is pedagogical rather than a claim that these three publications represent the complete history of engagement research.<\/p>\n"}, {"id": "39", "title": "Kahn (1990): Developing the conceptual foundation", "section": "D", "audience": "<p><strong>Published study:<\/strong> Kahn, W. A. (1990). <em>Psychological Conditions of Personal Engagement and Disengagement at Work.<\/em><\/p>\n<p>Kahn conceptualised personal engagement and disengagement at work and identified three psychological conditions associated with engagement.<\/p>\n<table>\n<thead>\n<tr>\n<th>Condition<\/th>\n<th>Guiding question<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>Psychological meaningfulness<\/td>\n<td>Is it worthwhile to invest oneself in the role?<\/td>\n<\/tr>\n<tr>\n<td>Psychological safety<\/td>\n<td>Can one express oneself without fear of negative consequences?<\/td>\n<\/tr>\n<tr>\n<td>Psychological availability<\/td>\n<td>Are the psychological, emotional, and physical resources available?<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n", "notes": "<p>Explain the importance of conceptualisation.<\/p>\n<p>Kahn's work provided an influential way of understanding how individuals bring themselves into, or withdraw themselves from, work roles.<\/p>\n<p>Do not reduce this study to simply “testing three independent variables.” Its contribution includes conceptual and theoretical development grounded in qualitative inquiry.<\/p>\n"}, {"id": "40", "title": "May, Gilson and Harter (2004): Examining the conditions", "section": "D", "audience": "<p><strong>Published study:<\/strong> <em>The psychological conditions of meaningfulness, safety and availability and the engagement of the human spirit at work.<\/em><\/p>\n<div class=\"flow\">\n<div class=\"flow-node\">\n<p><strong>Psychological meaningfulness · Safety · Availability<\/strong><\/p>\n<\/div>\n<div class=\"flow-arrow\" aria-hidden=\"true\">↓<\/div>\n<div class=\"flow-node\">\n<p><strong>Engagement at work<\/strong><\/p>\n<\/div>\n<\/div>", "notes": "<p>The study provides empirical examination of the psychological conditions developed in the earlier conceptual work.<\/p>\n<p>The three conditions were positively associated with engagement, with meaningfulness emerging as particularly important in the study.<\/p>\n<p>Emphasise that empirical examination can refine confidence in, and understanding of, a conceptual explanation. It need not involve proposing an entirely new theory.<\/p>\n"}, {"id": "41", "title": "Rich, LePine and Crawford (2010): Extending engagement to performance", "section": "D", "audience": "<p><strong>Published study:<\/strong> <em>Job Engagement: Antecedents and Effects on Job Performance.<\/em><\/p>\n<p>Rich and colleagues examined job engagement as a multidimensional construct and investigated its relationship with job performance.<\/p>\n<div class=\"flow\">\n<div class=\"flow-node\">\n<p><strong>Antecedent conditions<\/strong><\/p>\n<\/div>\n<div class=\"flow-arrow\" aria-hidden=\"true\">↓<\/div>\n<div class=\"flow-node\">\n<p><strong>Job engagement<\/strong><\/p>\n<p><span class=\"minor\">Physical · Emotional · Cognitive<\/span><\/p>\n<\/div>\n<div class=\"flow-arrow\" aria-hidden=\"true\">↓<\/div>\n<div class=\"flow-node\">\n<p><strong>Task performance and organisational citizenship behaviour<\/strong><\/p>\n<\/div>\n<\/div>", "notes": "<p>The study used a sample of firefighters and investigated engagement as a mechanism linking antecedents to performance outcomes.<\/p>\n<p>The teaching emphasis is how a construct can be operationalised and incorporated into a broader explanation of organisational outcomes.<\/p>\n<p>Avoid implying that Rich and colleagues simply repeated Kahn or May. Their contribution must be understood in relation to their specific theoretical arguments and evidence.<\/p>\n"}, {"id": "42", "title": "What changed across the three studies?", "section": "D", "audience": "<table>\n<thead>\n<tr>\n<th>Study<\/th>\n<th>Teaching emphasis<\/th>\n<th>Central question<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>Kahn (1990)<\/td>\n<td>Conceptual development<\/td>\n<td>What is personal engagement, and under what psychological conditions does it occur?<\/td>\n<\/tr>\n<tr>\n<td>May et al. (2004)<\/td>\n<td>Empirical examination<\/td>\n<td>How do meaningfulness, safety and availability relate to engagement?<\/td>\n<\/tr>\n<tr>\n<td>Rich et al. (2010)<\/td>\n<td>Extension and application<\/td>\n<td>How does job engagement help explain work performance?<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n<p><strong>Interaction:<\/strong> Progressive reveal of the three stages.<\/p>\n<p><strong>Audience question:<\/strong> Which study makes the most original contribution?<\/p>\n", "notes": "<p>Resist the temptation to identify one universal winner.<\/p>\n<p>Each study addresses a different intellectual problem. Originality must be evaluated relative to the knowledge available at the time and the specific contribution made.<\/p>\n<p>This sequence demonstrates that theoretical development is cumulative, not necessarily a single revolutionary event.<\/p>\n<p>Ask participants to identify whether their own PhD primarily conceptualises, examines, extends, challenges, or applies existing knowledge.<\/p>\n"}, {"id": "43", "title": "When does research contribute to theory?", "section": "D", "audience": "<p>A study may contribute to theory by:<\/p>\n<ul>\n<li>Introducing or clarifying important theoretical concepts.<\/li>\n<li>Developing an explanation for relationships or processes.<\/li>\n<li>Refining mechanisms or boundary conditions.<\/li>\n<li>Challenging an established theoretical expectation.<\/li>\n<li>Integrating existing ideas in a way that changes what can be explained.<\/li>\n<\/ul>\n", "notes": "<p>Connect the engagement sequence to Whetten, Corley and Gioia, and Venkatesh.<\/p>\n<p>Do not categorise every empirical application as a contribution to theory. The research must show what changes in theoretical understanding.<\/p>\n<p>Likewise, a theoretically informed empirical study may make a meaningful substantive contribution without revising the underlying theory.<\/p>\n"}, {"id": "44", "title": "The originality defence", "section": "D", "audience": "<p>Five-question interactive checklist.<\/p>\n<ol>\n<li>What knowledge will my research contribute?<\/li>\n<li>Is the primary claim a contribution of theory, to theory, both, or another form of contribution?<\/li>\n<li>How does it differ from the closest existing work?<\/li>\n<li>What evidence would justify the claimed contribution?<\/li>\n<li>Why should the academic or professional community care?<\/li>\n<\/ol>\n<p><strong>Final viva question:<\/strong><\/p>\n<div class=\"quote-card\">\n<p><span class=\"minor\">THE FINAL VIVA QUESTION<\/span><\/p>\n<h3>If your thesis disappeared tomorrow, what knowledge would the academic community lose?<\/h3>\n<\/div>", "notes": "<p>For candidates still developing proposals, ask what knowledge their thesis is intended to contribute and what evidence would be required to establish it.<\/p>\n<p>For candidates who have completed their analysis, ask what the evidence actually warrants.<\/p>\n<p>A useful supplementary question is:<\/p>\n<p>“Where does your PhD fit within the continuing development of knowledge in your research area?”<\/p>\n<p>This connects back to the Kahn–May–Rich sequence.<\/p>\n"}, {"id": "F1", "title": "Your doctoral contribution in three claims", "section": "E", "audience": "<p><strong>Individual reflection: 4 minutes<\/strong><\/p>\n<p>Complete three statements about your own research.<\/p>\n<p><strong>1. My research gap<\/strong><\/p>\n<p>What is insufficiently understood, and why does that limitation matter?<\/p>\n<p>Suggested writing prompt:<\/p>\n<p>“Existing scholarship establishes … However, it remains unclear … Resolving this matters because …”<\/p>\n<p><strong>2. My novelty<\/strong><\/p>\n<p>How will my research generate meaningfully different knowledge?<\/p>\n<p>Suggested writing prompt:<\/p>\n<p>“Compared with the closest existing studies, my research will … This difference matters because …”<\/p>\n<p><strong>3. My original contribution<\/strong><\/p>\n<p>What will readers understand or be able to establish that they could not before?<\/p>\n<p>Suggested writing prompt:<\/p>\n<p>“The intended contribution of my study is … It will advance understanding by …”<\/p>\n<p><strong>Interaction:<\/strong> Three separate editable text areas, with a button to copy all three statements.<\/p>\n", "notes": "<p>Participants should write three distinct but connected statements. The first identifies the unresolved issue, the second explains the proposed advance, and the third articulates the knowledge contribution.<\/p>\n<p>For proposal-stage participants, use prospective language. For those with completed results, require claims supported by evidence.<\/p>\n"}, {"id": "F2", "title": "The examiner's challenge", "section": "E", "audience": "<p><strong>Peer discussion: 4 minutes<\/strong><\/p>\n<p><strong>1. Research Gap<\/strong><\/p>\n<p>“How do you know this problem has not already been adequately resolved?”<\/p>\n<p><strong>2. Novelty<\/strong><\/p>\n<p>“What is meaningfully different from the closest published research?”<\/p>\n<p><strong>3. Originality<\/strong><\/p>\n<p>“What would the academic community lose if your thesis had never been written?”<\/p>\n<p><strong>Interaction:<\/strong> Participants exchange their three statements with a partner and challenge the claims.<\/p>\n", "notes": "<p>Invite participants to challenge a partner's statements. The objective is not to defeat the candidate but to expose assumptions, missing comparisons, and unsupported contribution claims.<\/p>\n"}, {"id": "F3", "title": "The contribution statement", "section": "E", "audience": "<p><strong>Closing synthesis: 2 minutes<\/strong><\/p>\n<div class=\"quote-card\">\n<p><span class=\"minor\">THE FINAL MESSAGE<\/span><\/p>\n<h3>A defensible doctoral contribution is not established by what you added to your model.<\/h3>\n<h3>It is established by what your research enables us to understand.<\/h3>\n<\/div>", "notes": "<p>Acknowledge that empirical, methodological, conceptual, and practical contributions can also be important. The closing statement should not imply that every PhD must produce a new theory.<\/p>\n"}], "parts": {"A": "Workshop Opening", "B": "Part I: Research Gap V0.5", "C": "Part II: Novelty V0.7", "D": "Part III: Originality V1.0", "E": "Integrated Workshop Closing", "F": "Complete HTML Implementation Requirements"}, "refs": [["Part I references", "<ul>\n<li>Alvesson, M., &amp; Sandberg, J. (2011). Generating research questions through problematization. <em>Academy of Management Review, 36<\/em>(2), 247–271.<\/li>\n<li>Sandberg, J., &amp; Alvesson, M. (2011). Ways of constructing research questions: Gap-spotting or problematization? <em>Organization, 18<\/em>(1), 23–44.<\/li>\n<li>Whetten, D. A. (1989). What constitutes a theoretical contribution? <em>Academy of Management Review, 14<\/em>(4), 490–495.<\/li>\n<\/ul>\n"], ["Part II references", "<ul>\n<li>Corley, K. G., &amp; Gioia, D. A. (2011). Building theory about theory building: What constitutes a theoretical contribution? <em>Academy of Management Review, 36<\/em>(1), 12–32.<\/li>\n<li>Davis, M. S. (1971). That's interesting! Towards a phenomenology of sociology and a sociology of phenomenology. <em>Philosophy of the Social Sciences, 1<\/em>(2), 309–344.<\/li>\n<li>Luo, J., &amp; Kaul, A. (2018). An economic case for CSR: The comparative efficiency of for-profit firms in meeting consumer demand for social goods. <em>Strategic Management Journal, 39<\/em>, 1650–1677.<\/li>\n<li>Makadok, R., Burton, R., &amp; Barney, J. (2018). A practical guide for making theory contributions in strategic management. <em>Strategic Management Journal, 39<\/em>, 1530–1545. DOI: 10.1002/smj.2789.<\/li>\n<li>Sandberg, J., &amp; Alvesson, M. (2011). Ways of constructing research questions: Gap-spotting or problematization? <em>Organization, 18<\/em>(1), 23–44.<\/li>\n<li>Whetten, D. A. (1989). What constitutes a theoretical contribution? <em>Academy of Management Review, 14<\/em>(4), 490–495.<\/li>\n<\/ul>\n<p><strong>Reference verification note:<\/strong> The CSR example is recorded here under Luo and Kaul as in the detailed draft. Its bibliographic author order and theoretical interpretation should be checked against the published article before finalising the presentation.<\/p>\n"], ["Part III references", "<ul>\n<li>Corley, K. G., &amp; Gioia, D. A. (2011). Building theory about theory building: What constitutes a theoretical contribution? <em>Academy of Management Review, 36<\/em>(1), 12–32.<\/li>\n<li>Kahn, W. A. (1990). Psychological conditions of personal engagement and disengagement at work. <em>Academy of Management Journal, 33<\/em>(4), 692–724.<\/li>\n<li>Makadok, R., Burton, R., &amp; Barney, J. (2018). A practical guide for making theory contributions in strategic management. <em>Strategic Management Journal, 39<\/em>, 1530–1545.<\/li>\n<li>May, D. R., Gilson, R. L., &amp; Harter, L. M. (2004). The psychological conditions of meaningfulness, safety and availability and the engagement of the human spirit at work. <em>Journal of Occupational and Organizational Psychology, 77<\/em>, 11–37.<\/li>\n<li>Rich, B. L., LePine, J. A., &amp; Crawford, E. R. (2010). Job engagement: Antecedents and effects on job performance. <em>Academy of Management Journal, 53<\/em>(3), 617–635.<\/li>\n<li>Sutton, R. I., &amp; Staw, B. M. (1995). What theory is not. <em>Administrative Science Quarterly, 40<\/em>(3), 371–384.<\/li>\n<li>Venkatesh, V. (2025). Leveraging context: Re-thinking research processes to make “contributions to theory”. <em>Information Systems Research, 36<\/em>(3), 1871–1886.<\/li>\n<li>Whetten, D. A. (1989). What constitutes a theoretical contribution? <em>Academy of Management Review, 14<\/em>(4), 490–495.<\/li>\n<li>Whetten, D. A. (2009). An examination of the interface between context and theory applied to the study of Chinese organizations. <em>Management and Organization Review, 5<\/em>(1), 29–55.<\/li>\n<\/ul>\n"]], "verification": "<p>Work should flag the following for review:<\/p>\n<ol>\n<li><strong>Part I wording:<\/strong> Slides 1–14 were reconstructed from the available earlier outline and must not be represented as verbatim approved V0.5.<\/li>\n<li><strong>Makadok et al. (2018):<\/strong> Check the precise formulation of the six theorising levers and their interpretation.<\/li>\n<li><strong>CSR case:<\/strong> Verify the bibliographic author order, title, and interpretation of the published work.<\/li>\n<li><strong>Venkatesh (2025):<\/strong> Confirm the precise scholarly distinction between contributions <em>of<\/em> and <em>to<\/em> theory.<\/li>\n<li><strong>Kahn–May–Rich sequence:<\/strong> Verify the published study details and avoid overstating the relationship among the three studies.<\/li>\n<li><strong>References:<\/strong> Validate bibliographic metadata and DOIs before the presentation is considered final.<\/li>\n<\/ol>\n", "pacing": "<table>\n<thead>\n<tr>\n<th>Section<\/th>\n<th style=\"text-align:right\">90-minute version<\/th>\n<th style=\"text-align:right\">120-minute version<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>Opening<\/td>\n<td style=\"text-align:right\">5 min<\/td>\n<td style=\"text-align:right\">8 min<\/td>\n<\/tr>\n<tr>\n<td>Part I — Research Gap<\/td>\n<td style=\"text-align:right\">25 min<\/td>\n<td style=\"text-align:right\">33 min<\/td>\n<\/tr>\n<tr>\n<td>Part II — Novelty<\/td>\n<td style=\"text-align:right\">25 min<\/td>\n<td style=\"text-align:right\">33 min<\/td>\n<\/tr>\n<tr>\n<td>Part III — Originality<\/td>\n<td style=\"text-align:right\">25 min<\/td>\n<td style=\"text-align:right\">33 min<\/td>\n<\/tr>\n<tr>\n<td>Integrated defence and closing<\/td>\n<td style=\"text-align:right\">10 min<\/td>\n<td style=\"text-align:right\">13 min<\/td>\n<\/tr>\n<tr>\n<td><strong>Total<\/strong><\/td>\n<td style=\"text-align:right\"><strong>90 min<\/strong><\/td>\n<td style=\"text-align:right\"><strong>120 min<\/strong><\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n<p>The 90-minute version requires concise discussion. The 120-minute version permits fuller engagement with the exercises.<\/p>\n"}</script>
+<script>'use strict';
+const data = JSON.parse(document.querySelector('#source').textContent);
+const get = id => document.getElementById(id);
+const deck = get('deck');
+const findUnit = id => data.slides.findIndex(unit => unit.id === id);
+let current = 0;
+let presenter;
+let audienceWindow;
+const notesMode = location.hash.startsWith('#notes=');
+
+function element(tag, content = '', className = '') {
+  const node = document.createElement(tag);
+  node.textContent = content;
+  if (className) node.className = className;
+  return node;
+}
+function button(text, action) {
+  const node = element('button', text);
+  node.type = 'button';
+  node.addEventListener('click', action);
+  return node;
+}
+function fragment(html) {
+  const range = document.createRange();
+  return range.createContextualFragment(html);
+}
+function labelled(root, expression) {
+  return [...root.querySelectorAll('p')].find(p => expression.test(p.firstElementChild?.textContent || ''));
+}
+function following(start, end = null) {
+  const nodes = [];
+  for (let node = start; node && node !== end; node = node.nextElementSibling) nodes.push(node);
+  return nodes;
+}
+function disclosure(nodes, title = 'Reveal explanation') {
+  const details = element('details', '', 'activity');
+  nodes[0].before(details);
+  details.append(element('summary', title), ...nodes);
+  return details;
+}
+function wrapTables(root) {
+  for (const table of root.querySelectorAll('table')) {
+    const wrap = element('div', '', 'table-wrap');
+    wrap.tabIndex = 0;
+    wrap.setAttribute('role','region');
+    wrap.setAttribute('aria-label','Comparison table');
+    table.before(wrap);
+    wrap.append(table);
+  }
+}
+function selector(root, options, onSelect) {
+  const row = element('div', '', 'choices');
+  root.append(row);
+  options.forEach((option, index) => {
+    const choice = button(option, () => {
+      for (const item of row.children) item.setAttribute('aria-pressed', String(item === choice));
+      onSelect(index);
+    });
+    choice.setAttribute('aria-pressed', 'false');
+    row.append(choice);
+  });
+}
+function poll(root, id) {
+  const answer = labelled(root, /^Reveal answer/);
+  const explanations = labelled(root, /^Reveal explanations/);
+  const activity = element('div', '', 'activity');
+  const interaction = labelled(root, /^Interaction/);
+  interaction.after(activity);
+  const status = element('p', '', 'status');
+  status.setAttribute('role','status');
+  const options = id === '2' || id === '31' ? ['A','B','C'] : ['A','B','C','D'];
+  let selected = -1;
+  const feedback = element('div', '', 'feedback');
+  feedback.hidden = true;
+  feedback.setAttribute('aria-live','polite');
+  const answers = explanations ? [...explanations.nextElementSibling.children] : [answer];
+  const reveal = button('Reveal feedback', () => {
+    feedback.replaceChildren(...(explanations ? [answers[selected].cloneNode(true)] : [answer.cloneNode(true)]));
+    if (explanations) {
+      const item = feedback.firstElementChild;
+      const para = element('p');
+      para.append(...item.childNodes);
+      item.replaceWith(para);
+      feedback.firstElementChild.insertAdjacentElement('beforebegin', explanations.cloneNode(true));
+    }
+    feedback.hidden = false;
+  });
+  reveal.disabled = true;
+  selector(activity, options.map(letter => 'Choose ' + letter), index => {
+    selected = index;
+    status.textContent = 'Selected ' + options[index];
+    reveal.disabled = false;
+    feedback.hidden = true;
+  });
+  activity.append(status, reveal, feedback);
+  const print = element('div', '', 'print-only');
+  if (explanations) print.append(explanations, explanations.nextElementSibling);
+  else print.append(answer);
+  activity.after(print);
+}
+function checklist(root, list, doneText = '') {
+  const form = element('div', '', 'activity');
+  list.before(form);
+  const status = element('p', '0 of ' + list.children.length + ' selected', 'status');
+  status.setAttribute('role','status');
+  const updates = [];
+  for (const item of list.children) {
+    const label = element('label', '', 'check');
+    const check = element('input');
+    check.type = 'checkbox';
+    updates.push(check);
+    label.append(check, ...item.cloneNode(true).childNodes);
+    form.append(label);
+    check.addEventListener('change', () => {
+      const count = updates.filter(input => input.checked).length;
+      status.textContent = count + ' of ' + updates.length + ' selected' + (count === updates.length && doneText ? '. ' + doneText : '');
+    });
+  }
+  form.append(status);
+  list.classList.add('print-only');
+}
+function responseField(label, placeholder = '') {
+  const wrapper = element('label', label);
+  const field = element('textarea');
+  field.placeholder = placeholder;
+  wrapper.append(field);
+  return wrapper;
+}
+function builder(root, id) {
+  const anchors = [...root.querySelectorAll('p')].filter(p => id === '10' ? /^“/.test(p.textContent) : p.textContent.startsWith('“'));
+  const fields = anchors.map((anchor,index) => {
+    const titles = id === '10' ? ['Existing knowledge','Unresolved issue','Intellectual consequence'] : ['My research gap','My novelty','My original contribution'];
+    const box = responseField(titles[index], anchor.textContent.replace(/^“|”$/g,''));
+    anchor.after(box);
+    return box.lastElementChild;
+  });
+  const status = element('p', '', 'status');
+  status.setAttribute('role','status');
+  root.append(button('Copy responses', async () => {
+    const values = fields.map(field => field.value.trim());
+    if (!values.some(Boolean)) {
+      status.textContent = 'Enter a response before copying.';
+      return;
+    }
+    const value = values.join('\n\n');
+    try {
+      await navigator.clipboard.writeText(value);
+      status.textContent = 'Responses copied.';
+    } catch {
+      const buffer = element('textarea');
+      buffer.value = value;
+      root.append(buffer);
+      buffer.select();
+      let copied = false;
+      try { copied = document.execCommand('copy'); } catch {}
+      if (copied) buffer.remove();
+      status.textContent = copied ? 'Responses copied.' : 'Use your device’s copy command on the selected text.';
+    }
+  }), status);
+}
+function explorer(root) {
+  const headings = [...root.querySelectorAll('h3')];
+  const groups = headings.map((heading,index) => following(heading,headings[index+1]));
+  const picker = element('div', '', 'activity');
+  headings[0].before(picker);
+  const panels = groups.map(nodes => {
+    const panel = element('section', '', 'activity lever-panel');
+    nodes[0].before(panel);
+    panel.append(...nodes);
+    panel.hidden = true;
+    disclosure(nodes.slice(2), 'Reveal interpretation and sustainability example');
+    return panel;
+  });
+  selector(picker,headings.map(h => h.textContent.split(' — ')[0]), index => {
+    panels.forEach((panel,i) => { panel.hidden = index !== i; });
+  });
+}
+function classifier(root) {
+  const headings = [...root.querySelectorAll('h3')];
+  const groups = headings.map((heading,index) => following(heading, headings[index+1]));
+  const labels = [...root.querySelector('ul').children].map(li => li.textContent);
+  groups.forEach(nodes => {
+    const panel = element('section', '', 'activity');
+    const feedback = element('div', '', 'feedback');
+    feedback.hidden = true;
+    feedback.setAttribute('aria-live','polite');
+    nodes[0].before(panel);
+    panel.append(...nodes.slice(0,2));
+    selector(panel,labels,index => {
+      const expected = nodes[2].textContent.replace(/^Expected classification:\s*|\.$/g,'');
+      const result = element('p', labels[index] === expected ? 'Matches the intended classification.' : 'Compare your choice with the intended classification.');
+      feedback.replaceChildren(result,...nodes.slice(2).map(node => node.cloneNode(true)));
+      feedback.hidden = false;
+    });
+    const print = element('div', '', 'print-only');
+    print.append(...nodes.slice(2));
+    panel.append(feedback,print);
+  });
+}
+function editableMatrix(root) {
+  const table = root.querySelector('table');
+  for (const row of table.tBodies[0].rows) {
+    for (let col = 1; col <= 2; col++) {
+      const cell = row.cells[col];
+      const field = responseField(row.cells[0].textContent + ' · ' + table.tHead.rows[0].cells[col].textContent, 'Add your comparison');
+      field.firstChild.remove();
+      field.lastElementChild.setAttribute('aria-label',row.cells[0].textContent + ' · ' + table.tHead.rows[0].cells[col].textContent);
+      cell.append(field);
+    }
+  }
+}
+function timeline(root, id) {
+  const nav = element('nav','','timeline');
+  nav.setAttribute('aria-label','Engagement research sequence');
+  const stages = [['38','Overview'],['39','Kahn · 1990'],['40','May et al. · 2004'],['41','Rich et al. · 2010'],['42','Compare']];
+  for (const [unit,title] of stages) {
+    const b = button(title, () => show(findUnit(unit)));
+    if (unit === id) b.setAttribute('aria-current','true');
+    nav.append(b);
+  }
+  root.prepend(nav);
+  if (id === '42') {
+    const rows = [...root.querySelector('tbody').rows];
+    const table = rows[0].closest('table');
+    let shown = 0;
+    rows.forEach(row => { row.hidden = true; });
+    const advance = button('Reveal Kahn (1990)', () => {
+      rows[shown].hidden = false;
+      shown++;
+      advance.disabled = shown === rows.length;
+      advance.textContent = ['','Reveal May et al. (2004)','Reveal Rich et al. (2010)','All three stages revealed'][shown];
+    });
+    table.before(advance);
+  }
+}
+const genericReveals = new Map([
+  ['5','Reveal literature evidence'],['8','Reveal alternative explanations'],['11','Reveal defence guidance'],
+  ['12','Reveal explanation'],['25','Reveal the theoretical shift'],['27','Reveal the examiner’s question']
+]);
+const hypotheticals = new Set(['2','5','7','8','16','22','27','31','36','37']);
+function buildSlide(unit) {
+  const {id,title,section,audience} = unit;
+  const slide = element('article','','slide');
+  slide.id = 'unit-' + id;
+  slide.dataset.unit = id;
+  slide.hidden = true;
+  const heading = element('h1',title);
+  heading.tabIndex = -1;
+  slide.append(element('div', data.parts[section] + ' · ' + (Number(id) ? 'Slide ' : '') + id, 'eyebrow'),heading);
+  if (hypotheticals.has(id)) slide.append(element('p','Hypothetical teaching example','minor'));
+  if (['24','25','39','40','41'].includes(id)) slide.append(element('p','Published scholarly case','minor'));
+  const root = element('div','','audience');
+  root.append(fragment(audience));
+  slide.append(root);
+  if (['O2','2','16','31'].includes(id)) poll(root,id);
+  if (genericReveals.has(id)) disclosure(following(labelled(root,/^(Reveal|Expected defence)/)),genericReveals.get(id));
+  if (['9','28','44'].includes(id)) {
+    const completion = labelled(root,/^Completion feedback/);
+    checklist(root,root.querySelector('ol,ul'),completion?.textContent.replace(/^Completion feedback:\s*/,''));
+    completion?.classList.add('print-only');
+  }
+  if (['10','F1'].includes(id)) builder(root,id);
+  if (id === '22') explorer(root);
+  if (id === '26') editableMatrix(root);
+  if (id === '37') classifier(root);
+  if (Number(id) >= 38 && Number(id) <= 42) timeline(root,id);
+  if (['13','29','F2'].includes(id)) root.append(responseField(id === 'F2' ? 'Revisions after peer feedback' : 'Draft your defence'));
+  wrapTables(root);
+  return slide;
+}
+function show(index, focus = true) {
+  if (index < 0 || index >= data.slides.length) return;
+  current = index;
+  const unit = data.slides[index];
+  if (notesMode) {
+    renderNotes();
+    return;
+  }
+  for (const slide of deck.children) {
+    if (slide.classList.contains('slide')) slide.hidden = slide.dataset.unit !== unit.id;
+  }
+  for (const item of get('index-body').querySelectorAll('button')) {
+    item.setAttribute('aria-current', String(item.dataset.unit === unit.id));
+  }
+  get('prev').disabled = index === 0;
+  get('next').disabled = index === data.slides.length - 1;
+  get('position').textContent = unit.id + ' · ' + (index + 1) + ' / ' + data.slides.length;
+  get('progress').value = index + 1;
+  if (presenter && !presenter.closed) presenter.postMessage({workshopUnit:unit.id},'*');
+  if (focus) get('unit-' + unit.id).querySelector('h1').focus({preventScroll:true});
+  fitVisibleSlide();
+  window.scrollTo(0,0);
+}
+function renderNotes() {
+  const view = get('notes-view');
+  const unit = data.slides[current];
+  view.replaceChildren(element('div','Presenter view · ' + (current+1) + ' / ' + data.slides.length,'eyebrow'),element('h1',unit.id + ' · ' + unit.title));
+  const prev = button('← Previous', () => requestSlide(current-1));
+  const next = button('Next →', () => requestSlide(current+1));
+  prev.disabled = current === 0;
+  next.disabled = current === data.slides.length - 1;
+  const nav = element('nav','','choices');
+  nav.append(prev,next);
+  const picker = element('select');
+  picker.setAttribute('aria-label','Jump to presenter notes');
+  for (const item of data.slides) {
+    const opt = element('option',item.id + ' · ' + item.title);
+    opt.value = item.id;
+    picker.append(opt);
+  }
+  picker.value = unit.id;
+  picker.addEventListener('change',()=>requestSlide(findUnit(picker.value)));
+  picker.style.maxWidth = '100%';
+  nav.append(picker);
+  view.append(nav);
+  if (!audienceWindow) {
+    const back = element('a','Return to audience slides');
+    back.href = location.href.split('#')[0];
+    view.append(back);
+  }
+  const content = element('article');
+  content.append(element('h2','Presenter notes'),fragment(unit.notes));
+  view.append(content);
+}
+function requestSlide(index) {
+  if (index < 0 || index >= data.slides.length) return;
+  show(index);
+  if (notesMode && audienceWindow && !audienceWindow.closed) audienceWindow.postMessage({workshopUnit:data.slides[index].id},'*');
+}
+let fitFrame = 0;
+function fitVisibleSlide() {
+  if (!document.body.classList.contains('presentation-fit')) return;
+  const slide = get('unit-' + data.slides[current].id);
+  const padding = getComputedStyle(deck);
+  const height = deck.clientHeight - parseFloat(padding.paddingTop) - parseFloat(padding.paddingBottom) - 2;
+  const width = deck.clientWidth - parseFloat(padding.paddingLeft) - parseFloat(padding.paddingRight) - 2;
+  if (height <= 0 || width <= 0) return;
+  const fits = scale => {
+    slide.style.setProperty('--slide-zoom', scale);
+    const box = slide.getBoundingClientRect();
+    return box.height <= height && slide.scrollWidth * scale <= width + 3;
+  };
+  if (fits(1)) return;
+  let low = .05;
+  let high = 1;
+  for (let attempt = 0; attempt < 11; attempt++) {
+    const scale = (low + high) / 2;
+    if (fits(scale)) low = scale;
+    else high = scale;
+  }
+  slide.style.setProperty('--slide-zoom', low);
+}
+function scheduleSlideFit() {
+  if (!document.body.classList.contains('presentation-fit') || fitFrame) return;
+  fitFrame = requestAnimationFrame(() => {
+    fitFrame = 0;
+    fitVisibleSlide();
+  });
+}
+function updateFullscreen() {
+  const active = Boolean(document.fullscreenElement || document.webkitFullscreenElement);
+  document.body.classList.toggle('presentation-fit', active);
+  document.documentElement.classList.toggle('presentation-fit', active);
+  get('fullscreen').textContent = active ? 'Exit full screen' : 'Full screen';
+  get('fullscreen').setAttribute('aria-pressed', String(active));
+  fitVisibleSlide();
+}
+async function toggleFullscreen() {
+  const status = get('fullscreen-status');
+  status.hidden = true;
+  try {
+    if (document.fullscreenElement || document.webkitFullscreenElement) {
+      const exit = document.exitFullscreen || document.webkitExitFullscreen;
+      await exit.call(document);
+    } else {
+      const root = document.documentElement;
+      const enter = root.requestFullscreen || root.webkitRequestFullscreen;
+      if (!enter) throw new Error('Fullscreen API unavailable');
+      await enter.call(root);
+    }
+    updateFullscreen();
+  } catch {
+    status.textContent = 'Full screen is unavailable in this view. Open the downloaded HTML directly in a browser or use the browser’s full-screen command.';
+    status.hidden = false;
+  }
+}
+function buildReview() {
+  const overview = get('review-body');
+  overview.append(element('p','90–120 minutes · College of Business PhD candidates · Consolidated Master Content V1.1'));
+  overview.append(element('p','Use the arrow keys to move between slides, Home or End to jump, and I to open the index. Use Full screen or press F to toggle full screen. Open Presenter notes in a separate window and share only the slide window.'));
+  overview.append(element('h3','Workshop pacing'),fragment(data.pacing));
+  const references = element('section','','print-references');
+  for (const [name,reference] of data.refs) references.append(element('h3',name),fragment(reference));
+  overview.append(references);
+  const print = references.cloneNode(true);
+  print.className = 'print-only';
+  deck.append(print);
+  wrapTables(overview);
+}
+window.addEventListener('message',event => {
+  if (notesMode ? event.source !== audienceWindow : event.source !== presenter) return;
+  show(findUnit(event.data?.workshopUnit));
+});
+document.addEventListener('keydown',event => {
+  if (event.altKey || event.ctrlKey || event.metaKey || event.target.closest('input,textarea,select,[contenteditable]') || document.querySelector('dialog[open]')) return;
+  const actions = {ArrowLeft:current-1,ArrowRight:current+1,Home:0,End:data.slides.length-1};
+  if (Object.hasOwn(actions,event.key)) {
+    event.preventDefault();
+    requestSlide(actions[event.key]);
+  }
+  if (!notesMode && event.key.toLowerCase() === 'f' && !event.repeat) {
+    event.preventDefault();
+    toggleFullscreen();
+  }
+  if (!notesMode && event.key.toLowerCase() === 'i') get('index').showModal();
+});
+if (notesMode) {
+  audienceWindow = window.opener;
+  document.body.classList.add('notes-layout');
+  get('notes-view').hidden = false;
+  const showHash = () => show(Math.max(0,findUnit(location.hash.slice(7))));
+  window.addEventListener('hashchange',showHash);
+  showHash();
+} else {
+  const groups = new Map();
+  for (const unit of data.slides) {
+    deck.append(buildSlide(unit));
+    if (!groups.has(unit.section)) {
+      const group = element('section','','index-group');
+      group.append(element('h3',data.parts[unit.section]));
+      groups.set(unit.section,group);
+      get('index-body').append(group);
+    }
+    const jump = button(unit.id + ' · ' + unit.title, () => {
+      get('index').close();
+      show(findUnit(unit.id));
+    });
+    jump.dataset.unit = unit.id;
+    groups.get(unit.section).append(jump);
+  }
+  buildReview();
+  get('fullscreen').addEventListener('click',toggleFullscreen);
+  document.addEventListener('fullscreenchange',updateFullscreen);
+  document.addEventListener('webkitfullscreenchange',updateFullscreen);
+  get('open-index').addEventListener('click',()=>get('index').showModal());
+  get('open-review').addEventListener('click',()=>get('review').showModal());
+  get('open-notes').addEventListener('click',()=>{
+    const url = new URL(location.href);
+    url.hash = 'notes=' + data.slides[current].id;
+    presenter = window.open(url.href,'WorkshopPresenter','popup,width=760,height=720');
+    if (presenter) presenter.focus();
+    else { location.hash = url.hash; location.reload(); }
+  });
+  get('prev').addEventListener('click',()=>show(current-1));
+  get('next').addEventListener('click',()=>show(current+1));
+  window.addEventListener('resize',scheduleSlideFit);
+  deck.addEventListener('toggle',scheduleSlideFit,true);
+  if (typeof MutationObserver !== 'undefined') {
+    const changes = new MutationObserver(scheduleSlideFit);
+    changes.observe(deck,{
+      subtree:true, childList:true, characterData:true,
+      attributes:true, attributeFilter:['hidden','open']
+    });
+  }
+  show(0,false);
+}
+</script>
+</body>
+</html>
